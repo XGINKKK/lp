@@ -54,8 +54,7 @@ const CTA: React.FC = () => {
                 Pronto para transformar seu negócio com <GradientText>IA sob medida?</GradientText>
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                Preencha o formulário e vamos entender como podemos levar sua empresa para o próximo nível 
-                com inteligência e automação humanizada.
+                Agende um diagnóstico gratuito para entender como a EduAi pode levar sua empresa para o próximo nível com automação humanizada.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -67,7 +66,7 @@ const CTA: React.FC = () => {
                 <BenefitCard
                   icon={<Lightbulb className="w-6 h-6" />}
                   title="Proposta Personalizada"
-                  description="Soluções sob medida para seus objetivos"
+                  description="Solução sob medida para seus objetivos"
                 />
                 <BenefitCard
                   icon={<Rocket className="w-6 h-6" />}
@@ -88,7 +87,7 @@ const CTA: React.FC = () => {
                 <iframe
                   src="https://typebot.co/ag-ncia-aplica-es-automatik-labs-1-f1h19py"
                   style={{ border: 'none', width: '100%', height: '600px' }}
-                  title="Typebot - Automatik Labs"
+                  title="Typebot - EduAi"
                 />
               </div>
             </div>

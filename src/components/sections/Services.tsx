@@ -52,8 +52,7 @@ const Services: React.FC = () => {
               Soluções completas de <GradientText>Automação 360°</GradientText>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Desenvolvemos soluções personalizadas que integram inteligência artificial
-              e automação para transformar todas as áreas do seu negócio.
+              Integramos IA e automação em toda a operação para transformar áreas-chave do seu negócio.
             </p>
           </div>
           
@@ -61,19 +60,18 @@ const Services: React.FC = () => {
             <ServiceCard 
               icon={<Bot className="w-10 h-10" />}
               title="Atendimento automatizado com IA humanizada"
-              description="Agentes de IA que conversam naturalmente com seus clientes, resolvem problemas e conduzem vendas com personalidade e empatia."
+              description="Agentes que conversam naturalmente, resolvem demandas e conduzem vendas"
               features={[
-                "Atendimento 24/7 personalizado",
-                "Integração com múltiplos canais",
+                "Atendimento 24/7 e multicanal",
                 "Análise de sentimento em tempo real"
               ]}
             />
             <ServiceCard 
               icon={<BrainCircuit className="w-10 h-10" />}
               title="Automação do setor comercial"
-              description="Sistemas inteligentes para prospecção, qualificação de leads, follow-up e recuperação de vendas perdidas, sem perder o toque humano."
+              description="Sistemas inteligentes para prospecção, qualificação de leads, follow-up e recuperação de vendas perdidas"
               features={[
-                "Qualificação automática de leads",
+                "Prospecção e qualificação automática de leads",
                 "Sequências de follow-up inteligentes",
                 "Análise preditiva de conversão"
               ]}
@@ -81,20 +79,20 @@ const Services: React.FC = () => {
             <ServiceCard 
               icon={<Workflow className="w-10 h-10" />}
               title="Otimização de processos internos"
-              description="Automatização de tarefas operacionais repetitivas, liberando sua equipe para atividades estratégicas e de alto valor."
+              description="Automatização de tarefas operacionais repetitivas, liberando sua equipe para atividades estratégicas"
               features={[
-                "Automação de processos (RPA)",
-                "Integração entre sistemas",
-                "Dashboards em tempo real"
+                "Automação de tarefas repetitivas (RPA)",
+                "Integração entre sistemas e redução de retrabalho",
+                "Dashboards operacionais em tempo real"
               ]}
             />
             <ServiceCard 
               icon={<Network className="w-10 h-10" />}
               title="Integração de áreas com inteligência"
-              description="Soluções que conectam todos os departamentos do seu negócio com fluxos de dados inteligentes e decisões baseadas em insights."
+              description="Soluções que conectam todos os departamentos do seu negócio com fluxos de dados inteligentes"
               features={[
-                "Fluxos de trabalho automatizados",
-                "BI com machine learning",
+                "Fluxos de trabalho automatizados ponta a ponta",
+                "BI com machine learning para insights acionáveis",
                 "APIs inteligentes customizadas"
               ]}
             />

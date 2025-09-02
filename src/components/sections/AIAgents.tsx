@@ -112,30 +112,29 @@ const AIAgents: React.FC = () => {
                 Agentes de IA que <GradientText>Pensam e Agem</GradientText> Como Humanos
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                Desenvolvemos agentes de IA com uma camada exclusiva de humanização, 
-                capazes de interagir com seus clientes e colaboradores de forma natural e empática.
+                Nossos agentes possuem uma camada exclusiva de humanização, com decisões baseadas em contexto, histórico e objetivos do seu negócio.
               </p>
               
               <div className="space-y-6 mb-8">
                 <FeatureItem 
                   icon={<BrainCircuit size={20} />} 
                   title="Raciocínio avançado"
-                  description="Nossos agentes analisam contexto, histórico e intenções para tomar decisões inteligentes."
+                  description="Análise de contexto e intenção para decisões melhores"
                 />
                 <FeatureItem 
                   icon={<MessageCircle size={20} />} 
                   title="Comunicação natural"
-                  description="Conversas fluidas que respeitam o tom de voz da sua marca e conectam com seu público."
+                  description="Tom alinhado à sua marca"
                 />
                 <FeatureItem 
                   icon={<Sparkles size={20} />} 
                   title="Personalidade definida"
-                  description="Cada agente possui características e traços que refletem os valores da sua empresa."
+                  description="Agentes com traços que refletem seus valores"
                 />
                 <FeatureItem 
                   icon={<Network size={20} />} 
                   title="Integração perfeita"
-                  description="Projetados para se encaixar perfeitamente nos processos existentes do seu negócio."
+                  description="Conectados aos seus sistemas e processos"
                 />
               </div>
               
@@ -156,7 +155,7 @@ const AIAgents: React.FC = () => {
                 <div className="relative rounded-xl overflow-hidden">
                   <img 
                     src="https://images.pexels.com/photos/8438969/pexels-photo-8438969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                    alt="AI agent visualization" 
+                    alt="Agente de IA EduAi" 
                     className="w-full h-[400px] md:h-[500px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent"></div>
@@ -170,7 +169,7 @@ const AIAgents: React.FC = () => {
                         </div>
                         <div>
                           <h4 className="font-medium text-white">Assistente IA</h4>
-                          <p className="text-xs text-white/60">Automatik Labs</p>
+                          <p className="text-xs text-white/60">EduAi</p>
                         </div>
                       </div>
                       <div className="space-y-3">

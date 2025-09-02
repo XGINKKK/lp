@@ -23,7 +23,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Super Time de Agentes",
-    description: "Equipe completa de agentes de IA trabalhando em conjunto para maximizar resultados",
+    description: "Equipe de agentes de IA trabalhando em conjunto para maximizar resultados",
     image: "/Super Time de Agentes.png",
     details: {
       overview: "O Time de Agentes é uma solução revolucionária que permite que múltiplos agentes de IA trabalhem em conjunto, cada um com sua especialidade, para realizar tarefas complexas com precisão e eficiência incomparáveis.",
@@ -246,7 +246,7 @@ const Projects: React.FC = () => {
                   <div className="h-[400px] sm:h-[450px] md:h-[400px] lg:h-[450px] xl:h-[500px] relative overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} - EduAi`}
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                     />

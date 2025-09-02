@@ -6,10 +6,10 @@ import Marquee from '../ui/Marquee';
 import { ArrowRight, Bot, Brain, Zap } from 'lucide-react';
 
 const benefitItems = [
-  "Redução de 70% nos custos operacionais",
-  "Aumento de 45% na satisfação do cliente",
-  "Automação de 85% das tarefas repetitivas",
-  "ROI positivo em 3 meses",
+  "Redução de até 70% nos custos operacionais",
+  "Aumento de até 45% na satisfação do cliente",
+  "Automação de até 85% das tarefas repetitivas",
+  "ROI positivo em até 3 meses",
   "Disponibilidade 24/7",
   "Escalabilidade imediata",
   "Integração com sistemas existentes",
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto">
-            Soluções de IA e automação humanizada que geram resultados reais, reduzem custos e aumentam a produtividade do seu negócio.
+            A EduAi cria soluções de IA e automação humanizada que geram resultados reais, reduzem custos e aumentam a produtividade.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16">

@@ -49,7 +49,7 @@ const Methodology: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Metodologia <GradientText>Automatik</GradientText> — o Caminho para Resultados
+              Metodologia <GradientText>EduAi</GradientText> — o caminho para resultados
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Nossa abordagem proprietária combina diagnóstico profundo, planejamento estratégico 
@@ -80,7 +80,7 @@ const Methodology: React.FC = () => {
                   description="Identificação dos fluxos que podem ser otimizados com IA e automação."
                   features={[
                     "Definição de objetivos",
-                    "Roadmap de implementação",
+                    "Roadmap",
                     "KPIs de sucesso"
                   ]}
                 />
@@ -92,8 +92,7 @@ const Methodology: React.FC = () => {
                   description="Desenvolvimento e integração dos agentes de IA sob medida."
                   features={[
                     "Sprints focados",
-                    "Testes contínuos",
-                    "Feedback em tempo real"
+                    "Testes contínuos e integração com seus sistemas"
                   ]}
                 />
                 

@@ -45,33 +45,32 @@ const About: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Sobre nós
+                Sobre a EduAi
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               Somos especialistas em <GradientText>IA aplicada</GradientText> para resultados reais
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              A Automatik Labs é referência em agentes de IA humanizados e soluções de automação sob medida 
-              para negócios que buscam eficiência operacional, aumento de receita e redução de custos.
+              A EduAi é a assinatura do trabalho de Eduardo Manoel de Miranda Santos, 22 anos, natural de Balneário Camboriú (SC). Após estudar tráfego pago e copywriting, o Eduardo se encontrou no universo das inteligências artificiais e hoje é especialista em criar soluções de IA sob medida para empresas que buscam eficiência, crescimento e redução de custos.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AboutCard 
               icon={<Shield className="w-12 h-12 text-primary-400" />}
-              title="Especialistas em IA"
-              description="Equipe com vasta experiência em desenvolvimento e implementação de soluções de inteligência artificial para diversos segmentos."
+              title="Mecanismo Único: EduAi"
+              description="A camada proprietária da EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
             />
             <AboutCard 
               icon={<Award className="w-12 h-12 text-accent-400" />}
-              title="Reconhecimento no Mercado"
-              description="Projetos premiados e cases de sucesso em empresas de diferentes portes, com resultados mensuráveis e significativos."
+              title="Projetos com Resultados"
+              description="Projetos com resultados mensuráveis em diferentes segmentos, sempre focados em eficiência operacional e crescimento sustentável."
             />
             <AboutCard 
               icon={<Zap className="w-12 h-12 text-primary-400" />}
               title="Tecnologia de Ponta"
-              description="Utilizamos as mais avançadas tecnologias de IA, machine learning e automação para criar soluções personalizadas."
+              description="Soluções baseadas nas tecnologias mais avançadas de IA, machine learning e automação, com integrações profundas com as ferramentas que você já usa."
             />
           </div>
         </div>

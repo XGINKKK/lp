@@ -40,7 +40,7 @@ const Comparison: React.FC = () => {
       automatik: true
     },
     {
-      feature: "Criação de agentes de IA com inteligência e humanização",
+      feature: "Agentes de IA com inteligência e humanização",
       tools: false,
       freelancers: "sometimes",
       automatik: true
@@ -52,43 +52,25 @@ const Comparison: React.FC = () => {
       automatik: true
     },
     {
-      feature: "Suporte consultivo contínuo com especialistas",
+      feature: "Integração profunda entre sistemas com IA inteligente",
       tools: false,
       freelancers: "sometimes",
       automatik: true
     },
     {
-      feature: "Customização profunda para cultura e processos da empresa",
-      tools: false,
-      freelancers: "sometimes",
-      automatik: true
-    },
-    {
-      feature: "Integração entre diferentes sistemas com IA inteligente",
-      tools: "sometimes",
-      freelancers: "sometimes",
-      automatik: true
-    },
-    {
-      feature: "Construção de fluxos com visão de crescimento e escala",
+      feature: "Visão de crescimento e escala desde o início",
       tools: false,
       freelancers: false,
       automatik: true
     },
     {
-      feature: "Acompanhamento e otimização contínua das automações",
+      feature: "Acompanhamento e otimização contínua",
       tools: false,
       freelancers: "sometimes",
       automatik: true
     },
     {
-      feature: "Redução de custos e aumento de produtividade como foco principal",
-      tools: false,
-      freelancers: false,
-      automatik: true
-    },
-    {
-      feature: "Time dedicado e processo validado para garantir resultado",
+      feature: "Foco em redução de custos e aumento de produtividade",
       tools: false,
       freelancers: false,
       automatik: true
