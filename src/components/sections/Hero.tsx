@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto">
-            A EduAi cria soluções de IA e automação humanizada que geram resultados reais, reduzem custos e aumentam a produtividade.
+            Criamos soluções de IA e automação humanizada que geram resultados reais, reduzem custos e aumentam a produtividade.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16">
