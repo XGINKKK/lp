@@ -52,7 +52,7 @@ const About: React.FC = () => {
               Somos especialistas em <GradientText>IA aplicada</GradientText> para resultados reais
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              A EduAi é a assinatura do trabalho de Eduardo Manoel de Miranda Santos, 22 anos, natural de Balneário Camboriú (SC). Após estudar tráfego pago e copywriting, o Eduardo se encontrou no universo das inteligências artificiais e hoje é especialista em criar soluções de IA sob medida para empresas que buscam eficiência, crescimento e redução de custos.
+              EduAi é a assinatura do trabalho de Eduardo Manoel de Miranda Santos, 22 anos, natural de Balneário Camboriú (SC). Após estudar tráfego pago e copywriting, Eduardo se encontrou no universo das inteligências artificiais e hoje é especialista em criar soluções de IA sob medida para empresas que buscam eficiência, crescimento e redução de custos.
             </p>
           </div>
           
@@ -60,7 +60,7 @@ const About: React.FC = () => {
             <AboutCard 
               icon={<Shield className="w-12 h-12 text-primary-400" />}
               title="Mecanismo Único: EduAi"
-              description="A camada proprietária da EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
+              description="A camada proprietária EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
             />
             <AboutCard 
               icon={<Award className="w-12 h-12 text-accent-400" />}
