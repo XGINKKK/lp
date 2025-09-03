@@ -120,7 +120,7 @@ const Comparison: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Por que escolher a <GradientText>Automatik Labs</GradientText>?
+              Por que escolher <GradientText>Automatik Labs</GradientText>?
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Compare nossa solução completa com alternativas do mercado e entenda por que somos

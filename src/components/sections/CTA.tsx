@@ -51,10 +51,10 @@ const CTA: React.FC = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                Pronto para transformar seu negócio com <GradientText>IA sob medida?</GradientText>
+                Pronto para transformar seu negócio com <GradientText>IA?</GradientText>
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                Agende um diagnóstico gratuito para entender como a EduAi pode levar sua empresa para o próximo nível com automação humanizada.
+                Agende um diagnóstico gratuito para entender como EduAi pode levar sua empresa para o próximo nível com automação humanizada.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
