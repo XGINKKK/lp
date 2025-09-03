@@ -279,14 +279,6 @@ const Projects: React.FC = () => {
       >
         {selectedProject && (
           <div className="space-y-8">
-            <div className="relative h-[300px] rounded-xl overflow-hidden">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent" />
-            </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-3">Visão Geral</h4>
