@@ -243,14 +243,14 @@ const Projects: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full">
-                  <div className="h-[400px] sm:h-[450px] md:h-[400px] lg:h-[450px] xl:h-[500px] relative overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={`${project.title} - EduAi`}
-                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                  <div className="h-[200px] relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/30 via-accent-500/20 to-secondary-500/30" />
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-500/40 to-accent-500/40 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        {getProjectIcon(project.title)}
+                      </div>
+                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors">
@@ -354,6 +354,28 @@ const Projects: React.FC = () => {
       </Modal>
     </section>
   );
+};
+
+const getProjectIcon = (title: string) => {
+  const iconClass = "w-10 h-10 text-white";
+  
+  if (title.includes("Super Time")) {
+    return <Network className={iconClass} />;
+  }
+  if (title.includes("Analista")) {
+    return <BrainCircuit className={iconClass} />;
+  }
+  if (title.includes("Robô") || title.includes("Assistente")) {
+    return <Bot className={iconClass} />;
+  }
+  if (title.includes("Marketing")) {
+    return <Workflow className={iconClass} />;
+  }
+  if (title.includes("Ligação")) {
+    return <Bot className={iconClass} />;
+  }
+  
+  return <Bot className={iconClass} />;
 };
 
 export default Projects;

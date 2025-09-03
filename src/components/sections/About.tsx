@@ -59,7 +59,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AboutCard 
               icon={<Shield className="w-12 h-12 text-primary-400" />}
-              title="Mecanismo Único: EduAi"
+              title="EduAi"
               description="A camada proprietária EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
             />
             <AboutCard 
