@@ -4,6 +4,15 @@ import GradientText from '../ui/GradientText';
 import { Check, X, HelpCircle, ChevronDown } from 'lucide-react';
 import { Tooltip } from '../ui/Tooltip';
 
+type Status = boolean | 'sometimes';
+
+type ComparisonRow = {
+  feature: string;
+  tools: Status;
+  freelancers: Status;
+  eduAi: Status;
+};
+
 const Comparison: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
@@ -32,52 +41,52 @@ const Comparison: React.FC = () => {
     };
   }, []);
 
-  const comparisonData = [
+  const comparisonData: ComparisonRow[] = [
     {
       feature: "Diagnóstico estratégico do negócio antes da automação",
       tools: false,
       freelancers: false,
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Agentes de IA com inteligência e humanização",
       tools: false,
       freelancers: "sometimes",
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Automação 360° de toda a jornada (Marketing, Comercial, Entrega e Pós-venda)",
       tools: false,
       freelancers: "sometimes",
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Integração profunda entre sistemas com IA inteligente",
       tools: false,
       freelancers: "sometimes",
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Visão de crescimento e escala desde o início",
       tools: false,
       freelancers: false,
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Acompanhamento e otimização contínua",
       tools: false,
       freelancers: "sometimes",
-      automatik: true
+      eduAi: true
     },
     {
       feature: "Foco em redução de custos e aumento de produtividade",
       tools: false,
       freelancers: false,
-      automatik: true
+      eduAi: true
     }
   ];
 
-  const StatusIcon = ({ status }: { status: boolean | "sometimes" }) => {
+  const StatusIcon = ({ status }: { status: Status }) => {
     if (status === true) {
       return (
         <div className="flex items-center justify-center w-6 h-6">
@@ -172,7 +181,7 @@ const Comparison: React.FC = () => {
                         <StatusIcon status={row.freelancers} />
                       </div>
                       <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.automatik} />
+                        <StatusIcon status={row.eduAi} />
                       </div>
                     </div>
                   ))}
@@ -211,8 +220,8 @@ const Comparison: React.FC = () => {
                       <StatusIcon status={row.freelancers} />
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">Automatik Labs:</span>
-                      <StatusIcon status={row.automatik} />
+                      <span className="text-sm text-white/70">EduAi:</span>
+                      <StatusIcon status={row.eduAi} />
                     </div>
                   </div>
                 )}
