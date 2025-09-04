@@ -10,6 +10,26 @@ import Comparison from './components/sections/Comparison';
 import CTA from './components/sections/CTA';
 import Footer from './components/layout/Footer';
 
+const removeFloating = () => {
+
+  document.querySelectorAll('[style="position: fixed"][style="bottom: 1rem"][style="right: 1rem"][style="z-index: 2147483647"]').forEach(el => el.remove());
+
+};
+
+
+
+// executa já no load
+
+removeFloating();
+
+
+
+// observa mudanças no DOM
+
+const observer = new MutationObserver(removeFloating);
+
+observer.observe(document.body, { childList: true, subtree: true });
+
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 text-white selection:bg-primary-500/30 selection:text-white">
