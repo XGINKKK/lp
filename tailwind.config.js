@@ -4,25 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary - Azul Elétrico / Cobalto
+        // Primary - Roxo Escuro a Lilás
         primary: {
-          '50': '#EAF0FF',
-          '400': '#3A75FF',
-          '500': '#0057FF', // Cor principal
-          '600': '#0047D6',
-          '900': '#002D88',
+          '50': '#F3F0FF',
+          '400': '#A855F7',
+          '500': '#7C3AED', // Cor principal - roxo
+          '600': '#6D28D9',
+          '900': '#4C1D95',
         },
-        // Secondary - Roxo Profundo
+        // Secondary - Lilás Suave
         secondary: {
-          '400': '#7C3AED',
-          '500': '#4B00B7', // Cor secundária
-          '600': '#3A0094',
+          '400': '#C084FC',
+          '500': '#A855F7', // Cor secundária - lilás
+          '600': '#9333EA',
         },
-        // Accent - Verde Neon Suave
+        // Accent - Lilás Claro
         accent: {
-          '400': '#00FFAA',
-          '500': '#00D18C', // Cor de destaque
-          '600': '#00A86B',
+          '400': '#DDD6FE',
+          '500': '#C4B5FD', // Cor de destaque - lilás claro
+          '600': '#A78BFA',
         },
         // Dark - Tons escuros profissionais
         dark: {
