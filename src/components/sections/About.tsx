@@ -155,9 +155,9 @@ const About: React.FC = () => {
                         }`}
                         style={{ 
                           transitionDelay: cardsRevealed ? `${index * 200}ms` : '0ms'
-                        }}
-                      >
-                        <span className="text-green-400 text-xl font-bold flex-shrink-0 w-6 text-center mt-0.5">
+                    style={{ 
+                      animationDelay: `${index * 200}ms`
+                    }}
                           ✓
                         </span>
                         <span className="text-white/90 leading-relaxed text-base font-medium">
@@ -172,12 +172,8 @@ const About: React.FC = () => {
           </div>
         </div>
       </Container>
-      
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
+          <div ref={cardsRef} className="mt-12">
+            <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 backdrop-blur-sm rounded-2xl p-8 border border-green-500/20 shadow-xl shadow-green-500/10">
             transform: translateY(0);
           }
         }
