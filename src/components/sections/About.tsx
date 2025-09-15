@@ -153,7 +153,7 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className="flex items-start gap-3 py-3 verdade-item"
+                        className="flex items-start gap-3 py-4 verdade-item"
                         style={{ 
                           opacity: cardsRevealed ? 1 : 0,
                           transform: cardsRevealed ? 'translateX(0)' : 'translateX(-30px)',
@@ -161,10 +161,10 @@ const About: React.FC = () => {
                           transitionDelay: cardsRevealed ? `${index * 200}ms` : '0ms'
                         }}
                       >
-                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 mt-0.5">
+                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 text-center mt-0.5">
                           ✓
                         </span>
-                        <span className="text-white/90 leading-relaxed">
+                        <span className="text-white/90 leading-relaxed text-base">
                           {text}
                         </span>
                       </div>
