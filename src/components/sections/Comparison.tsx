@@ -1,21 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Check, X, HelpCircle, ChevronDown } from 'lucide-react';
-import { Tooltip } from '../ui/Tooltip';
-
-type Status = boolean | 'sometimes';
-
-type ComparisonRow = {
-  feature: string;
-  tools: Status;
-  freelancers: Status;
-  eduAi: Status;
-};
+import { X, Check } from 'lucide-react';
 
 const Comparison: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,62 +30,21 @@ const Comparison: React.FC = () => {
     };
   }, []);
 
-  const comparisonData: ComparisonRow[] = [
-    {
-      feature: "Faz o que você pede vs Entende o que você precisa",
-      tools: false,
-      freelancers: false,
-      eduAi: true
-    },
-    {
-      feature: "Entrega e vai embora vs Fica do seu lado sempre",
-      tools: false,
-      freelancers: false,
-      eduAi: true
-    },
-    {
-      feature: "Só sabe usar ferramentas básicas vs Cria soluções sob medida",
-      tools: false,
-      freelancers: false,
-      eduAi: true
-    },
-    {
-      feature: "Você tem que explicar tudo vs A gente entende de negócio",
-      tools: false,
-      freelancers: false,
-      eduAi: true
-    },
-    {
-      feature: "Se der problema, boa sorte vs Suporte dedicado e garantia",
-      tools: false,
-      freelancers: false,
-      eduAi: true
-    }
+  const freelancerPoints = [
+    "Faz apenas o que você pede",
+    "Entrega o projeto e desaparece",
+    "Usa só ferramentas básicas (Zapier, Make)",
+    "Você precisa explicar cada detalhe",
+    "Se der problema depois, você fica na mão"
   ];
 
-  const StatusIcon = ({ status }: { status: Status }) => {
-    if (status === true) {
-      return (
-        <div className="flex items-center justify-center w-6 h-6">
-          <Check className="w-6 h-6 text-[#63D471] group-hover:animate-pulse" />
-        </div>
-      );
-    }
-    if (status === false) {
-      return (
-        <div className="flex items-center justify-center w-6 h-6">
-          <X className="w-6 h-6 text-[#E74C3C]" />
-        </div>
-      );
-    }
-    return (
-      <div className="flex items-center justify-center w-6 h-6">
-        <Tooltip content="Depende da experiência e disponibilidade do profissional">
-          <HelpCircle className="w-6 h-6 text-[#F5C244] cursor-help" />
-        </Tooltip>
-      </div>
-    );
-  };
+  const eduAiPoints = [
+    "Entende o que seu negócio realmente precisa",
+    "Fica do seu lado durante toda jornada",
+    "Cria soluções personalizadas e inteligentes",
+    "Conhece de negócio, não só de tecnologia",
+    "Garante suporte dedicado sempre que precisar"
+  ];
 
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
@@ -124,46 +72,40 @@ const Comparison: React.FC = () => {
             </p>
           </div>
 
-          {/* Desktop Table (hidden on mobile) */}
-          <div className="relative hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
-            <div className="relative overflow-x-auto">
-              <div className="min-w-[768px]">
-                <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50">
-                  {/* Table Header */}
-                  <div className="grid grid-cols-4 border-b border-dark-700/50">
-                    <div className="p-6 font-semibold text-lg">
-                      Comparativo
+          {/* Comparison Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Freelancer Comum */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-red-500/10 to-red-600/10 rounded-2xl blur-xl opacity-50" />
+              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-red-400 mb-2">🔴 Freelancer Comum</h3>
+                </div>
+                <div className="space-y-4">
+                  {freelancerPoints.map((point, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <X className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80">{point}</span>
                     </div>
-                    <div className="p-6 text-center font-semibold text-lg">
-                      Freelancer Comum
-                    </div>
-                    <div className="p-6 text-center font-semibold text-lg">
-                      EduAi
-                    </div>
-                    <div className="p-6 text-center font-semibold text-lg">
-                      Resultado
-                    </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-                  {/* Table Body */}
-                  {comparisonData.map((row, index) => (
-                    <div 
-                      key={index}
-                      className="grid grid-cols-4 border-b border-dark-700/50 last:border-0 group hover:bg-dark-800/30 transition-colors"
-                    >
-                      <div className="p-6 flex items-center">
-                        {row.feature}
-                      </div>
-                      <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.tools} />
-                      </div>
-                      <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.freelancers} />
-                      </div>
-                      <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.eduAi} />
-                      </div>
+            {/* EduAi */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
+              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/30">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2">
+                    <GradientText>🟢 EduAi</GradientText>
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {eduAiPoints.map((point, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80">{point}</span>
                     </div>
                   ))}
                 </div>
@@ -171,43 +113,17 @@ const Comparison: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Cards (visible only on mobile) */}
-          <div className="md:hidden space-y-4">
-            {comparisonData.map((row, index) => (
-              <div
-                key={index}
-                className="bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700/50 overflow-hidden"
-              >
-                <button
-                  className="w-full p-4 flex items-center justify-between text-left"
-                  onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                >
-                  <span className="flex-1 pr-4">{row.feature}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 transform transition-transform ${
-                      expandedCard === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                
-                {expandedCard === index && (
-                  <div className="px-4 pb-4 space-y-3 border-t border-dark-700/50 pt-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">Ferramentas Avulsas:</span>
-                      <StatusIcon status={row.tools} />
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">Freelancers:</span>
-                      <StatusIcon status={row.freelancers} />
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">EduAi:</span>
-                      <StatusIcon status={row.eduAi} />
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Conclusion */}
+          <div className="text-center">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
+            <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/30 max-w-2xl mx-auto">
+              <p className="text-xl font-bold">
+                <span className="text-white/90">A diferença: </span>
+                <span className="text-red-400">Freelancer resolve um problema.</span>
+                <span className="text-white/90"> </span>
+                <GradientText>EduAi transforma seu negócio.</GradientText>
+              </p>
+            </div>
           </div>
         </div>
       </Container>
