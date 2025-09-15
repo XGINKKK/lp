@@ -81,7 +81,6 @@ const Hero: React.FC = () => {
             <p className="text-white/60 mb-6 text-lg">Especialistas certificados em:</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <TrustBadge 
-            <TrustBadge 
               icon={<Target className="w-6 h-6" />}
               title="Especialistas em Google Ads"
               subtitle="Campanhas otimizadas"
