@@ -29,24 +29,13 @@
   51%, 100% { border-color: #ff00ff; }
 }
 
-@keyframes typewriterReveal {
-  0% { 
-    width: 0;
-    opacity: 1;
+@keyframes blink-caret {
+  from, to { 
+    border-color: transparent; 
   }
-  99% { 
-    width: 100%;
-    opacity: 1;
+  50% { 
+    border-color: #ff00ff; 
   }
-  100% { 
-    width: 100%;
-    opacity: 1;
-  }
-}
-
-@keyframes cursorBlink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
 }
 
 @keyframes ripple {
@@ -248,18 +237,21 @@
   }
 
   .typewriter {
-    display: inline-block;
+    display: inline;
     overflow: hidden;
-    white-space: nowrap;
-    animation: typewriterReveal 3s steps(40, end) forwards;
-    width: 0;
+    border-right: 2px solid #ff00ff;
+    animation: typing 4s steps(35, end) forwards, blink-caret 0.75s step-end infinite;
   }
 
-  .typewriter::after {
-    content: '|';
-    color: #ff00ff;
-    animation: cursorBlink 1s infinite;
-    margin-left: 2px;
+  @keyframes typing {
+    from { 
+      width: 0;
+      max-width: 0;
+    }
+    to { 
+      width: 100%;
+      max-width: 100%;
+    }
   }
 
   .mega-orb {
