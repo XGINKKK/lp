@@ -113,6 +113,8 @@ const Hero: React.FC = () => {
 };
 
 type TrustBadgeProps = {
+            }
+  )
   icon: React.ReactNode;
   title: string;
   subtitle: string;
