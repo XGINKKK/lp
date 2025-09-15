@@ -32,7 +32,12 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden animated-gradient">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
+      <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
+      
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/20 rounded-full floating" style={{ animationDelay: '0s' }} />
