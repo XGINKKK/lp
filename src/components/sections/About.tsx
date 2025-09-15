@@ -144,7 +144,7 @@ const About: React.FC = () => {
                     Na verdade, quando você automatiza as tarefas certas:
                   </h3>
                   
-                  <div className="verdades-checklist max-w-3xl mx-auto">
+                  <div className="space-y-4 max-w-3xl mx-auto">
                     {[
                       "Sua equipe fica mais humana - foca no que realmente importa",
                       "Resolve problemas complexos de forma inteligente", 
@@ -153,18 +153,19 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className="flex items-start gap-3 py-4 verdade-item"
+                        className={`flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out ${
+                          cardsRevealed 
+                            ? 'opacity-100 translate-x-0' 
+                            : 'opacity-0 -translate-x-8'
+                        }`}
                         style={{ 
-                          opacity: cardsRevealed ? 1 : 0,
-                          transform: cardsRevealed ? 'translateX(0)' : 'translateX(-30px)',
-                          transition: 'all 0.8s ease',
                           transitionDelay: cardsRevealed ? `${index * 200}ms` : '0ms'
                         }}
                       >
-                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 text-center mt-0.5">
+                        <span className="text-green-400 text-xl font-bold flex-shrink-0 w-6 text-center mt-0.5">
                           ✓
                         </span>
-                        <span className="text-white/90 leading-relaxed text-base">
+                        <span className="text-white/90 leading-relaxed text-base font-medium">
                           {text}
                         </span>
                       </div>
