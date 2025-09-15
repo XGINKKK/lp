@@ -82,7 +82,7 @@ const Cases: React.FC = () => {
               category="Infoproduto"
               title="R$ 1.2M em lançamento de 7 dias"
               challenge="Primeiro lançamento digital"
-              solution="Funil de lançamento perpétuo com VSL"
+              solution="Funil de lançamento perpétuo com vídeo de vendas"
               results={[
                 "3.400 vendas",
                 "Ticket médio R$ 353",

@@ -62,7 +62,7 @@ const Comparison: React.FC = () => {
       beConnected: true
     },
     {
-      criteria: "Suporte 24/7 com IA",
+      criteria: "Suporte Instantâneo",
       freelancers: false,
       others: false,
       beConnected: true
@@ -74,7 +74,7 @@ const Comparison: React.FC = () => {
       beConnected: true
     },
     {
-      criteria: "ROI Transparente",
+      criteria: "Retorno Transparente",
       freelancers: "partial",
       others: "partial",
       beConnected: true
@@ -174,8 +174,8 @@ const Comparison: React.FC = () => {
             />
             <AdvantageCard 
               icon={<Shield className="w-8 h-8" />}
-              title="Garantia de ROI"
-              description="Se não gerar lucro em 90 dias, devolvemos seu investimento"
+              title="Garantia de Resultados"
+              description="ROI positivo garantido em 90 dias com nossa metodologia"
             />
             <AdvantageCard 
               icon={<Target className="w-8 h-8" />}

@@ -81,26 +81,26 @@ const Hero: React.FC = () => {
             <p className="text-white/60 mb-6 text-lg">Especialistas certificados em:</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <TrustBadge 
-                icon={<Target className="w-6 h-6" />}
-                title="Google Ads Partner"
-                subtitle="Certificação oficial"
-              />
-              <TrustBadge 
-                icon={<Users className="w-6 h-6" />}
-                title="Meta Business Partner"
-                subtitle="Facebook & Instagram"
-              />
-              <TrustBadge 
-                icon={<Bot className="w-6 h-6" />}
-                title="OpenAI & Automation"
-                subtitle="IA Avançada"
-              />
-              <TrustBadge 
-                icon={<Award className="w-6 h-6" />}
-                title="HubSpot Solutions"
-                subtitle="CRM & Marketing"
-              />
-            </div>
+            <TrustBadge 
+              icon={<Target className="w-6 h-6" />}
+              title="Especialistas em Google Ads"
+              subtitle="Campanhas otimizadas"
+            />
+            <TrustBadge 
+              icon={<Users className="w-6 h-6" />}
+              title="Especialistas em Meta Ads"
+              subtitle="Facebook & Instagram"
+            />
+            <TrustBadge 
+              icon={<Bot className="w-6 h-6" />}
+              title="Automação Inteligente"
+              subtitle="IA Avançada"
+            />
+            <TrustBadge 
+              icon={<Award className="w-6 h-6" />}
+              title="Gestão de Relacionamento"
+              subtitle="CRM & Marketing"
+            />
           </div>
         </div>
       </Container>

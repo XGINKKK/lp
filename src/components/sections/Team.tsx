@@ -54,10 +54,10 @@ const Team: React.FC = () => {
               role="Arquiteto de Automações & IA"
               description="Constrói sistemas inteligentes que vendem sozinhos, integrando IA em cada etapa do funil."
               superpowers={[
-                "Automações complexas com Make/Zapier/n8n",
+                "Automações complexas com ferramentas avançadas",
                 "Chatbots com IA que vendem como humanos",
-                "Integrações CRM avançadas",
-                "Machine Learning para otimização de funis"
+                "Integrações avançadas de sistemas",
+                "Aprendizado de máquina para otimização de funis"
               ]}
               icon={<Bot className="w-8 h-8" />}
               gradient="from-blue-500 to-purple-500"
@@ -68,10 +68,10 @@ const Team: React.FC = () => {
               role="Estrategista de Tráfego de Alta Performance"
               description="Transforma cliques em clientes com campanhas cirúrgicas e segmentação laser-focused."
               superpowers={[
-                "Funis de conversão com 300%+ ROAS",
-                "Campanhas omnichannel integradas",
-                "Pixel tracking e atribuição avançada",
-                "Scaling campaigns sem perder eficiência"
+                "Funis de conversão com 300%+ retorno sobre investimento",
+                "Campanhas integradas em múltiplos canais",
+                "Rastreamento avançado e análise de resultados",
+                "Escalar campanhas sem perder eficiência"
               ]}
               icon={<Target className="w-8 h-8" />}
               gradient="from-green-500 to-blue-500"
@@ -82,9 +82,9 @@ const Team: React.FC = () => {
               role="Mestre em Persuasão e Conteúdo"
               description="Cria narrativas irresistíveis que movem pessoas através do funil até a compra."
               superpowers={[
-                "VSLs que vendem no automático",
+                "Vídeos de vendas que convertem automaticamente",
                 "Copy que gera urgência e desejo",
-                "Sequências de e-mail com 40%+ open rate",
+                "Sequências de e-mail com 40%+ taxa de abertura",
                 "Scripts de vendas com IA personalizada"
               ]}
               icon={<PenTool className="w-8 h-8" />}

@@ -89,21 +89,21 @@ const Services: React.FC = () => {
                 {
                   icon: <Target className="w-6 h-6" />,
                   title: "Landing Pages de Alta Conversão",
-                  description: "Design e copy otimizados com heatmaps"
+                  description: "Design e textos otimizados com mapas de calor"
                 },
                 {
                   icon: <Video className="w-6 h-6" />,
-                  title: "VSLs e Webinars Automatizados",
+                  title: "Vídeos de Vendas e Webinars Automatizados",
                   description: "Apresentações que vendem 24/7"
                 },
                 {
                   icon: <Mail className="w-6 h-6" />,
-                  title: "Email Sequences",
+                  title: "Sequências de E-mail",
                   description: "Nutrição personalizada baseada em comportamento"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Social Proof System",
+                  title: "Sistema de Prova Social",
                   description: "Depoimentos e cases no momento certo"
                 }
               ]}
@@ -123,17 +123,17 @@ const Services: React.FC = () => {
                 },
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Lead Scoring com IA",
+                  title: "Pontuação de Leads com IA",
                   description: "Identificação automática de leads quentes"
                 },
                 {
                   icon: <Zap className="w-6 h-6" />,
-                  title: "Follow-up Automatizado",
+                  title: "Acompanhamento Automatizado",
                   description: "Nunca perca uma oportunidade de venda"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Predictive Analytics",
+                  title: "Análise Preditiva",
                   description: "IA prevendo quem vai comprar"
                 }
               ]}
@@ -153,17 +153,17 @@ const Services: React.FC = () => {
                 },
                 {
                   icon: <Zap className="w-6 h-6" />,
-                  title: "Split Testing Contínuo",
+                  title: "Testes Contínuos de Variações",
                   description: "IA testando variações automaticamente"
                 },
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Attribution Modeling",
+                  title: "Modelo de Atribuição",
                   description: "Saiba exatamente o que gera vendas"
                 },
                 {
                   icon: <Settings className="w-6 h-6" />,
-                  title: "ROI Tracking",
+                  title: "Rastreamento de Retorno",
                   description: "Lucro por canal, campanha e criativo"
                 }
               ]}

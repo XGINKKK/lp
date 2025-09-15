@@ -134,7 +134,7 @@ const CTA: React.FC = () => {
                 />
                 <BenefitItem 
                   icon={<Clock className="w-6 h-6" />}
-                  text="Orçamento transparente com ROI projetado"
+                  text="Orçamento transparente com retorno projetado"
                 />
               </div>
             </div>

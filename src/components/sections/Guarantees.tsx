@@ -55,16 +55,16 @@ const Guarantees: React.FC = () => {
             <GuaranteeCard 
               number="1"
               icon={<CheckCircle className="w-8 h-8" />}
-              title="Garantia de Implementação"
-              description="Seu funil completo funcionando em 30 dias ou trabalhamos de graça até entregar"
+              title="Garantia de Resultados"
+              description="ROI positivo em 90 dias ou ajustamos a estratégia até alcançar"
               gradient="from-green-500 to-emerald-500"
             />
             
             <GuaranteeCard 
               number="2"
               icon={<Shield className="w-8 h-8" />}
-              title="Garantia de Resultados"
-              description="ROI positivo em 90 dias ou devolvemos 100% do investimento"
+              title="Garantia de Implementação"
+              description="Seu funil completo funcionando em 30 dias conforme planejado"
               gradient="from-blue-500 to-cyan-500"
             />
             
@@ -72,7 +72,7 @@ const Guarantees: React.FC = () => {
               number="3"
               icon={<Clock className="w-8 h-8" />}
               title="Garantia de Suporte"
-              description="Resposta em até 2 horas durante horário comercial, 24h nos finais de semana"
+              description="Suporte instantâneo via WhatsApp durante horário comercial"
               gradient="from-purple-500 to-violet-500"
             />
           </div>
