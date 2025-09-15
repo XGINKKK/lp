@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Award, Shield, Zap, ChevronDown, Eye } from 'lucide-react';
+import { ChevronDown, Eye } from 'lucide-react';
 
 const About: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -72,31 +72,33 @@ const About: React.FC = () => {
                 
                 {/* Checklist de Problemas */}
                 <div className="max-w-2xl mx-auto mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <ChecklistItem 
-                      icon="❌" 
-                      text="Muito complicado" 
-                      delay={0}
-                      revealed={cardsRevealed}
-                    />
-                    <ChecklistItem 
-                      icon="❌" 
-                      text="Muito caro" 
-                      delay={100}
-                      revealed={cardsRevealed}
-                    />
-                    <ChecklistItem 
-                      icon="❌" 
-                      text="Só para grandes empresas" 
-                      delay={200}
-                      revealed={cardsRevealed}
-                    />
-                    <ChecklistItem 
-                      icon="❌" 
-                      text="Vai desumanizar o negócio" 
-                      delay={300}
-                      revealed={cardsRevealed}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 checklist-grid">
+                    {[
+                      "Muito complicado",
+                      "Muito caro", 
+                      "Só para grandes empresas",
+                      "Vai desumanizar o negócio"
+                    ].map((text, index) => (
+                      <div 
+                        key={index}
+                        className={`flex items-center gap-3 p-4 bg-dark-800/30 border border-dark-700/50 rounded-lg min-h-[60px] transition-all duration-700 checklist-item ${
+                          cardsRevealed ? 'border-primary-500/30 bg-primary-500/5' : ''
+                        }`}
+                        style={{ 
+                          opacity: 0,
+                          transform: 'translateY(20px)',
+                          animation: `fadeInUp 0.6s ease forwards`,
+                          animationDelay: `${index * 100}ms`
+                        }}
+                      >
+                        <span className="text-red-400 text-lg font-bold flex-shrink-0 w-5 text-center">
+                          ✗
+                        </span>
+                        <span className="text-white/90 font-medium">
+                          {text}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 
@@ -131,133 +133,65 @@ const About: React.FC = () => {
                 </div>
               </div>
               
-              <div 
-                ref={cardsRef}
-                className={`bg-gradient-to-r from-primary-500/10 to-accent-500/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/20 transition-all duration-1000 ${
-                  cardsRevealed ? 'ring-2 ring-primary-500/30 shadow-xl shadow-primary-500/20' : ''
-                }`}
-              >
-                <p className="text-center text-xl font-semibold text-primary-400">
-                  Na verdade, quando você automatiza as tarefas certas, sua equipe fica mais humana - porque pode focar no que realmente importa: resolver problemas complexos e criar relacionamentos.
-                </p>
+              {/* Seção de Verdades */}
+              <div ref={cardsRef}>
+                <div 
+                  className={`bg-gradient-to-r from-primary-500/10 to-accent-500/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/20 transition-all duration-1000 verdades-section ${
+                    cardsRevealed ? 'ring-2 ring-primary-500/30 shadow-xl shadow-primary-500/20' : ''
+                  }`}
+                >
+                  <h3 className="text-center text-xl font-semibold text-primary-400 mb-6">
+                    Na verdade, quando você automatiza as tarefas certas:
+                  </h3>
+                  
+                  <div className="verdades-checklist max-w-3xl mx-auto">
+                    {[
+                      "Sua equipe fica mais humana - foca no que realmente importa",
+                      "Resolve problemas complexos de forma inteligente", 
+                      "Cria relacionamentos mais profundos com clientes",
+                      "Escala seu negócio sem perder a qualidade"
+                    ].map((text, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-start gap-3 py-3 verdade-item"
+                        style={{ 
+                          opacity: cardsRevealed ? 1 : 0,
+                          transform: cardsRevealed ? 'translateX(0)' : 'translateX(-30px)',
+                          transition: 'all 0.8s ease',
+                          transitionDelay: cardsRevealed ? `${index * 200}ms` : '0ms'
+                        }}
+                      >
+                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 mt-0.5">
+                          ✓
+                        </span>
+                        <span className="text-white/90 leading-relaxed">
+                          {text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-1000 ${
-            cardsRevealed ? 'opacity-100 translate-y-0' : 'opacity-70 translate-y-4'
-          }`}>
-            <AboutCard 
-              icon={<Award className="w-12 h-12 text-primary-400" />}
-              title="Por Que Nossa IA é Diferente?"
-              description="Ela realmente 'entende' seu cliente, analisa histórico, entende tom emocional e adapta respostas para a personalidade da sua marca."
-              delay={0}
-              revealed={cardsRevealed}
-            />
-            <AboutCard 
-              icon={<Zap className="w-12 h-12 text-accent-400" />}
-              title="Foco No Que Dá Dinheiro"
-              description="Não automatizamos por automatizar. Focamos nos processos que liberam tempo da sua equipe, aceleram vendas e reduzem custos operacionais."
-              delay={200}
-              revealed={cardsRevealed}
-            />
-            <AboutCard 
-              icon={<Shield className="w-12 h-12 text-primary-400" />}
-              title="Fica Mais Inteligente Todo Dia"
-              description="Quanto mais sua IA trabalha, mais ela aprende sobre seu negócio e melhora os resultados automaticamente."
-              delay={400}
-              revealed={cardsRevealed}
-            />
-          </div>
         </div>
       </Container>
-    </section>
-  );
-};
-
-type ChecklistItemProps = {
-  icon: string;
-  text: string;
-  delay: number;
-  revealed: boolean;
-};
-
-const ChecklistItem: React.FC<ChecklistItemProps> = ({ icon, text, delay, revealed }) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  return (
-    <div className={`flex items-center gap-4 p-4 rounded-xl bg-dark-800/30 border border-dark-700/50 transition-all duration-500 ${
-      isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-    } ${
-      revealed ? 'border-primary-500/30 bg-primary-500/5' : ''
-    }`}>
-      <div className={`text-2xl transition-all duration-300 ${
-        revealed ? 'scale-110' : ''
-      }`}>
-        {icon}
-      </div>
-      <p className={`font-medium transition-colors duration-300 ${
-        revealed ? 'text-primary-300' : 'text-white/80'
-      }`}>
-        {text}
-      </p>
-    </div>
-  );
-};
-
-type AboutCardProps = {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  delay: number;
-  revealed: boolean;
-};
-
-const AboutCard: React.FC<AboutCardProps> = ({ icon, title, description, delay, revealed }) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (revealed) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, delay);
-      return () => clearTimeout(timer);
-    }
-  }, [revealed, delay]);
-
-  return (
-    <div className={`group relative transition-all duration-700 ${
-      isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-70 translate-y-8 scale-95'
-    }`}>
-      <div className={`absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-opacity duration-500 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      } group-hover:opacity-100`} />
-      <div className={`relative glass-card rounded-2xl p-8 text-center transition-all duration-300 ${
-        isVisible 
-          ? 'border-primary-500/30 shadow-lg shadow-primary-500/10' 
-          : 'border-dark-700/50'
-      } hover:border-primary-500/50 hover:shadow-xl hover:shadow-primary-500/20`}>
-        <div className={`bg-gradient-to-br from-dark-800 to-dark-900 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 ${
-          isVisible ? 'scale-100' : 'scale-75'
-        } group-hover:scale-110`} style={{ transform: 'rotate(0deg)' }}>
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold mb-3 text-center">{title}</h3>
-        <p className="text-white/70 text-center leading-relaxed">{description}</p>
+      
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         
-        {/* Reveal indicator */}
-        {isVisible && (
-          <div className="absolute top-4 right-4 w-3 h-3 bg-primary-500 rounded-full animate-pulse" />
-        )}
-      </div>
-    </div>
+        .checklist-item {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      `}</style>
+    </section>
   );
 };
 
