@@ -251,7 +251,7 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    animation: typewriterReveal 4s steps(60, end) forwards;
+    animation: typewriterReveal 3s steps(40, end) forwards;
     width: 0;
   }
 
