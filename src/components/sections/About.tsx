@@ -151,13 +151,11 @@ const About: React.FC = () => {
                         className={`flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out ${
                           cardsRevealed 
                             ? 'opacity-100 translate-x-0' 
-                            : 'opacity-0 -translate-x-8'
-                        }`}
                         style={{ 
-                          transitionDelay: cardsRevealed ? `${index * 200}ms` : '0ms'
-                    style={{ 
-                      animationDelay: `${index * 200}ms`
-                    }}
+                          animationDelay: `${index * 200}ms`
+                        }}
+                      >
+                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 text-center">
                           ✓
                         </span>
                         <span className="text-white/90 leading-relaxed text-base font-medium">
@@ -172,8 +170,14 @@ const About: React.FC = () => {
           </div>
         </div>
       </Container>
-          <div ref={cardsRef} className="mt-12">
-            <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 backdrop-blur-sm rounded-2xl p-8 border border-green-500/20 shadow-xl shadow-green-500/10">
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
             transform: translateY(0);
           }
         }
