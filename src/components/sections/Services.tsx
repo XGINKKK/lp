@@ -84,27 +84,27 @@ const Services: React.FC = () => {
               number="02"
               icon={<Video className="w-12 h-12" />}
               title="Conteúdo que Vende"
-              subtitle="Cada palavra pensada para gerar vendas"
+              subtitle="Estratégia digital + produção presencial profissional"
               features={[
                 {
                   icon: <Target className="w-6 h-6" />,
                   title: "Páginas que Convertem",
-                  description: "Design e textos testados para gerar mais vendas"
+                  description: "Landing pages criadas por Eduardo que transformam visitantes em clientes"
                 },
                 {
                   icon: <Video className="w-6 h-6" />,
                   title: "Vídeos que Vendem",
-                  description: "Apresentações automáticas que vendem 24 horas"
+                  description: "Marcus grava vídeos de vendas profissionais que convertem automaticamente"
                 },
                 {
-                  icon: <Mail className="w-6 h-6" />,
-                  title: "E-mails Automáticos",
-                  description: "Mensagens personalizadas que educam e vendem"
+                  icon: <Video className="w-6 h-6" />,
+                  title: "Captação Presencial",
+                  description: "Marcus produz depoimentos e materiais estratégicos no local"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
                   title: "Prova Social",
-                  description: "Depoimentos aparecem na hora certa para convencer"
+                  description: "Depoimentos reais captados presencialmente que geram confiança"
                 }
               ]}
             />

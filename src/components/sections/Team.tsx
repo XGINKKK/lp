@@ -52,12 +52,12 @@ const Team: React.FC = () => {
             <TeamMember 
               name="Eduardo Manoel"
               role="Arquiteto de Automações & IA"
-              description="Constrói sistemas inteligentes que vendem sozinhos, integrando IA em cada etapa do funil."
+              description="Constrói sistemas inteligentes que vendem sozinhos e cria páginas que convertem visitantes em clientes."
               superpowers={[
                 "Automações complexas com ferramentas avançadas",
                 "Chatbots com IA que vendem como humanos",
-                "Integrações avançadas de sistemas",
-                "Aprendizado de máquina para otimização de funis"
+                "Páginas de vendas que convertem automaticamente",
+                "Estrutura digital completa para seu negócio"
               ]}
               icon={<Bot className="w-8 h-8" />}
               gradient="from-blue-500 to-purple-500"
@@ -79,13 +79,13 @@ const Team: React.FC = () => {
             
             <TeamMember 
               name="Marcus Lemes"
-              role="Mestre em Persuasão e Conteúdo"
-              description="Cria narrativas irresistíveis que movem pessoas através do funil até a compra."
+              role="Especialista em Persuasão e Captação de Conteúdo"
+              description="Cria narrativas irresistíveis e produz conteúdo presencial profissional que converte."
               superpowers={[
                 "Vídeos de vendas que convertem automaticamente",
-                "Copy que gera urgência e desejo",
-                "Sequências de e-mail com 40%+ taxa de abertura",
-                "Scripts de vendas com IA personalizada"
+                "Captação presencial de depoimentos e provas sociais",
+                "Copy que gera urgência e desejo de compra",
+                "Produção de materiais estratégicos profissionais"
               ]}
               icon={<PenTool className="w-8 h-8" />}
               gradient="from-purple-500 to-pink-500"
