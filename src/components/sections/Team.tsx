@@ -79,12 +79,12 @@ const Team: React.FC = () => {
             
             <TeamMember 
               name="Marcus Lemes"
-              role="Especialista em Persuasão e Captação de Conteúdo"
-              description="Cria narrativas irresistíveis e produz conteúdo presencial profissional que converte."
+              role="Mestre em Conteúdo Viral e Estratégico"
+              description="Especialista em gravação presencial de conteúdo estratégico que gera resultados e engajamento."
               superpowers={[
-                "Vídeos de vendas que convertem automaticamente",
+                "Gravação presencial de conteúdo estratégico",
                 "Captação presencial de depoimentos e provas sociais",
-                "Copy que gera urgência e desejo de compra",
+                "Conteúdo viral que engaja e converte",
                 "Produção de materiais estratégicos profissionais"
               ]}
               icon={<PenTool className="w-8 h-8" />}
