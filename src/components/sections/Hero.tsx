@@ -57,11 +57,35 @@ const Hero: React.FC = () => {
   );
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden bg-black">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 bg-black -z-10" />
+      
+      {/* Multiple Gradient Orbs */}
+      <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary-500/40 rounded-full blur-[120px] mega-orb" />
+      <div className="absolute bottom-1/4 -right-1/4 w-80 h-80 bg-accent-500/45 rounded-full blur-[100px] mega-orb" style={{ animationDelay: '4s' }} />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-pink/50 rounded-full blur-[80px] mega-orb transform -translate-x-1/2 -translate-y-1/2" style={{ animationDelay: '8s' }} />
+      <div className="absolute top-1/6 right-1/3 w-72 h-72 bg-primary-400/35 rounded-full blur-[90px] floating-orbs" style={{ animationDelay: '1s' }} />
+      <div className="absolute bottom-1/6 left-1/3 w-88 h-88 bg-accent-400/40 rounded-full blur-[110px] floating-orbs" style={{ animationDelay: '6s' }} />
+      
+      {/* Pulsing Glows */}
+      <div className="absolute top-20 right-20 w-56 h-56 bg-primary-400/60 rounded-full blur-[70px] super-glow" />
+      <div className="absolute bottom-32 left-20 w-64 h-64 bg-accent-400/55 rounded-full blur-[80px] super-glow" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/3 right-1/6 w-48 h-48 bg-neon-pink/70 rounded-full blur-[60px] super-glow" style={{ animationDelay: '3s' }} />
+      <div className="absolute bottom-1/3 left-1/6 w-52 h-52 bg-primary-500/65 rounded-full blur-[75px] super-glow" style={{ animationDelay: '4.5s' }} />
+      
+      {/* Rotating Rings */}
+      <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rotate-glow">
+        <div className="w-full h-full rounded-full border-2 border-primary-500/30 blur-sm"></div>
+      </div>
+      <div className="absolute top-1/2 left-1/2 w-[900px] h-[900px] -translate-x-1/2 -translate-y-1/2 rotate-glow" style={{ animationDelay: '10s', animationDirection: 'reverse' }}>
+        <div className="w-full h-full rounded-full border border-accent-500/25 blur-md"></div>
+      </div>
+      
       {/* Floating Particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <FloatingParticle key={i} delay={i * 0.5} size={Math.random() > 0.5 ? 2 : 4} />
+        {[...Array(30)].map((_, i) => (
+          <FloatingParticle key={i} delay={i * 0.3} size={Math.random() > 0.5 ? 3 : 6} />
         ))}
       </div>
 
@@ -148,11 +172,6 @@ const Hero: React.FC = () => {
         <Marquee items={benefitItems} speed="normal" />
         <Marquee items={benefitItems} direction="right" speed="normal" />
       </div>
-
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-neon-pink/40 rounded-full blur-[128px] -z-10 floating" />
-      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-neon-purple/40 rounded-full blur-[128px] -z-10 floating" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 w-1/4 h-1/4 bg-neon-glow/30 rounded-full blur-[96px] -z-10 transform -translate-x-1/2 -translate-y-1/2 floating" style={{ animationDelay: '4s' }} />
     </section>
   );
 };
