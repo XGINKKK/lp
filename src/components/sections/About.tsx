@@ -71,8 +71,23 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white font-bold text-3xl px-8 py-4 rounded-xl mb-6 transform rotate-[-2deg] shadow-lg">
+                  <div className="group relative inline-block mb-6 cursor-pointer">
+                    {/* Glow effect background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary-500/40 to-accent-500/40 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Main button */}
+                    <div className="relative bg-gradient-to-r from-primary-500 via-neon-pink to-accent-500 text-white font-bold text-3xl px-10 py-5 rounded-2xl transform rotate-[-2deg] group-hover:rotate-[-1deg] transition-all duration-300 shadow-2xl shadow-primary-500/25 group-hover:shadow-primary-500/50 border border-primary-400/30 group-hover:border-primary-300/50">
+                      {/* Inner glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      {/* Text with subtle animation */}
+                      <span className="relative z-10 group-hover:scale-105 transition-transform duration-200 inline-block">
                     MENTIRA!
+                      </span>
+                      
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-2xl" />
+                    </div>
                   </div>
                 </div>
               </div>
