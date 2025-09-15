@@ -148,9 +148,7 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className={`flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out ${
-                          cardsRevealed 
-                            ? 'opacity-100 translate-x-0' 
+                        className="flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out opacity-100 translate-x-0"
                         style={{ 
                           animationDelay: `${index * 200}ms`
                         }}
