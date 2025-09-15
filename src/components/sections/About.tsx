@@ -70,16 +70,16 @@ const About: React.FC = () => {
                   A maioria das empresas não automatiza porque acham que é:
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="text-center p-4 bg-primary-500/10 rounded-lg border border-primary-500/20">
+                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
                     <p className="text-primary-300 font-semibold">Muito complicado</p>
                   </div>
-                  <div className="text-center p-4 bg-primary-500/10 rounded-lg border border-primary-500/20">
+                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
                     <p className="text-primary-300 font-semibold">Muito caro</p>
                   </div>
-                  <div className="text-center p-4 bg-primary-500/10 rounded-lg border border-primary-500/20">
+                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
                     <p className="text-primary-300 font-semibold">Só para grandes</p>
                   </div>
-                  <div className="text-center p-4 bg-primary-500/10 rounded-lg border border-primary-500/20">
+                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
                     <p className="text-primary-300 font-semibold">Desumaniza</p>
                   </div>
                 </div>
@@ -180,24 +180,24 @@ const AboutCard: React.FC<AboutCardProps> = ({ icon, title, description, delay, 
   }, [revealed, delay]);
 
   return (
-    <div className={`group relative tilt-card transition-all duration-700 ${
+    <div className={`group relative transition-all duration-700 ${
       isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-70 translate-y-8 scale-95'
     }`}>
       <div className={`absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl transition-opacity duration-500 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       } group-hover:opacity-100`} />
-      <div className={`relative glass-card rounded-2xl p-8 transition-all duration-300 ${
+      <div className={`relative glass-card rounded-2xl p-8 text-center transition-all duration-300 ${
         isVisible 
           ? 'border-primary-500/30 shadow-lg shadow-primary-500/10' 
           : 'border-dark-700/50'
       } hover:border-primary-500/50 hover:shadow-xl hover:shadow-primary-500/20`}>
-        <div className={`bg-gradient-to-br from-dark-800 to-dark-900 w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${
-          isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'
-        } group-hover:scale-110`}>
+        <div className={`bg-gradient-to-br from-dark-800 to-dark-900 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 ${
+          isVisible ? 'scale-100' : 'scale-75'
+        } group-hover:scale-110`} style={{ transform: 'rotate(0deg)' }}>
           {icon}
         </div>
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-white/70">{description}</p>
+        <h3 className="text-xl font-bold mb-3 text-center">{title}</h3>
+        <p className="text-white/70 text-center leading-relaxed">{description}</p>
         
         {/* Reveal indicator */}
         {isVisible && (
