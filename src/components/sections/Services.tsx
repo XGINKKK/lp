@@ -40,11 +40,11 @@ const Services: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Sistema Completo
+                O que Fazemos
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              O Sistema Completo de <GradientText>Vendas</GradientText>
+              Sistema Completo de <GradientText>Vendas Automáticas</GradientText>
             </h2>
           </div>
           
@@ -53,28 +53,28 @@ const Services: React.FC = () => {
             <ServiceModule 
               number="01"
               icon={<Target className="w-12 h-12" />}
-              title="Tráfego Qualificado"
-              subtitle="Atraímos compradores, não curiosos"
+              title="Clientes Certos"
+              subtitle="Atraímos quem realmente vai comprar"
               features={[
                 {
                   icon: <Smartphone className="w-6 h-6" />,
-                  title: "Campanhas Multi-Canal",
-                  description: "Google, Meta, TikTok, LinkedIn sincronizados"
+                  title: "Anúncios em Todos os Lugares",
+                  description: "Google, Facebook, Instagram, TikTok trabalhando juntos"
                 },
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Segmentação Avançada",
-                  description: "Lookalike audiences e retargeting inteligente"
+                  title: "Público Certeiro",
+                  description: "Encontramos pessoas iguais aos seus melhores clientes"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Creative Testing",
-                  description: "Testes A/B contínuos com IA analisando performance"
+                  title: "Testes Automáticos",
+                  description: "IA testa qual anúncio vende mais e usa o melhor"
                 },
                 {
                   icon: <Zap className="w-6 h-6" />,
-                  title: "Budget Optimization",
-                  description: "Algoritmos distribuindo verba para máximo ROI"
+                  title: "Verba Inteligente",
+                  description: "Dinheiro vai automaticamente para onde vende mais"
                 }
               ]}
             />
@@ -83,28 +83,28 @@ const Services: React.FC = () => {
             <ServiceModule 
               number="02"
               icon={<Video className="w-12 h-12" />}
-              title="Conteúdo Estratégico"
-              subtitle="Cada palavra projetada para converter"
+              title="Conteúdo que Vende"
+              subtitle="Cada palavra pensada para gerar vendas"
               features={[
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Landing Pages de Alta Conversão",
-                  description: "Design e textos otimizados com mapas de calor"
+                  title: "Páginas que Convertem",
+                  description: "Design e textos testados para gerar mais vendas"
                 },
                 {
                   icon: <Video className="w-6 h-6" />,
-                  title: "Vídeos de Vendas e Webinars Automatizados",
-                  description: "Apresentações que vendem 24/7"
+                  title: "Vídeos que Vendem",
+                  description: "Apresentações automáticas que vendem 24 horas"
                 },
                 {
                   icon: <Mail className="w-6 h-6" />,
-                  title: "Sequências de E-mail",
-                  description: "Nutrição personalizada baseada em comportamento"
+                  title: "E-mails Automáticos",
+                  description: "Mensagens personalizadas que educam e vendem"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Sistema de Prova Social",
-                  description: "Depoimentos e cases no momento certo"
+                  title: "Prova Social",
+                  description: "Depoimentos aparecem na hora certa para convencer"
                 }
               ]}
             />
@@ -113,28 +113,28 @@ const Services: React.FC = () => {
             <ServiceModule 
               number="03"
               icon={<Bot className="w-12 h-12" />}
-              title="Automação com IA"
-              subtitle="Seu time de vendas robótico trabalhando sem parar"
+              title="IA que Vende"
+              subtitle="Robôs inteligentes vendendo sem parar"
               features={[
                 {
                   icon: <Bot className="w-6 h-6" />,
-                  title: "Chatbots Inteligentes",
-                  description: "Qualificação e vendas via WhatsApp/Instagram"
+                  title: "Robôs no WhatsApp",
+                  description: "Atendem, qualificam e vendem no WhatsApp e Instagram"
                 },
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Pontuação de Leads com IA",
-                  description: "Identificação automática de leads quentes"
+                  title: "IA Identifica Compradores",
+                  description: "Sabe automaticamente quem está pronto para comprar"
                 },
                 {
                   icon: <Zap className="w-6 h-6" />,
-                  title: "Acompanhamento Automatizado",
-                  description: "Nunca perca uma oportunidade de venda"
+                  title: "Follow-up Automático",
+                  description: "Nunca perde um cliente em potencial"
                 },
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Análise Preditiva",
-                  description: "IA prevendo quem vai comprar"
+                  title: "IA Prevê Vendas",
+                  description: "Sabe quem vai comprar antes mesmo da pessoa decidir"
                 }
               ]}
             />
@@ -143,28 +143,28 @@ const Services: React.FC = () => {
             <ServiceModule 
               number="04"
               icon={<Settings className="w-12 h-12" />}
-              title="Otimização Contínua"
-              subtitle="Melhorando resultados todos os dias"
+              title="Melhoria Constante"
+              subtitle="Vendas aumentando todos os dias"
               features={[
                 {
                   icon: <BarChart3 className="w-6 h-6" />,
-                  title: "Dashboard em Tempo Real",
-                  description: "Veja cada métrica do seu funil"
+                  title: "Painel de Resultados",
+                  description: "Veja todos os números do seu sistema em tempo real"
                 },
                 {
                   icon: <Zap className="w-6 h-6" />,
-                  title: "Testes Contínuos de Variações",
-                  description: "IA testando variações automaticamente"
+                  title: "Testes Automáticos",
+                  description: "IA testa melhorias sozinha, sem você precisar fazer nada"
                 },
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "Modelo de Atribuição",
-                  description: "Saiba exatamente o que gera vendas"
+                  title: "Rastreamento Completo",
+                  description: "Saiba exatamente de onde vem cada venda"
                 },
                 {
                   icon: <Settings className="w-6 h-6" />,
-                  title: "Rastreamento de Retorno",
-                  description: "Lucro por canal, campanha e criativo"
+                  title: "Controle de Lucro",
+                  description: "Veja o lucro de cada anúncio e campanha"
                 }
               ]}
             />

@@ -55,18 +55,18 @@ const About: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                O Sistema Be Connected
+                Como Funciona
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 stagger-item opacity-0 translate-y-5 transition-all duration-500">
-              Sistema Be Connected de <GradientText>Vendas Previsíveis</GradientText>
+              Sistema de <GradientText>Vendas Automáticas</GradientText>
             </h2>
             <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
-              Desenvolvemos e implementamos <strong>funis de alta conversão</strong> que capturam, nutrem e convertem leads automaticamente, usando a combinação perfeita de tráfego qualificado, conteúdo persuasivo e inteligência artificial.
+              Criamos <strong>sistemas completos de vendas</strong> que atraem, educam e convertem clientes automaticamente. Tudo funciona sozinho, 24 horas por dia.
             </p>
             <div className="glass-card rounded-2xl p-6 max-w-3xl mx-auto stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <p className="text-lg font-semibold text-primary-300">
-                Nossa Obsessão: Criar máquinas de vendas que funcionam 24/7, transformando cada centavo investido em lucro previsível e escalável.
+                Nossa missão: Criar sistemas que vendem sozinhos, transformando cada real investido em mais clientes e vendas previsíveis.
               </p>
             </div>
           </div>
@@ -75,28 +75,28 @@ const About: React.FC = () => {
             {/* Problems */}
             <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-red-400">
-                Por Que 97% dos Negócios Falham Online?
+                Por Que Seus Concorrentes Não Vendem Online?
               </h3>
               <div className="space-y-6">
                 <ProblemItem 
                   icon={<X className="w-6 h-6 text-red-400" />}
-                  title="Funil Quebrado"
-                  description="Tráfego sem conversão, leads frios, vendas esporádicas"
+                  title="Sistema Quebrado"
+                  description="Visitantes que não viram clientes, vendas esporádicas"
                 />
                 <ProblemItem 
                   icon={<X className="w-6 h-6 text-red-400" />}
-                  title="Desperdício de Verba"
-                  description="Anúncios mal configurados queimando dinheiro"
+                  title="Dinheiro Desperdiçado"
+                  description="Anúncios que não geram vendas, só gastam verba"
                 />
                 <ProblemItem 
                   icon={<X className="w-6 h-6 text-red-400" />}
                   title="Processo Manual"
-                  description="Equipe sobrecarregada com tarefas repetitivas"
+                  description="Time perdendo tempo com tarefas que poderiam ser automáticas"
                 />
                 <ProblemItem 
                   icon={<X className="w-6 h-6 text-red-400" />}
-                  title="Sem Previsibilidade"
-                  description="Não sabem de onde virá a próxima venda"
+                  title="Vendas Imprevisíveis"
+                  description="Nunca sabem quando vai entrar a próxima venda"
                 />
               </div>
             </div>
@@ -104,28 +104,28 @@ const About: React.FC = () => {
             {/* Solutions */}
             <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <h3 className="text-2xl md:text-3xl font-bold mb-8">
-                A Solução: Seu <GradientText>Funil de Vendas Inteligente</GradientText>
+                A Solução: Seu <GradientText>Sistema de Vendas Automático</GradientText>
               </h3>
               <div className="space-y-6">
                 <SolutionItem 
                   icon={<Check className="w-6 h-6 text-green-400" />}
-                  title="Tráfego Cirúrgico"
-                  description="Atraímos apenas quem está pronto para comprar"
+                  title="Clientes Certos"
+                  description="Atraímos apenas pessoas prontas para comprar"
                 />
                 <SolutionItem 
                   icon={<Check className="w-6 h-6 text-green-400" />}
                   title="Conteúdo que Vende"
-                  description="Copywriting e vídeos que convertem em todas as etapas"
+                  description="Textos e vídeos que convencem e geram vendas"
                 />
                 <SolutionItem 
                   icon={<Check className="w-6 h-6 text-green-400" />}
-                  title="IA Trabalhando 24/7"
-                  description="Chatbots, qualificação e follow-up automatizados"
+                  title="IA Vendendo 24h"
+                  description="Robôs que atendem, qualificam e vendem sozinhos"
                 />
                 <SolutionItem 
                   icon={<Check className="w-6 h-6 text-green-400" />}
-                  title="Dados em Tempo Real"
-                  description="Dashboard mostrando cada centavo do seu ROI"
+                  title="Resultados Claros"
+                  description="Painel mostrando cada real investido e o retorno"
                 />
               </div>
             </div>

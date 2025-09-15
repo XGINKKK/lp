@@ -99,42 +99,42 @@ const CTA: React.FC = () => {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
                 <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                  Transforme Seu Negócio
+                  Comece Agora
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                Transforme Seu Negócio <GradientText>Agora</GradientText>
+                Quero Mais <GradientText>Clientes</GradientText>
               </h2>
               
               <h3 className="text-2xl font-bold mb-6 text-primary-400">
-                Diagnóstico Estratégico Gratuito
+                Análise Gratuita do Seu Negócio
               </h3>
               
               <p className="text-xl text-white/80 mb-8">
-                <strong>Receba em 48 horas:</strong>
+                <strong>Você vai receber em 48 horas:</strong>
               </p>
               
               <div className="space-y-4 mb-8">
                 <BenefitItem 
                   icon={<FileText className="w-6 h-6" />}
-                  text="Análise completa do seu funil atual"
+                  text="Análise completa do seu sistema de vendas atual"
                 />
                 <BenefitItem 
                   icon={<Target className="w-6 h-6" />}
-                  text="Mapa de oportunidades perdidas"
+                  text="Onde você está perdendo clientes (e como resolver)"
                 />
                 <BenefitItem 
                   icon={<CheckCircle className="w-6 h-6" />}
-                  text="Projeção de resultados com nosso sistema"
+                  text="Quantos clientes a mais você pode ter"
                 />
                 <BenefitItem 
                   icon={<ArrowRight className="w-6 h-6" />}
-                  text="Estratégia personalizada de implementação"
+                  text="Plano personalizado para o seu negócio"
                 />
                 <BenefitItem 
                   icon={<Clock className="w-6 h-6" />}
-                  text="Orçamento transparente com retorno projetado"
+                  text="Investimento necessário e retorno esperado"
                 />
               </div>
             </div>
@@ -216,7 +216,7 @@ const CTA: React.FC = () => {
                   {/* Faturamento */}
                   <div>
                     <label className="block text-sm font-medium text-white/90 mb-2">
-                      Faturamento Mensal Atual *
+                      Quanto Você Fatura por Mês? *
                     </label>
                     <select
                       value={formData.revenue}
@@ -239,7 +239,7 @@ const CTA: React.FC = () => {
                   {/* Desafio */}
                   <div>
                     <label className="block text-sm font-medium text-white/90 mb-2">
-                      Principal Desafio *
+                      Qual Seu Maior Desafio? *
                     </label>
                     <select
                       value={formData.challenge}
@@ -250,11 +250,11 @@ const CTA: React.FC = () => {
                       disabled={isSubmitting}
                     >
                       <option value="">Selecione...</option>
-                      <option value="gerar-leads">Gerar mais leads qualificados</option>
-                      <option value="aumentar-conversao">Aumentar taxa de conversão</option>
-                      <option value="escalar-vendas">Escalar vendas mantendo CAC</option>
-                      <option value="automatizar">Automatizar processos de venda</option>
-                      <option value="previsibilidade">Criar previsibilidade</option>
+                      <option value="gerar-leads">Conseguir mais clientes potenciais</option>
+                      <option value="aumentar-conversao">Converter mais visitantes em clientes</option>
+                      <option value="escalar-vendas">Vender mais sem aumentar custos</option>
+                      <option value="automatizar">Automatizar as vendas</option>
+                      <option value="previsibilidade">Ter vendas previsíveis</option>
                     </select>
                     {errors.challenge && <p className="mt-1 text-xs text-red-400">{errors.challenge}</p>}
                   </div>
@@ -262,7 +262,7 @@ const CTA: React.FC = () => {
                   {/* Investimento */}
                   <div>
                     <label className="block text-sm font-medium text-white/90 mb-2">
-                      Investimento Disponível/Mês *
+                      Quanto Pode Investir por Mês? *
                     </label>
                     <select
                       value={formData.investment}
@@ -273,10 +273,10 @@ const CTA: React.FC = () => {
                       disabled={isSubmitting}
                     >
                       <option value="">Selecione...</option>
-                      <option value="3k-10k">R$ 3k - R$ 10k</option>
-                      <option value="10k-30k">R$ 10k - R$ 30k</option>
-                      <option value="30k-50k">R$ 30k - R$ 50k</option>
-                      <option value="acima-50k">Acima de R$ 50k</option>
+                      <option value="3k-10k">R$ 3 mil - R$ 10 mil</option>
+                      <option value="10k-30k">R$ 10 mil - R$ 30 mil</option>
+                      <option value="30k-50k">R$ 30 mil - R$ 50 mil</option>
+                      <option value="acima-50k">Acima de R$ 50 mil</option>
                     </select>
                     {errors.investment && <p className="mt-1 text-xs text-red-400">{errors.investment}</p>}
                   </div>
@@ -294,7 +294,7 @@ const CTA: React.FC = () => {
                       </>
                     ) : (
                       <>
-                        Solicitar Análise Gratuita
+                        Quero Minha Análise Grátis
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}

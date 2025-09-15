@@ -55,16 +55,16 @@ const Hero: React.FC = () => {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-500"></span>
             </span>
             <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-              Sistema de Vendas Automatizado
+              Sistema que Vende Sozinho
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8">
-            Seu Funil de Vendas Completo e <GradientText>Automatizado</GradientText> Gerando Vendas 24/7 com Inteligência Artificial
+            Transforme Visitantes em <GradientText>Clientes Pagantes</GradientText> Automaticamente
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto">
-            Construímos máquinas de vendas previsíveis que transformam desconhecidos em clientes fiéis através de um sistema integrado de tráfego qualificado, conteúdo estratégico e automações inteligentes com IA.
+            Criamos sistemas completos que atraem, educam e vendem para seus clientes ideais. Mais vendas, menos trabalho manual, resultados previsíveis.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16">
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
               onClick={() => window.location.href = '#contato'}
             >
               <span className="flex items-center justify-center gap-2">
-                Quero Meu Funil Lucrativo
+                Quero Mais Clientes
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
               onClick={() => window.location.href = '#cases'}
             >
               <span className="flex items-center justify-center gap-2">
-                Ver Sistema Funcionando
+                Ver na Prática
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </span>
             </Button>
@@ -92,27 +92,27 @@ const Hero: React.FC = () => {
 
           {/* Trust Badges */}
           <div className="mb-16">
-            <p className="text-white/60 mb-6 text-lg">Especialistas certificados em:</p>
+            <p className="text-white/60 mb-6 text-lg">Especialistas em:</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <TrustBadge 
               icon={<Target className="w-6 h-6" />}
-              title="Especialistas em Google Ads"
-              subtitle="Campanhas otimizadas"
+              title="Google Ads"
+              subtitle="Anúncios que convertem"
             />
             <TrustBadge 
               icon={<Users className="w-6 h-6" />}
-              title="Especialistas em Meta Ads"
+              title="Meta Ads"
               subtitle="Facebook & Instagram"
             />
             <TrustBadge 
               icon={<Bot className="w-6 h-6" />}
-              title="Automação Inteligente"
-              subtitle="IA Avançada"
+              title="Automação com IA"
+              subtitle="Vendas automáticas"
             />
             <TrustBadge 
               icon={<Award className="w-6 h-6" />}
-              title="Gestão de Relacionamento"
-              subtitle="CRM & Marketing"
+              title="Relacionamento"
+              subtitle="Clientes fiéis"
             />
           </div>
           </div>

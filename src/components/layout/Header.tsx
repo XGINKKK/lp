@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           <a href="#" className="flex items-center">
             <div className="text-2xl font-display font-bold">
               <GradientText>Be Connected</GradientText>
-              <span className="ml-1 text-sm text-white/60">Conecte. Converta. Escale.</span>
+              <span className="ml-1 text-sm text-white/60">Mais Vendas. Menos Trabalho.</span>
             </div>
           </a>
         </div>
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             className="ml-4"
             onClick={() => window.location.href = '#contato'}
           >
-            Quero Meu Funil Lucrativo
+            Quero Mais Clientes
           </Button>
         </nav>
 
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
                 setIsMenuOpen(false);
               }}
             >
-              Quero Meu Funil Lucrativo
+              Quero Mais Clientes
             </Button>
           </div>
         </div>

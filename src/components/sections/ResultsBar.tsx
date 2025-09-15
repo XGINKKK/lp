@@ -3,18 +3,18 @@ import Marquee from '../ui/Marquee';
 
 const ResultsBar: React.FC = () => {
   const results = [
-    "R$ 5M+ Gerados em Vendas",
-    "10.000+ Leads Qualificados/Mês", 
-    "87% Taxa de Automação",
-    "3x Redução no Ciclo de Vendas"
+    "R$ 5M+ em Vendas Geradas",
+    "10.000+ Clientes Potenciais/Mês", 
+    "87% das Vendas Automáticas",
+    "3x Mais Rápido para Vender"
   ];
 
   const benefits = [
-    "Funis que faturam R$ 100k+/mês",
-    "CAC reduzido em até 70%",
-    "LTV aumentado em 250%",
-    "Vendas no automático 24/7",
-    "IA respondendo leads em segundos"
+    "Sistemas que faturam R$ 100k+/mês",
+    "Custo de cliente reduzido em 70%",
+    "Valor de vida do cliente +250%",
+    "Vendas automáticas 24 horas",
+    "IA respondendo clientes em segundos"
   ];
 
   return (
@@ -27,25 +27,25 @@ const ResultsBar: React.FC = () => {
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
                 R$ 5M+
               </div>
-              <p className="text-white/70 text-sm">Gerados em Vendas</p>
+              <p className="text-white/70 text-sm">em Vendas Geradas</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
                 10.000+
               </div>
-              <p className="text-white/70 text-sm">Leads Qualificados/Mês</p>
+              <p className="text-white/70 text-sm">Clientes Potenciais/Mês</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
                 87%
               </div>
-              <p className="text-white/70 text-sm">Taxa de Automação</p>
+              <p className="text-white/70 text-sm">das Vendas Automáticas</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-2">
                 3x
               </div>
-              <p className="text-white/70 text-sm">Redução no Ciclo de Vendas</p>
+              <p className="text-white/70 text-sm">Mais Rápido para Vender</p>
             </div>
           </div>
         </div>
