@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8 typewriter">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8">
             Seu Funil de Vendas Completo e <GradientText>Automatizado</GradientText> Gerando Vendas 24/7 com Inteligência Artificial
           </h1>
           
