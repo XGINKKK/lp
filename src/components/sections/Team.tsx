@@ -115,11 +115,11 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   gradient 
 }) => {
   return (
-    <div className="group relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
+    <div className="group relative tilt-card">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/30 to-accent-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative glass-card rounded-2xl p-8">
         {/* Icon */}
-        <div className={`bg-gradient-to-br ${gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+        <div className={`bg-gradient-to-br ${gradient} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 floating`}>
           <div className="text-white">
             {icon}
           </div>
@@ -135,8 +135,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
           <h5 className="font-semibold text-accent-400 text-sm">Superpoderes:</h5>
           <ul className="space-y-2">
             {superpowers.map((power, index) => (
-              <li key={index} className="flex items-start gap-2 text-sm text-white/60">
-                <Zap className="w-3 h-3 text-primary-400 mt-1 flex-shrink-0" />
+              <li key={index} className="flex items-start gap-2 text-sm text-white/60 hover:text-white/80 transition-colors duration-300">
+                <Zap className="w-3 h-3 text-primary-400 mt-1 flex-shrink-0 group-hover:animate-pulse" />
                 {power}
               </li>
             ))}

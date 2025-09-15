@@ -195,18 +195,18 @@ const ServiceModule: React.FC<ServiceModuleProps> = ({
   features 
 }) => {
   return (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-accent-500/10 rounded-3xl blur-xl opacity-50" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-dark-700/50">
+    <div className="relative group">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative glass-card rounded-3xl p-8 md:p-12">
         <div className="flex items-start gap-6 mb-8">
           {/* Number Badge */}
-          <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-2xl font-bold">
+          <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-2xl font-bold group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 floating">
             {number}
           </div>
           
           {/* Icon */}
-          <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-20 h-20 rounded-2xl flex items-center justify-center">
-            <div className="text-primary-400">
+          <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-20 h-20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-primary-400 group-hover:text-accent-400 transition-colors duration-300">
               {icon}
             </div>
           </div>
@@ -223,9 +223,9 @@ const ServiceModule: React.FC<ServiceModuleProps> = ({
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-dark-900/50 border border-dark-700/30">
-              <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg">
-                <div className="text-primary-400">
+            <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-dark-900/50 border border-dark-700/30 hover:bg-dark-800/50 hover:border-primary-500/30 transition-all duration-300 transform hover:scale-105">
+              <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg hover:scale-110 transition-transform duration-300">
+                <div className="text-primary-400 hover:text-accent-400 transition-colors duration-300">
                   {feature.icon}
                 </div>
               </div>

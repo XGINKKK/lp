@@ -11,8 +11,17 @@ const About: React.FC = () => {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
             entry.target.classList.remove('opacity-0', 'translate-y-10');
+            
+            // Stagger animation for child elements
+            const children = entry.target.querySelectorAll('.stagger-item');
+            children.forEach((child, index) => {
+              setTimeout(() => {
+                child.classList.add('opacity-100', 'translate-y-0');
+                child.classList.remove('opacity-0', 'translate-y-5');
+              }, index * 100);
+            });
           }
         });
       },
@@ -31,25 +40,31 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section id="sobre" className="py-20 md:py-32 relative">
+    <section id="sobre" className="py-20 md:py-32 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+      
       <Container>
         <div 
           ref={aboutRef} 
           className="max-w-6xl mx-auto opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
                 O Sistema Be Connected
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 stagger-item opacity-0 translate-y-5 transition-all duration-500">
               Sistema Be Connected de <GradientText>Vendas Previsíveis</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8">
+            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
               Desenvolvemos e implementamos <strong>funis de alta conversão</strong> que capturam, nutrem e convertem leads automaticamente, usando a combinação perfeita de tráfego qualificado, conteúdo persuasivo e inteligência artificial.
             </p>
-            <div className="bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 rounded-2xl p-6 max-w-3xl mx-auto">
+            <div className="glass-card rounded-2xl p-6 max-w-3xl mx-auto stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <p className="text-lg font-semibold text-primary-300">
                 Nossa Obsessão: Criar máquinas de vendas que funcionam 24/7, transformando cada centavo investido em lucro previsível e escalável.
               </p>
@@ -58,7 +73,7 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Problems */}
-            <div>
+            <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-red-400">
                 Por Que 97% dos Negócios Falham Online?
               </h3>
@@ -87,7 +102,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Solutions */}
-            <div>
+            <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
               <h3 className="text-2xl md:text-3xl font-bold mb-8">
                 A Solução: Seu <GradientText>Funil de Vendas Inteligente</GradientText>
               </h3>
@@ -129,7 +144,7 @@ type ProblemItemProps = {
 
 const ProblemItem: React.FC<ProblemItemProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/20">
+    <div className="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/20 hover:bg-red-500/10 transition-all duration-300 transform hover:scale-105">
       <div className="flex-shrink-0 mt-1">
         {icon}
       </div>
@@ -149,7 +164,7 @@ type SolutionItemProps = {
 
 const SolutionItem: React.FC<SolutionItemProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+    <div className="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20 hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105">
       <div className="flex-shrink-0 mt-1">
         {icon}
       </div>

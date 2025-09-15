@@ -13,10 +13,19 @@ import CTA from './components/sections/CTA';
 import Footer from './components/layout/Footer';
 
 function App() {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950 text-white selection:bg-primary-500/30 selection:text-white">
+    <div className="min-h-screen bg-dark-950 text-white selection:bg-primary-500/30 selection:text-white overflow-x-hidden">
       <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-      <div className="fixed inset-0 bg-gradient-to-t from-dark-950 via-dark-900/50 to-transparent" />
+      <div className="fixed inset-0 bg-gradient-to-t from-dark-950 via-dark-900/50 to-transparent pointer-events-none" />
       <Header />
       <main className="relative">
         <Hero />
@@ -34,5 +43,7 @@ function App() {
     </div>
   );
 }
+
+import { useEffect } from 'react';
 
 export default App;
