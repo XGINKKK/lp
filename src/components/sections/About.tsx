@@ -45,22 +45,43 @@ const About: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Sobre a EduAi
+                A Realidade do Mercado
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               A Verdade Que Ninguém Conta <GradientText>Sobre Automação</GradientText>
             </h2>
-            <div className="text-xl text-white/80 max-w-4xl mx-auto">
-              <p className="mb-6">
-                A maioria das empresas não automatiza porque acham que é muito complicado, muito caro ou só para empresas grandes.
-              </p>
-              <p className="text-2xl font-bold text-center mb-6">
-                <span className="text-red-400">Mentira.</span>
-              </p>
-              <p className="text-center text-primary-400 font-semibold">
-                Na verdade, quando você automatiza as tarefas certas, sua equipe fica mais humana - porque pode focar no que realmente importa: resolver problemas complexos e criar relacionamentos.
-              </p>
+            <div className="text-xl text-white/80 max-w-4xl mx-auto mb-12">
+              <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 mb-8">
+                <p className="text-center mb-6">
+                  A maioria das empresas não automatiza porque acham que é:
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-red-400 font-semibold">Muito complicado</p>
+                  </div>
+                  <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-red-400 font-semibold">Muito caro</p>
+                  </div>
+                  <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-red-400 font-semibold">Só para grandes</p>
+                  </div>
+                  <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <p className="text-red-400 font-semibold">Desumaniza</p>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white font-bold text-3xl px-8 py-4 rounded-xl mb-6 transform rotate-[-2deg] shadow-lg">
+                    MENTIRA!
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-primary-500/10 to-accent-500/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/20">
+                <p className="text-center text-xl font-semibold text-primary-400">
+                  Na verdade, quando você automatiza as tarefas certas, sua equipe fica mais humana - porque pode focar no que realmente importa: resolver problemas complexos e criar relacionamentos.
+                </p>
+              </div>
             </div>
           </div>
           
