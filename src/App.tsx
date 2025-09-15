@@ -12,9 +12,9 @@ import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dark-950 via-dark-800 to-dark-950 text-white selection:bg-neon-pink/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-neon-pink/30 selection:text-white">
       <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-      <div className="fixed inset-0 bg-gradient-to-t from-dark-950 via-dark-800/50 to-transparent" />
+      <div className="fixed inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       
       <Header />
       <main className="relative">

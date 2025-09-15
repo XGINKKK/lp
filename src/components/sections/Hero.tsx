@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
   );
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden animated-gradient">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden bg-black">
       {/* Floating Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
