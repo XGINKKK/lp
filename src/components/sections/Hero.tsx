@@ -101,6 +101,7 @@ const Hero: React.FC = () => {
               subtitle="CRM & Marketing"
             />
           </div>
+          </div>
         </div>
       </Container>
 
