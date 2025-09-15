@@ -4,7 +4,7 @@ import GradientText from '../ui/GradientText';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-dark-950 border-t border-dark-800/50 py-16">
+    <footer className="bg-black border-t border-dark-800/50 py-16">
       <Container>
         <div className="text-center">
           <div className="text-2xl font-display font-bold mb-4">
