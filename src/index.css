@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Neon glow effects */
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 5px theme('colors.neon.pink'), 0 0 10px theme('colors.neon.pink'), 0 0 15px theme('colors.neon.pink');
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 5px theme('colors.neon.pink'), 0 0 10px theme('colors.neon.pink');
+  }
+  
+  .neon-border {
+    border: 1px solid theme('colors.neon.pink');
+    box-shadow: 0 0 10px theme('colors.neon.pink');
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);

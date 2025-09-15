@@ -12,8 +12,8 @@ const GradientText: React.FC<GradientTextProps> = ({
   variant = 'primary'
 }) => {
   const gradients = {
-    primary: 'from-primary-900 via-primary-500 to-accent-500',
-    secondary: 'from-secondary-600 via-secondary-500 to-accent-400'
+    primary: 'from-neon-bright via-neon-pink to-neon-magenta',
+    secondary: 'from-neon-glow via-secondary-500 to-accent-400'
   };
 
   return (

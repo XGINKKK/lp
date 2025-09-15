@@ -4,31 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary - Roxo Escuro a Lilás
+        // Primary - Neon Magenta/Rosa
         primary: {
-          '50': '#F3F0FF',
-          '400': '#A855F7',
-          '500': '#7C3AED', // Cor principal - roxo
-          '600': '#6D28D9',
-          '900': '#4C1D95',
+          '50': '#ffeeff',
+          '400': '#ff40ff',
+          '500': '#d946ef', // Cor principal - magenta neon
+          '600': '#c726d9',
+          '900': '#7c3aed',
         },
-        // Secondary - Lilás Suave
+        // Secondary - Rosa Neon
         secondary: {
-          '400': '#C084FC',
-          '500': '#A855F7', // Cor secundária - lilás
-          '600': '#9333EA',
+          '400': '#ff80ff',
+          '500': '#ff00ff', // Cor secundária - rosa neon
+          '600': '#e91e63',
         },
-        // Accent - Lilás Claro
+        // Accent - Roxo Neon
         accent: {
-          '400': '#DDD6FE',
-          '500': '#C4B5FD', // Cor de destaque - lilás claro
-          '600': '#A78BFA',
+          '400': '#f0a0ff',
+          '500': '#a855f7', // Cor de destaque - roxo neon
+          '600': '#9333ea',
         },
-        // Dark - Tons escuros profissionais
+        // Dark - Tons escuros cyberpunk
         dark: {
-          '800': '#1A1A1A',
-          '900': '#111111',
-          '950': '#0B0B0B',
+          '700': '#2d1b47',
+          '800': '#1a0d2e',
+          '900': '#0a0a0a',
+          '950': '#000000',
+        },
+        // Neon effects
+        neon: {
+          'pink': '#ff00ff',
+          'magenta': '#e040e0',
+          'purple': '#a855f7',
+          'glow': '#ff80ff',
+          'bright': '#ffffff',
         },
       },
       fontFamily: {
