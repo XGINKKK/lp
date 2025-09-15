@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8 slide-in-right">
-            Liberte o Potencial da Sua Empresa: <GradientText>Automatize e Escale</GradientText> com Inteligência Artificial
+            <span className="typewriter">Liberte o Potencial da Sua Empresa: <GradientText>Automatize e Escale</GradientText> com Inteligência Artificial</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto scale-in">
