@@ -43,43 +43,31 @@ const Comparison: React.FC = () => {
 
   const comparisonData: ComparisonRow[] = [
     {
-      feature: "Diagnóstico estratégico do negócio antes da automação",
+      feature: "Faz o que você pede vs Entende o que você precisa",
       tools: false,
       freelancers: false,
       eduAi: true
     },
     {
-      feature: "Agentes de IA com inteligência e humanização",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Automação 360° de toda a jornada (Marketing, Comercial, Entrega e Pós-venda)",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Integração profunda entre sistemas com IA inteligente",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Visão de crescimento e escala desde o início",
+      feature: "Entrega e vai embora vs Fica do seu lado sempre",
       tools: false,
       freelancers: false,
       eduAi: true
     },
     {
-      feature: "Acompanhamento e otimização contínua",
+      feature: "Só sabe usar ferramentas básicas vs Cria soluções sob medida",
       tools: false,
-      freelancers: "sometimes",
+      freelancers: false,
       eduAi: true
     },
     {
-      feature: "Foco em redução de custos e aumento de produtividade",
+      feature: "Você tem que explicar tudo vs A gente entende de negócio",
+      tools: false,
+      freelancers: false,
+      eduAi: true
+    },
+    {
+      feature: "Se der problema, boa sorte vs Suporte dedicado e garantia",
       tools: false,
       freelancers: false,
       eduAi: true
@@ -129,11 +117,10 @@ const Comparison: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Por que escolher <GradientText>EduAi</GradientText>?
+              Por Que Escolher EduAi e Não <GradientText>Qualquer Freelancer?</GradientText>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Compare nossa solução completa com alternativas do mercado e entenda por que somos
-              a escolha ideal para transformar seu negócio.
+              Veja a diferença entre contratar um freelancer comum e ter a EduAi como parceira do seu negócio.
             </p>
           </div>
 
@@ -146,22 +133,16 @@ const Comparison: React.FC = () => {
                   {/* Table Header */}
                   <div className="grid grid-cols-4 border-b border-dark-700/50">
                     <div className="p-6 font-semibold text-lg">
-                      Recursos e Diferenciais
+                      Comparativo
                     </div>
                     <div className="p-6 text-center font-semibold text-lg">
-                      Ferramentas Avulsas
-                      <div className="text-sm text-white/60 font-normal">
-                        (Zapier, Make, n8n)
-                      </div>
-                    </div>
-                    <div className="p-6 text-center font-semibold text-lg">
-                      Freelancers e Autônomos
+                      Freelancer Comum
                     </div>
                     <div className="p-6 text-center font-semibold text-lg">
                       EduAi
-                      <div className="text-sm text-white/60 font-normal">
-                        (Nossa Solução)
-                      </div>
+                    </div>
+                    <div className="p-6 text-center font-semibold text-lg">
+                      Resultado
                     </div>
                   </div>
 

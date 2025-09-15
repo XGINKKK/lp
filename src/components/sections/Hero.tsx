@@ -78,13 +78,12 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8 slide-in-right">
-            Liberte o Potencial da Sua Empresa:{' '}
-            <GradientText>Automatize e Escale</GradientText>
-            {' '}com Inteligência Artificial
+            Pare de Perder Dinheiro com Tarefas que{' '}
+            <GradientText>Poderiam ser Automatizadas</GradientText>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto scale-in">
-            Criamos soluções de IA e automação humanizada que geram resultados reais, reduzem custos e aumentam a produtividade.
+            Sua equipe está gastando 6 horas por dia em tarefas repetitivas enquanto você poderia estar focando no que realmente importa: fazer sua empresa crescer.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16 slide-in-left">

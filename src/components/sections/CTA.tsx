@@ -51,32 +51,32 @@ const CTA: React.FC = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                Pronto para transformar seu negócio com <GradientText>IA?</GradientText>
+                Comece Sua <GradientText>Transformação Hoje</GradientText>
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                Agende um diagnóstico gratuito para entender como EduAi pode levar sua empresa para o próximo nível com automação humanizada.
+                A automação não é um gasto. É o melhor investimento que você pode fazer no seu negócio.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <BenefitCard
                   icon={<Target className="w-6 h-6" />}
-                  title="Diagnóstico Gratuito"
-                  description="Análise completa das necessidades do seu negócio"
+                  title="🎯 Diagnóstico Gratuito (Vale R$ 2.500)"
+                  description="Análise completa do seu negócio, identificamos onde automatizar primeiro"
                 />
                 <BenefitCard
                   icon={<Lightbulb className="w-6 h-6" />}
-                  title="Proposta Personalizada"
-                  description="Solução sob medida para seus objetivos"
+                  title="📞 Consultoria de 30 Minutos"
+                  description="Falamos sobre suas dores específicas e mostramos casos similares"
                 />
                 <BenefitCard
                   icon={<Rocket className="w-6 h-6" />}
-                  title="Implementação Rápida"
-                  description="Resultados em semanas, não meses"
+                  title="🚀 Implementação Express"
+                  description="Primeira automação funcionando em 10 dias com suporte total"
                 />
                 <BenefitCard
                   icon={<Gauge className="w-6 h-6" />}
-                  title="Suporte Dedicado"
-                  description="Acompanhamento em todas as etapas"
+                  title="⚠️ Última Chance"
+                  description="Apenas 5 empresas por mês. 3 vagas restantes para este mês."
                 />
               </div>
             </div>

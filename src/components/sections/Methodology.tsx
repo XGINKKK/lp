@@ -49,14 +49,10 @@ const Methodology: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Metodologia <GradientText>EduAi</GradientText>
+              Como Funciona Nossa <GradientText>Parceria</GradientText>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              O caminho para resultados
-            </p>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Nossa abordagem proprietária combina diagnóstico profundo, planejamento estratégico 
-              e implementação gradual para transformar seu negócio com IA.
+              Do diagnóstico à implementação: como transformamos seu negócio em apenas 10 dias.
             </p>
           </div>
           
@@ -67,47 +63,48 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
-                  title="Diagnóstico Profundo"
-                  description="Análise completa dos processos, dores e oportunidades do seu negócio."
+                  title="Dias 1-3: Raio-X do Seu Negócio"
+                  description="Onde você está perdendo dinheiro sem saber?"
                   features={[
                     "Mapeamento de processos",
-                    "Análise de eficiência",
-                    "Identificação de gargalos"
+                    "Identificamos o que pode ser automatizado",
+                    "Calculamos quanto você vai economizar"
                   ]}
                 />
                 
                 <MethodologyStep
                   number="02"
                   icon={<Lightbulb className="w-8 h-8" />}
-                  title="Planejamento Estratégico"
-                  description="Identificação dos fluxos que podem ser otimizados com IA e automação."
+                  title="Dias 4-7: Construção da Sua IA"
+                  description="Criamos sua assistente virtual personalizada"
                   features={[
-                    "Definição de objetivos",
-                    "Roadmap",
-                    "KPIs de sucesso"
+                    "Desenvolvemos os agentes de IA",
+                    "Treinamos com dados do seu negócio",
+                    "Integramos com seus sistemas atuais"
                   ]}
                 />
                 
                 <MethodologyStep
                   number="03"
                   icon={<Rocket className="w-8 h-8" />}
-                  title="Implementação Ágil"
-                  description="Desenvolvimento e integração dos agentes de IA sob medida."
+                  title="Dias 8-10: Colocando Para Funcionar"
+                  description="Hora de ver o dinheiro entrando"
                   features={[
-                    "Sprints focados",
-                    "Testes contínuos e integração com seus sistemas"
+                    "Testamos tudo em ambiente controlado",
+                    "Treinamos sua equipe",
+                    "Liberamos para produção"
                   ]}
                 />
                 
                 <MethodologyStep
                   number="04"
                   icon={<Gauge className="w-8 h-8" />}
-                  title="Otimização Contínua"
-                  description="Análise de resultados e refinamento constante para maior eficiência."
+                  title="Sempre: Cuidamos da Evolução"
+                  description="Sua IA fica mais inteligente todo dia"
                   features={[
                     "Monitoramento 24/7",
                     "Ajustes baseados em dados",
-                    "Evolução constante"
+                    "Adicionamos novas funcionalidades"
                   ]}
                 />
               </div>

@@ -49,28 +49,46 @@ const About: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Somos especialistas em <GradientText>IA aplicada</GradientText> para resultados reais
+              Você Reconhece <GradientText>Essas Situações?</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              EduAi é a assinatura do trabalho de Eduardo Manoel de Miranda Santos, 22 anos, natural de Balneário Camboriú (SC). Após estudar tráfego pago e copywriting, Eduardo se encontrou no universo das inteligências artificiais e hoje é especialista em criar soluções de IA sob medida para empresas que buscam eficiência, crescimento e redução de custos.
-            </p>
+            <div className="text-xl text-white/80 max-w-3xl mx-auto space-y-4">
+              <p className="flex items-start gap-3">
+                <span className="text-2xl">😰</span>
+                <span>Seu time comercial passa mais tempo organizando planilhas do que vendendo</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-2xl">😤</span>
+                <span>Clientes reclamam de demora no atendimento, mas você não tem gente suficiente para responder tudo</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-2xl">😫</span>
+                <span>Você trabalha até tarde porque sempre tem "aquelas tarefas chatas" que ninguém quer fazer</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="text-2xl">💸</span>
+                <span>Está gastando uma fortuna em funcionários para fazer trabalhos que uma IA faria melhor (e mais barato)</span>
+              </p>
+              <p className="text-center mt-8 text-primary-400 font-semibold">
+                Se você pensou "nossa, isso é a minha empresa", continue lendo...
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AboutCard 
+              icon={<Award className="w-12 h-12 text-primary-400" />}
+              title="A Verdade Sobre Automação"
+              description="A maioria das empresas não automatiza porque acham que é muito complicado, caro ou só para empresas grandes. Mentira. Quando você automatiza as tarefas certas, sua equipe fica mais humana."
+            />
+            <AboutCard 
+              icon={<Zap className="w-12 h-12 text-accent-400" />}
+              title="Nossa IA é Diferente"
+              description="Ela realmente 'entende' seu cliente, analisa histórico, entende tom emocional e adapta respostas para a personalidade da sua marca."
+            />
+            <AboutCard 
               icon={<Shield className="w-12 h-12 text-primary-400" />}
-              title="EduAi"
-              description="A camada proprietária EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
-            />
-            <AboutCard 
-              icon={<Award className="w-12 h-12 text-accent-400" />}
-              title="Projetos com Resultados"
-              description="Projetos com resultados mensuráveis em diferentes segmentos, sempre focados em eficiência operacional e crescimento sustentável."
-            />
-            <AboutCard 
-              icon={<Zap className="w-12 h-12 text-primary-400" />}
-              title="Tecnologia de Ponta"
-              description="Soluções baseadas nas tecnologias mais avançadas de IA, machine learning e automação, com integrações profundas com as ferramentas que você já usa."
+              title="Foco No Que Dá Dinheiro"
+              description="Não automatizamos por automatizar. Focamos nos processos que liberam tempo da sua equipe, aceleram vendas e reduzem custos operacionais."
             />
           </div>
         </div>

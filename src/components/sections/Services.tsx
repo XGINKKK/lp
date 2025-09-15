@@ -49,51 +49,49 @@ const Services: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Soluções completas de <GradientText>Automação 360°</GradientText>
+              Como a EduAi Transformou <GradientText>Esses Negócios</GradientText>
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Integramos IA e automação em toda a operação para transformar áreas-chave do seu negócio.
+              Casos reais de empresas que automatizaram e multiplicaram seus resultados.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <ServiceCard 
-              icon={<Bot className="w-10 h-10" />}
-              title="Atendimento automatizado com IA humanizada"
-              description="Agentes que conversam naturalmente, resolvem demandas e conduzem vendas"
+              icon={<MessageSquare className="w-10 h-10" />}
+              title="🏪 Loja de Roupas Online"
+              description="Antes: 3 pessoas no atendimento, 40 mensagens sem resposta por dia. Depois: 1 pessoa + IA, 100% das mensagens respondidas em menos de 2 minutos."
               features={[
-                "Atendimento 24/7 e multicanal",
-                "Análise de sentimento em tempo real"
+                "70% menos custo operacional",
+                "45% mais vendas"
               ]}
             />
             <ServiceCard 
-              icon={<BrainCircuit className="w-10 h-10" />}
-              title="Automação do setor comercial"
-              description="Sistemas inteligentes para prospecção, qualificação de leads, follow-up e recuperação de vendas perdidas"
+              icon={<Users className="w-10 h-10" />}
+              title="🏥 Clínica Médica"
+              description="Antes: Recepcionista atendia telefone o dia todo, pacientes irritados. Depois: IA agenda consultas 24h, recepcionista foca no acolhimento."
               features={[
-                "Prospecção e qualificação automática de leads",
-                "Sequências de follow-up inteligentes",
-                "Análise preditiva de conversão"
+                "3x mais agendamentos",
+                "Zero reclamações de atendimento"
               ]}
             />
             <ServiceCard 
-              icon={<Workflow className="w-10 h-10" />}
-              title="Otimização de processos internos"
-              description="Automatização de tarefas operacionais repetitivas, liberando sua equipe para atividades estratégicas"
+              icon={<Settings className="w-10 h-10" />}
+              title="🏗️ Construtora Regional"
+              description="Antes: Vendedor perdia 4h/dia organizando leads. Depois: IA qualifica leads e faz follow-up automático."
               features={[
-                "Automação de tarefas repetitivas (RPA)",
-                "Integração entre sistemas e redução de retrabalho",
-                "Dashboards operacionais em tempo real"
+                "Vendedor dobrou número de visitas",
+                "60% mais contratos fechados"
               ]}
             />
             <ServiceCard 
-              icon={<Network className="w-10 h-10" />}
-              title="Integração de áreas com inteligência"
-              description="Soluções que conectam todos os departamentos do seu negócio com fluxos de dados inteligentes"
+              icon={<Layers className="w-10 h-10" />}
+              title="O Que Você Ganha Com a EduAi"
+              description="Tempo de volta para você, dinheiro no bolso todo mês e empresa preparada para crescer."
               features={[
-                "Fluxos de trabalho automatizados ponta a ponta",
-                "BI com machine learning para insights acionáveis",
-                "APIs inteligentes customizadas"
+                "Redução de até 70% nos custos",
+                "Aumento médio de 45% nas vendas",
+                "ROI positivo já no 1º mês"
               ]}
             />
           </div>
