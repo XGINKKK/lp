@@ -63,19 +63,50 @@ const CTA: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Simular envio
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Enviar dados para o webhook
+      const webhookUrl = 'https://dudu181190-n8n.qvhrom.easypanel.host/webhook-test/3d973b0f-098c-43d9-bdc2-2c92145b1c2f';
       
-      // Redirecionar para Typebot com dados
-      const typebotUrl = new URL('https://typebot.co/be-connected-diagnostico');
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value) typebotUrl.searchParams.set(key, value);
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.whatsapp,
+          website: formData.website || '',
+          revenue: formData.revenue,
+          challenge: formData.challenge,
+          investment: formData.investment,
+          timestamp: new Date().toISOString(),
+          source: 'landing-page-be-connected'
+        })
       });
       
-      window.location.href = typebotUrl.toString();
+      if (!response.ok) {
+        throw new Error(`Erro no servidor: ${response.status}`);
+      }
+      
+      // Sucesso - mostrar mensagem ou redirecionar
+      alert('Dados enviados com sucesso! Entraremos em contato em breve.');
+      
+      // Limpar formulário
+      setFormData({
+        name: '',
+        email: '',
+        whatsapp: '',
+        website: '',
+        revenue: '',
+        challenge: '',
+        investment: ''
+      });
+      
+      setIsSubmitting(false);
       
     } catch (error) {
-      console.error('Erro ao enviar:', error);
+      console.error('Erro ao enviar formulário:', error);
+      alert('Erro ao enviar dados. Tente novamente ou entre em contato conosco.');
       setIsSubmitting(false);
     }
   };
