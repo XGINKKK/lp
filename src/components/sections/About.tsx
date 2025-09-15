@@ -72,7 +72,7 @@ const About: React.FC = () => {
                 
                 {/* Checklist de Problemas */}
                 <div className="max-w-2xl mx-auto mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 checklist-grid">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       "Muito complicado",
                       "Muito caro", 
@@ -81,7 +81,7 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className={`flex items-center gap-3 p-4 bg-dark-800/30 border border-dark-700/50 rounded-lg min-h-[60px] transition-all duration-700 checklist-item ${
+                        className={`flex items-center gap-3 p-4 bg-dark-800/30 border border-dark-700/50 rounded-lg min-h-[60px] transition-all duration-700 ${
                           cardsRevealed ? 'border-primary-500/30 bg-primary-500/5' : ''
                         }`}
                         style={{ 
@@ -102,32 +102,26 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 
-                {/* Improved MENTIRA Button */}
+                {/* Botão MENTIRA */}
                 <div className="text-center mb-6">
                   <button
                     onClick={handleRevealTruth}
                     className="group relative inline-flex flex-col items-center gap-2 px-8 py-6 bg-gradient-to-r from-primary-500 via-neon-pink to-accent-500 rounded-2xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/50 border border-primary-400/30 hover:border-primary-300/50 focus:outline-none focus:ring-4 focus:ring-primary-500/30"
                     aria-label="Revelar a verdade sobre automação"
                   >
-                    {/* Glow effect background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-500/40 to-accent-500/40 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-                    
-                    {/* Inner glow */}
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
-                    {/* Main text */}
                     <span className="relative z-10 text-3xl font-black tracking-wide group-hover:scale-105 transition-transform duration-200">
                       MENTIRA!
                     </span>
                     
-                    {/* Context text */}
                     <span className="relative z-10 text-sm font-medium opacity-90 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1">
                       <Eye className="w-4 h-4" />
                       Descubra a verdade abaixo
                       <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                     </span>
                     
-                    {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-2xl" />
                   </button>
                 </div>
@@ -136,7 +130,7 @@ const About: React.FC = () => {
               {/* Seção de Verdades */}
               <div ref={cardsRef}>
                 <div 
-                  className={`bg-gradient-to-r from-primary-500/10 to-accent-500/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/20 transition-all duration-1000 verdades-section ${
+                  className={`bg-gradient-to-r from-primary-500/10 to-accent-500/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/20 transition-all duration-1000 ${
                     cardsRevealed ? 'ring-2 ring-primary-500/30 shadow-xl shadow-primary-500/20' : ''
                   }`}
                 >
@@ -186,11 +180,6 @@ const About: React.FC = () => {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-        
-        .checklist-item {
-          opacity: 0;
-          transform: translateY(20px);
         }
       `}</style>
     </section>
