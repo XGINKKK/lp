@@ -53,18 +53,18 @@ const About: React.FC = () => {
           className="max-w-6xl mx-auto opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <div className="dyn-reveal inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
                 O Sistema Be Connected
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <h2 className="dyn-reveal text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               Sistema Be Connected de <GradientText>Vendas Previsíveis</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8 stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <p className="dyn-reveal text-xl text-white/80 max-w-4xl mx-auto mb-8">
               Desenvolvemos e implementamos <strong>funis de alta conversão</strong> que capturam, nutrem e convertem leads automaticamente, usando a combinação perfeita de tráfego qualificado, conteúdo persuasivo e inteligência artificial.
             </p>
-            <div className="glass-card rounded-2xl p-6 max-w-3xl mx-auto stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <div className="dyn-reveal glass-card rounded-2xl p-6 max-w-3xl mx-auto">
               <p className="text-lg font-semibold text-primary-300">
                 Nossa Obsessão: Criar máquinas de vendas que funcionam 24/7, transformando cada centavo investido em lucro previsível e escalável.
               </p>
@@ -73,11 +73,11 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Problems */}
-            <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <div className="dyn-reveal">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-red-400">
                 Por Que 97% dos Negócios Falham Online?
               </h3>
-              <div className="space-y-6">
+              <div className="dyn-stagger space-y-6">
                 <ProblemItem 
                   icon={<X className="w-6 h-6 text-red-400" />}
                   title="Funil Quebrado"
@@ -102,11 +102,11 @@ const About: React.FC = () => {
             </div>
 
             {/* Solutions */}
-            <div className="stagger-item opacity-0 translate-y-5 transition-all duration-500">
+            <div className="dyn-reveal">
               <h3 className="text-2xl md:text-3xl font-bold mb-8">
                 A Solução: Seu <GradientText>Funil de Vendas Inteligente</GradientText>
               </h3>
-              <div className="space-y-6">
+              <div className="dyn-stagger space-y-6">
                 <SolutionItem 
                   icon={<Check className="w-6 h-6 text-green-400" />}
                   title="Tráfego Cirúrgico"

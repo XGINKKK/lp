@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
+    <section className="hero-section pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
       <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
@@ -60,20 +60,20 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-8">
-            Seu Funil de Vendas Completo e <GradientText>Automatizado</GradientText> Gerando Vendas 24/7 com Inteligência Artificial
+            <span className="dyn-reveal">Seu Funil de Vendas Completo e <GradientText>Automatizado</GradientText> Gerando Vendas 24/7 com Inteligência Artificial</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto">
+          <p className="dyn-reveal text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto">
             Construímos máquinas de vendas previsíveis que transformam desconhecidos em clientes fiéis através de um sistema integrado de tráfego qualificado, conteúdo estratégico e automações inteligentes com IA.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16">
+          <div className="dyn-reveal flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16">
             <Button 
-              variant="primary" 
+              variant="primary"
               className="w-full sm:w-auto text-lg py-6 px-12 group glow-button ripple-effect"
               onClick={() => window.location.href = '#contato'}
             >
-              <span className="flex items-center justify-center gap-2">
+              <span className="dyn-cta flex items-center justify-center gap-2">
                 Quero Meu Funil Lucrativo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -91,9 +91,9 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="mb-16">
+          <div className="dyn-reveal mb-16">
             <p className="text-white/60 mb-6 text-lg">Especialistas certificados em:</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="dyn-stagger grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <TrustBadge 
               icon={<Target className="w-6 h-6" />}
               title="Especialistas em Google Ads"
@@ -130,7 +130,7 @@ type TrustBadgeProps = {
 
 const TrustBadge: React.FC<TrustBadgeProps> = ({ icon, title, subtitle }) => {
   return (
-    <div className="flex flex-col items-center gap-3 p-4 rounded-xl glass-card tilt-card group">
+    <div className="dyn-tilt flex flex-col items-center gap-3 p-4 rounded-xl glass-card tilt-card group" data-dyn-parallax="6">
       <div className="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center">
         <div className="text-primary-400 group-hover:scale-110 transition-transform duration-300">
           {icon}

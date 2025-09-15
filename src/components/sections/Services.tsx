@@ -38,17 +38,17 @@ const Services: React.FC = () => {
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
+            <div className="dyn-reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
                 Sistema Completo
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="dyn-reveal text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               O Sistema Completo de <GradientText>Vendas</GradientText>
             </h2>
           </div>
           
-          <div className="space-y-20">
+          <div className="dyn-stagger space-y-20">
             {/* Módulo 1: Tráfego Qualificado */}
             <ServiceModule 
               number="01"

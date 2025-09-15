@@ -1,0 +1,134 @@
+:root{
+  --dyn-accent: 124 58 237; /* purple primary */
+  --dyn-accent-2: 168 85 247; /* purple secondary */
+  --dyn-foreground: 17 24 39;
+  --dyn-blob-blur: 120px;
+  --dyn-transition-fast: 220ms cubic-bezier(.22,.9,.29,1);
+  --dyn-transition-slow: 460ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Hero gradient layer (aria-hidden) */
+.dyn-gradient{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(600px 400px at var(--dyn-x, 50%) var(--dyn-y, 40%), rgba(var(--dyn-accent),0.14), transparent 20%),
+    radial-gradient(420px 300px at calc(var(--dyn-x2,60%)) calc(var(--dyn-y2,70%)), rgba(var(--dyn-accent-2),0.12), transparent 20%);
+  mix-blend-mode: screen;
+  transition: opacity var(--dyn-transition-slow);
+  will-change: transform, opacity;
+}
+
+/* blurred colored blob */
+.dyn-blob{
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  filter:blur(var(--dyn-blob-blur));
+  transform: translate3d(0,0,0);
+  opacity:0.9;
+  pointer-events:none;
+  will-change: transform, opacity;
+}
+
+/* Reveal animation */
+.dyn-reveal{
+  opacity:0;
+  transform: translateY(14px);
+  transition: opacity 420ms cubic-bezier(.2,.9,.3,1), transform 420ms cubic-bezier(.2,.9,.3,1);
+  will-change: opacity, transform;
+}
+.dyn-reveal.in-view{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* CTA */
+.dyn-cta{
+  display:inline-block;
+  transition: transform var(--dyn-transition-fast), box-shadow var(--dyn-transition-fast);
+  transform-origin:center;
+}
+.dyn-cta:hover,
+.dyn-cta:focus-visible{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.18);
+  outline: none;
+}
+.dyn-cta:focus-visible{
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.12);
+}
+
+/* Tilt container */
+.dyn-tilt{
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 320ms cubic-bezier(.2,.9,.3,1);
+}
+
+/* Header glass */
+.dyn-header{
+  position:relative;
+  transition: background-color 260ms ease, backdrop-filter 260ms ease, box-shadow 260ms ease;
+}
+.dyn-header.dyn-header--scrolled{
+  background-color: rgba(26,26,26,0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(124,58,237,0.1);
+  border-bottom: 1px solid rgba(124,58,237,0.1);
+}
+
+/* Enhanced glassmorphism for existing cards */
+.glass-card.dyn-enhanced {
+  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(124, 58, 237, 0.05);
+  transition: all 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+.glass-card.dyn-enhanced:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 35px 80px -12px rgba(124, 58, 237, 0.3),
+    0 0 0 1px rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Stagger animation for children */
+.dyn-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms cubic-bezier(.2,.9,.3,1), transform 500ms cubic-bezier(.2,.9,.3,1);
+}
+
+.dyn-stagger.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dyn-stagger.in-view > *:nth-child(1) { transition-delay: 0ms; }
+.dyn-stagger.in-view > *:nth-child(2) { transition-delay: 100ms; }
+.dyn-stagger.in-view > *:nth-child(3) { transition-delay: 200ms; }
+.dyn-stagger.in-view > *:nth-child(4) { transition-delay: 300ms; }
+.dyn-stagger.in-view > *:nth-child(5) { transition-delay: 400ms; }
+.dyn-stagger.in-view > *:nth-child(6) { transition-delay: 500ms; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .dyn-reveal, .dyn-tilt, .dyn-gradient, .dyn-stagger > * { 
+    transition: none !important; 
+    animation: none !important; 
+    transform: none !important; 
+    opacity: 1 !important;
+  }
+}
+
+/* small utility */
+[data-dyn-hidden]{ display:none !important; }
