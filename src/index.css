@@ -131,7 +131,7 @@
   overflow: hidden;
   border-right: 3px solid #7C3AED;
   white-space: nowrap;
-  animation: typewriter 4s steps(40) 1s 1 normal both, blink 1s steps(1) infinite;
+  animation: typewriter 6s steps(80) 1s 1 normal both, blink 1s steps(1) infinite;
 }
 
 @keyframes marquee {
