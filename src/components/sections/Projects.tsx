@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
+      <div className="absolute inset-0 bg-black -z-10" />
       <Container>
         <div 
           ref={sectionRef} 
