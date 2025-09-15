@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dark-900/90 backdrop-blur-md py-3 shadow-lg shadow-neon-pink/10 border-b border-neon-pink/20' : 'bg-transparent py-5'
+        isScrolled ? 'glass-card py-3 shadow-lg shadow-neon-pink/10 border-b border-neon-pink/20' : 'bg-transparent py-5'
       }`}
     >
       <Container className="flex items-center justify-between">
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-dark-900/95 backdrop-blur-md absolute top-full left-0 right-0 border-t border-dark-700/50 animate-fade-in">
+        <div className="md:hidden glass-card absolute top-full left-0 right-0 border-t border-dark-700/50 animate-fade-in">
           <div className="py-5 px-6 flex flex-col space-y-6">
             <a 
               href="#about" 
