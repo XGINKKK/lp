@@ -109,13 +109,10 @@ const Hero: React.FC = () => {
       <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary-500/30 rounded-full blur-[128px] -z-10" />
       <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent-500/30 rounded-full blur-[128px] -z-10" />
     </section>
-  )
   );
 };
 
 type TrustBadgeProps = {
-            }
-  )
   icon: React.ReactNode;
   title: string;
   subtitle: string;
