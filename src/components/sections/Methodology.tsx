@@ -138,9 +138,9 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group relative">
+    <div className="group relative h-full">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full flex flex-col">
         {/* Step number */}
         <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-sm font-bold">
           {number}
@@ -154,8 +154,10 @@ const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, 
         </div>
         
         {/* Content */}
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-white/70 mb-6">{description}</p>
+        <div className="flex-1 flex flex-col">
+          <h3 className="text-xl font-bold mb-3 min-h-[3.5rem] flex items-start">{title}</h3>
+          <p className="text-white/70 mb-6 flex-1">{description}</p>
+        </div>
         
         {/* Features */}
         <ul className="space-y-2">
