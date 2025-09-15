@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
             <Button 
               variant="secondary" 
               className="w-full sm:w-auto text-lg group"
-              onClick={() => window.location.href = '#services'}
+              onClick={() => window.location.href = '#projects'}
             >
               <span className="flex items-center justify-center gap-2">
                 Explorar Soluções
