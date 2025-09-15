@@ -146,10 +146,11 @@ const About: React.FC = () => {
                   
                   <div className="space-y-4 max-w-3xl mx-auto">
                     {[
-                      "Sua equipe fica mais humana - foca no que realmente importa",
-                      "Resolve problemas complexos de forma inteligente", 
-                      "Cria relacionamentos mais profundos com clientes",
-                      "Escala seu negócio sem perder a qualidade"
+                      "Equipe mais feliz - fim das tarefas repetitivas e chatas",
+                      "Clientes impressionados com velocidade e personalização",
+                      "Você trabalha ON no negócio, não IN no negócio",
+                      "Cresce 10x sem contratar 10x mais pessoas",
+                      "Compete com gigantes usando cérebro, não músculo"
                     ].map((text, index) => (
                       <div 
                         key={index}
