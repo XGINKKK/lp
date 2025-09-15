@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { MessageSquare, Users, Settings, Layers, ArrowRight, Bot, BrainCircuit, Workflow, Network } from 'lucide-react';
+import { Target, Smartphone, Bot, BarChart3, Video, Mail, Zap, Settings } from 'lucide-react';
 
 const Services: React.FC = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -31,12 +31,7 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 md:py-32 relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
-      <div className="absolute top-1/2 right-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
-      <div className="absolute bottom-0 left-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
-      
+    <section id="servicos" className="py-20 md:py-32 relative">
       <Container>
         <div 
           ref={servicesRef} 
@@ -45,69 +40,134 @@ const Services: React.FC = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Nossas Soluções
+                Sistema Completo
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Soluções completas de <GradientText>Automação 360°</GradientText>
+              O Sistema Completo de <GradientText>Vendas</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Integramos IA e automação em toda a operação para transformar áreas-chave do seu negócio.
-            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <ServiceCard 
-              icon={<Bot className="w-10 h-10" />}
-              title="Atendimento automatizado com IA humanizada"
-              description="Agentes que conversam naturalmente, resolvem demandas e conduzem vendas"
+          <div className="space-y-20">
+            {/* Módulo 1: Tráfego Qualificado */}
+            <ServiceModule 
+              number="01"
+              icon={<Target className="w-12 h-12" />}
+              title="Tráfego Qualificado"
+              subtitle="Atraímos compradores, não curiosos"
               features={[
-                "Atendimento 24/7 e multicanal",
-                "Análise de sentimento em tempo real"
+                {
+                  icon: <Smartphone className="w-6 h-6" />,
+                  title: "Campanhas Multi-Canal",
+                  description: "Google, Meta, TikTok, LinkedIn sincronizados"
+                },
+                {
+                  icon: <Target className="w-6 h-6" />,
+                  title: "Segmentação Avançada",
+                  description: "Lookalike audiences e retargeting inteligente"
+                },
+                {
+                  icon: <BarChart3 className="w-6 h-6" />,
+                  title: "Creative Testing",
+                  description: "Testes A/B contínuos com IA analisando performance"
+                },
+                {
+                  icon: <Zap className="w-6 h-6" />,
+                  title: "Budget Optimization",
+                  description: "Algoritmos distribuindo verba para máximo ROI"
+                }
               ]}
             />
-            <ServiceCard 
-              icon={<BrainCircuit className="w-10 h-10" />}
-              title="Automação do setor comercial"
-              description="Sistemas inteligentes para prospecção, qualificação de leads, follow-up e recuperação de vendas perdidas"
+
+            {/* Módulo 2: Conteúdo Estratégico */}
+            <ServiceModule 
+              number="02"
+              icon={<Video className="w-12 h-12" />}
+              title="Conteúdo Estratégico"
+              subtitle="Cada palavra projetada para converter"
               features={[
-                "Prospecção e qualificação automática de leads",
-                "Sequências de follow-up inteligentes",
-                "Análise preditiva de conversão"
+                {
+                  icon: <Target className="w-6 h-6" />,
+                  title: "Landing Pages de Alta Conversão",
+                  description: "Design e copy otimizados com heatmaps"
+                },
+                {
+                  icon: <Video className="w-6 h-6" />,
+                  title: "VSLs e Webinars Automatizados",
+                  description: "Apresentações que vendem 24/7"
+                },
+                {
+                  icon: <Mail className="w-6 h-6" />,
+                  title: "Email Sequences",
+                  description: "Nutrição personalizada baseada em comportamento"
+                },
+                {
+                  icon: <BarChart3 className="w-6 h-6" />,
+                  title: "Social Proof System",
+                  description: "Depoimentos e cases no momento certo"
+                }
               ]}
             />
-            <ServiceCard 
-              icon={<Workflow className="w-10 h-10" />}
-              title="Otimização de processos internos"
-              description="Automatização de tarefas operacionais repetitivas, liberando sua equipe para atividades estratégicas"
+
+            {/* Módulo 3: Automação com IA */}
+            <ServiceModule 
+              number="03"
+              icon={<Bot className="w-12 h-12" />}
+              title="Automação com IA"
+              subtitle="Seu time de vendas robótico trabalhando sem parar"
               features={[
-                "Automação de tarefas repetitivas (RPA)",
-                "Integração entre sistemas e redução de retrabalho",
-                "Dashboards operacionais em tempo real"
+                {
+                  icon: <Bot className="w-6 h-6" />,
+                  title: "Chatbots Inteligentes",
+                  description: "Qualificação e vendas via WhatsApp/Instagram"
+                },
+                {
+                  icon: <Target className="w-6 h-6" />,
+                  title: "Lead Scoring com IA",
+                  description: "Identificação automática de leads quentes"
+                },
+                {
+                  icon: <Zap className="w-6 h-6" />,
+                  title: "Follow-up Automatizado",
+                  description: "Nunca perca uma oportunidade de venda"
+                },
+                {
+                  icon: <BarChart3 className="w-6 h-6" />,
+                  title: "Predictive Analytics",
+                  description: "IA prevendo quem vai comprar"
+                }
               ]}
             />
-            <ServiceCard 
-              icon={<Network className="w-10 h-10" />}
-              title="Integração de áreas com inteligência"
-              description="Soluções que conectam todos os departamentos do seu negócio com fluxos de dados inteligentes"
+
+            {/* Módulo 4: Otimização Contínua */}
+            <ServiceModule 
+              number="04"
+              icon={<Settings className="w-12 h-12" />}
+              title="Otimização Contínua"
+              subtitle="Melhorando resultados todos os dias"
               features={[
-                "Fluxos de trabalho automatizados ponta a ponta",
-                "BI com machine learning para insights acionáveis",
-                "APIs inteligentes customizadas"
+                {
+                  icon: <BarChart3 className="w-6 h-6" />,
+                  title: "Dashboard em Tempo Real",
+                  description: "Veja cada métrica do seu funil"
+                },
+                {
+                  icon: <Zap className="w-6 h-6" />,
+                  title: "Split Testing Contínuo",
+                  description: "IA testando variações automaticamente"
+                },
+                {
+                  icon: <Target className="w-6 h-6" />,
+                  title: "Attribution Modeling",
+                  description: "Saiba exatamente o que gera vendas"
+                },
+                {
+                  icon: <Settings className="w-6 h-6" />,
+                  title: "ROI Tracking",
+                  description: "Lucro por canal, campanha e criativo"
+                }
               ]}
             />
-          </div>
-          
-          <div className="flex justify-center">
-            <a 
-              href="#apply" 
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-dark-800/50 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300"
-            >
-              <span className="text-white/90 group-hover:text-white transition-colors">
-                Conheça todas as possibilidades para seu negócio
-              </span>
-              <ArrowRight className="w-4 h-4 text-primary-400 group-hover:translate-x-1 transition-transform" />
-            </a>
           </div>
         </div>
       </Container>
@@ -115,36 +175,66 @@ const Services: React.FC = () => {
   );
 };
 
-type ServiceCardProps = {
+type ServiceModuleProps = {
+  number: string;
   icon: React.ReactNode;
   title: string;
-  description: string;
-  features: string[];
+  subtitle: string;
+  features: {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+  }[];
 };
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, features }) => {
+const ServiceModule: React.FC<ServiceModuleProps> = ({ 
+  number, 
+  icon, 
+  title, 
+  subtitle, 
+  features 
+}) => {
   return (
-    <div className="group relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm p-8 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
-        <div className="flex items-start gap-5">
-          <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-4 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+    <div className="relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-accent-500/10 rounded-3xl blur-xl opacity-50" />
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-dark-700/50">
+        <div className="flex items-start gap-6 mb-8">
+          {/* Number Badge */}
+          <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-2xl font-bold">
+            {number}
+          </div>
+          
+          {/* Icon */}
+          <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-20 h-20 rounded-2xl flex items-center justify-center">
+            <div className="text-primary-400">
               {icon}
             </div>
           </div>
+          
+          {/* Title */}
           <div>
-            <h3 className="text-xl font-bold mb-3">{title}</h3>
-            <p className="text-white/70 mb-6">{description}</p>
-            <ul className="space-y-2">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-sm text-white/60">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
+            <h3 className="text-2xl md:text-3xl font-bold mb-2">
+              Módulo {number}: <GradientText>{title}</GradientText>
+            </h3>
+            <p className="text-xl text-white/80">{subtitle}</p>
           </div>
+        </div>
+        
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {features.map((feature, index) => (
+            <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-dark-900/50 border border-dark-700/30">
+              <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg">
+                <div className="text-primary-400">
+                  {feature.icon}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">{feature.title}</h4>
+                <p className="text-white/70 text-sm">{feature.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

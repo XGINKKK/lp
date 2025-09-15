@@ -34,29 +34,32 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <a href="#" className="flex items-center">
             <div className="text-2xl font-display font-bold">
-              <GradientText>EduAi</GradientText>
-              <span className="ml-1 text-sm text-white/60">Automatize. Escale.</span>
+              <GradientText>Be Connected</GradientText>
+              <span className="ml-1 text-sm text-white/60">Conecte. Converta. Escale.</span>
             </div>
           </a>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          <a href="#about" className="text-white/80 hover:text-white font-medium transition-colors">
+          <a href="#sobre" className="text-white/80 hover:text-white font-medium transition-colors">
             Sobre
           </a>
-          <a href="#services" className="text-white/80 hover:text-white font-medium transition-colors">
+          <a href="#servicos" className="text-white/80 hover:text-white font-medium transition-colors">
             Serviços
           </a>
-          <a href="#methodology" className="text-white/80 hover:text-white font-medium transition-colors">
+          <a href="#metodologia" className="text-white/80 hover:text-white font-medium transition-colors">
             Metodologia
+          </a>
+          <a href="#cases" className="text-white/80 hover:text-white font-medium transition-colors">
+            Cases
           </a>
           <Button 
             variant="primary" 
             className="ml-4"
-            onClick={() => window.location.href = '#apply'}
+            onClick={() => window.location.href = '#contato'}
           >
-            Aplicar Agora
+            Quero Meu Funil Lucrativo
           </Button>
         </nav>
 
@@ -75,35 +78,42 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-dark-900/95 backdrop-blur-md absolute top-full left-0 right-0 border-t border-dark-700/50 animate-fade-in">
           <div className="py-5 px-6 flex flex-col space-y-6">
             <a 
-              href="#about" 
+              href="#sobre" 
               className="text-white/80 hover:text-white font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </a>
             <a 
-              href="#services" 
+              href="#servicos" 
               className="text-white/80 hover:text-white font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Serviços
             </a>
             <a 
-              href="#methodology" 
+              href="#metodologia" 
               className="text-white/80 hover:text-white font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Metodologia
             </a>
+            <a 
+              href="#cases" 
+              className="text-white/80 hover:text-white font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Cases
+            </a>
             <Button 
               variant="primary" 
               className="w-full text-center py-3"
               onClick={() => {
-                window.location.href = '#apply';
+                window.location.href = '#contato';
                 setIsMenuOpen(false);
               }}
             >
-              Aplicar Agora
+              Quero Meu Funil Lucrativo
             </Button>
           </div>
         </div>

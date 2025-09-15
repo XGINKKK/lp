@@ -1,26 +1,16 @@
 import React from 'react';
 import Header from './components/layout/Header';
 import Hero from './components/sections/Hero';
+import ResultsBar from './components/sections/ResultsBar';
 import About from './components/sections/About';
+import Team from './components/sections/Team';
 import Services from './components/sections/Services';
-import AIAgents from './components/sections/AIAgents';
-import Projects from './components/sections/Projects';
 import Methodology from './components/sections/Methodology';
 import Comparison from './components/sections/Comparison';
+import Cases from './components/sections/Cases';
+import Guarantees from './components/sections/Guarantees';
 import CTA from './components/sections/CTA';
 import Footer from './components/layout/Footer';
-
-  const removeFloating = () => {
-
-  document.querySelectorAll('[style="position: fixed"][style="bottom: 1rem"][style="right: 1rem"][style="z-index: 2147483647"]').forEach(el => el.remove());
-
-};
-
-
-
-// executa já no load
-
-removeFloating();
 
 function App() {
   return (
@@ -30,12 +20,14 @@ function App() {
       <Header />
       <main className="relative">
         <Hero />
+        <ResultsBar />
         <About />
+        <Team />
         <Services />
-        <AIAgents />
-        <Projects />
         <Methodology />
         <Comparison />
+        <Cases />
+        <Guarantees />
         <CTA />
       </main>
       <Footer />

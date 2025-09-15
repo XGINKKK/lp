@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Award, Shield, Zap } from 'lucide-react';
+import { X, Check, AlertTriangle, Zap } from 'lucide-react';
 
 const About: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -31,47 +31,89 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <section id="about" className="py-20 md:py-32 relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 to-dark-900 -z-10" />
-      <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
-      
+    <section id="sobre" className="py-20 md:py-32 relative">
       <Container>
         <div 
           ref={aboutRef} 
-          className="max-w-4xl mx-auto opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+          className="max-w-6xl mx-auto opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
               <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Sobre a EduAi
+                O Sistema Be Connected
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Somos especialistas em <GradientText>IA aplicada</GradientText> para resultados reais
+              Sistema Be Connected de <GradientText>Vendas Previsíveis</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              EduAi é a assinatura do trabalho de Eduardo Manoel de Miranda Santos, 22 anos, natural de Balneário Camboriú (SC). Após estudar tráfego pago e copywriting, Eduardo se encontrou no universo das inteligências artificiais e hoje é especialista em criar soluções de IA sob medida para empresas que buscam eficiência, crescimento e redução de custos.
+            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8">
+              Desenvolvemos e implementamos <strong>funis de alta conversão</strong> que capturam, nutrem e convertem leads automaticamente, usando a combinação perfeita de tráfego qualificado, conteúdo persuasivo e inteligência artificial.
             </p>
+            <div className="bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 rounded-2xl p-6 max-w-3xl mx-auto">
+              <p className="text-lg font-semibold text-primary-300">
+                Nossa Obsessão: Criar máquinas de vendas que funcionam 24/7, transformando cada centavo investido em lucro previsível e escalável.
+              </p>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <AboutCard 
-              icon={<Shield className="w-12 h-12 text-primary-400" />}
-              title="EduAi"
-              description="A camada proprietária EduAi combina raciocínio avançado, automação orquestrada e humanização para entregar agentes que entendem contexto, executam tarefas e aprendem com seus processos."
-            />
-            <AboutCard 
-              icon={<Award className="w-12 h-12 text-accent-400" />}
-              title="Projetos com Resultados"
-              description="Projetos com resultados mensuráveis em diferentes segmentos, sempre focados em eficiência operacional e crescimento sustentável."
-            />
-            <AboutCard 
-              icon={<Zap className="w-12 h-12 text-primary-400" />}
-              title="Tecnologia de Ponta"
-              description="Soluções baseadas nas tecnologias mais avançadas de IA, machine learning e automação, com integrações profundas com as ferramentas que você já usa."
-            />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Problems */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-red-400">
+                Por Que 97% dos Negócios Falham Online?
+              </h3>
+              <div className="space-y-6">
+                <ProblemItem 
+                  icon={<X className="w-6 h-6 text-red-400" />}
+                  title="Funil Quebrado"
+                  description="Tráfego sem conversão, leads frios, vendas esporádicas"
+                />
+                <ProblemItem 
+                  icon={<X className="w-6 h-6 text-red-400" />}
+                  title="Desperdício de Verba"
+                  description="Anúncios mal configurados queimando dinheiro"
+                />
+                <ProblemItem 
+                  icon={<X className="w-6 h-6 text-red-400" />}
+                  title="Processo Manual"
+                  description="Equipe sobrecarregada com tarefas repetitivas"
+                />
+                <ProblemItem 
+                  icon={<X className="w-6 h-6 text-red-400" />}
+                  title="Sem Previsibilidade"
+                  description="Não sabem de onde virá a próxima venda"
+                />
+              </div>
+            </div>
+
+            {/* Solutions */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8">
+                A Solução: Seu <GradientText>Funil de Vendas Inteligente</GradientText>
+              </h3>
+              <div className="space-y-6">
+                <SolutionItem 
+                  icon={<Check className="w-6 h-6 text-green-400" />}
+                  title="Tráfego Cirúrgico"
+                  description="Atraímos apenas quem está pronto para comprar"
+                />
+                <SolutionItem 
+                  icon={<Check className="w-6 h-6 text-green-400" />}
+                  title="Conteúdo que Vende"
+                  description="Copywriting e vídeos que convertem em todas as etapas"
+                />
+                <SolutionItem 
+                  icon={<Check className="w-6 h-6 text-green-400" />}
+                  title="IA Trabalhando 24/7"
+                  description="Chatbots, qualificação e follow-up automatizados"
+                />
+                <SolutionItem 
+                  icon={<Check className="w-6 h-6 text-green-400" />}
+                  title="Dados em Tempo Real"
+                  description="Dashboard mostrando cada centavo do seu ROI"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </Container>
@@ -79,22 +121,41 @@ const About: React.FC = () => {
   );
 };
 
-type AboutCardProps = {
+type ProblemItemProps = {
   icon: React.ReactNode;
   title: string;
   description: string;
 };
 
-const AboutCard: React.FC<AboutCardProps> = ({ icon, title, description }) => {
+const ProblemItem: React.FC<ProblemItemProps> = ({ icon, title, description }) => {
   return (
-    <div className="group relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm border border-dark-700/50 rounded-2xl p-8 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
-        <div className="bg-gradient-to-br from-dark-800 to-dark-900 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-white/70">{description}</p>
+    <div className="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/20">
+      <div className="flex-shrink-0 mt-1">
+        {icon}
+      </div>
+      <div>
+        <h4 className="font-semibold mb-1 text-red-300">{title}</h4>
+        <p className="text-white/70 text-sm">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+type SolutionItemProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+const SolutionItem: React.FC<SolutionItemProps> = ({ icon, title, description }) => {
+  return (
+    <div className="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+      <div className="flex-shrink-0 mt-1">
+        {icon}
+      </div>
+      <div>
+        <h4 className="font-semibold mb-1 text-green-300">{title}</h4>
+        <p className="text-white/70 text-sm">{description}</p>
       </div>
     </div>
   );

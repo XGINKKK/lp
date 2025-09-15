@@ -1,21 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Check, X, HelpCircle, ChevronDown } from 'lucide-react';
-import { Tooltip } from '../ui/Tooltip';
-
-type Status = boolean | 'sometimes';
-
-type ComparisonRow = {
-  feature: string;
-  tools: Status;
-  freelancers: Status;
-  eduAi: Status;
-};
+import { Check, X, AlertTriangle, Shield, Zap, Target } from 'lucide-react';
 
 const Comparison: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,82 +30,69 @@ const Comparison: React.FC = () => {
     };
   }, []);
 
-  const comparisonData: ComparisonRow[] = [
+  const comparisonData = [
     {
-      feature: "Diagnóstico estratégico do negócio antes da automação",
-      tools: false,
+      criteria: "Funil Completo End-to-End",
       freelancers: false,
-      eduAi: true
+      others: "partial",
+      beConnected: true
     },
     {
-      feature: "Agentes de IA com inteligência e humanização",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Automação 360° de toda a jornada (Marketing, Comercial, Entrega e Pós-venda)",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Integração profunda entre sistemas com IA inteligente",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Visão de crescimento e escala desde o início",
-      tools: false,
+      criteria: "Integração com IA Avançada",
       freelancers: false,
-      eduAi: true
+      others: false,
+      beConnected: true
     },
     {
-      feature: "Acompanhamento e otimização contínua",
-      tools: false,
-      freelancers: "sometimes",
-      eduAi: true
-    },
-    {
-      feature: "Foco em redução de custos e aumento de produtividade",
-      tools: false,
+      criteria: "Tráfego + Conteúdo + Automação",
       freelancers: false,
-      eduAi: true
+      others: "partial",
+      beConnected: true
+    },
+    {
+      criteria: "Dashboard em Tempo Real",
+      freelancers: false,
+      others: "partial",
+      beConnected: true
+    },
+    {
+      criteria: "Garantia de Resultados",
+      freelancers: false,
+      others: false,
+      beConnected: true
+    },
+    {
+      criteria: "Suporte 24/7 com IA",
+      freelancers: false,
+      others: false,
+      beConnected: true
+    },
+    {
+      criteria: "Previsibilidade de Vendas",
+      freelancers: false,
+      others: "partial",
+      beConnected: true
+    },
+    {
+      criteria: "ROI Transparente",
+      freelancers: "partial",
+      others: "partial",
+      beConnected: true
     }
   ];
 
-  const StatusIcon = ({ status }: { status: Status }) => {
+  const StatusIcon = ({ status }: { status: boolean | "partial" }) => {
     if (status === true) {
-      return (
-        <div className="flex items-center justify-center w-6 h-6">
-          <Check className="w-6 h-6 text-[#63D471] group-hover:animate-pulse" />
-        </div>
-      );
+      return <Check className="w-6 h-6 text-green-400" />;
     }
     if (status === false) {
-      return (
-        <div className="flex items-center justify-center w-6 h-6">
-          <X className="w-6 h-6 text-[#E74C3C]" />
-        </div>
-      );
+      return <X className="w-6 h-6 text-red-400" />;
     }
-    return (
-      <div className="flex items-center justify-center w-6 h-6">
-        <Tooltip content="Depende da experiência e disponibilidade do profissional">
-          <HelpCircle className="w-6 h-6 text-[#F5C244] cursor-help" />
-        </Tooltip>
-      </div>
-    );
+    return <AlertTriangle className="w-6 h-6 text-yellow-400" />;
   };
 
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
-      <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
-      
       <Container>
         <div 
           ref={sectionRef} 
@@ -129,39 +105,32 @@ const Comparison: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Por que escolher <GradientText>EduAi</GradientText>?
+              Por que escolher <GradientText>Be Connected</GradientText>?
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Compare nossa solução completa com alternativas do mercado e entenda por que somos
-              a escolha ideal para transformar seu negócio.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+              Compare nossa solução completa com alternativas do mercado e entenda por que somos a escolha ideal para transformar seu negócio.
             </p>
           </div>
 
-          {/* Desktop Table (hidden on mobile) */}
-          <div className="relative hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
+          {/* Comparison Table */}
+          <div className="relative mb-16">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-accent-500/10 rounded-2xl blur-xl opacity-50" />
             <div className="relative overflow-x-auto">
               <div className="min-w-[768px]">
                 <div className="bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50">
                   {/* Table Header */}
                   <div className="grid grid-cols-4 border-b border-dark-700/50">
                     <div className="p-6 font-semibold text-lg">
-                      Recursos e Diferenciais
+                      Critério
                     </div>
                     <div className="p-6 text-center font-semibold text-lg">
-                      Ferramentas Avulsas
-                      <div className="text-sm text-white/60 font-normal">
-                        (Zapier, Make, n8n)
-                      </div>
+                      Freelancers
                     </div>
                     <div className="p-6 text-center font-semibold text-lg">
-                      Freelancers e Autônomos
+                      Outras Soluções
                     </div>
                     <div className="p-6 text-center font-semibold text-lg">
-                      EduAi
-                      <div className="text-sm text-white/60 font-normal">
-                        (Nossa Solução)
-                      </div>
+                      <GradientText>Be Connected</GradientText>
                     </div>
                   </div>
 
@@ -172,16 +141,16 @@ const Comparison: React.FC = () => {
                       className="grid grid-cols-4 border-b border-dark-700/50 last:border-0 group hover:bg-dark-800/30 transition-colors"
                     >
                       <div className="p-6 flex items-center">
-                        {row.feature}
-                      </div>
-                      <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.tools} />
+                        {row.criteria}
                       </div>
                       <div className="p-6 flex items-center justify-center">
                         <StatusIcon status={row.freelancers} />
                       </div>
                       <div className="p-6 flex items-center justify-center">
-                        <StatusIcon status={row.eduAi} />
+                        <StatusIcon status={row.others} />
+                      </div>
+                      <div className="p-6 flex items-center justify-center">
+                        <StatusIcon status={row.beConnected} />
                       </div>
                     </div>
                   ))}
@@ -190,47 +159,56 @@ const Comparison: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Cards (visible only on mobile) */}
-          <div className="md:hidden space-y-4">
-            {comparisonData.map((row, index) => (
-              <div
-                key={index}
-                className="bg-dark-800/50 backdrop-blur-sm rounded-xl border border-dark-700/50 overflow-hidden"
-              >
-                <button
-                  className="w-full p-4 flex items-center justify-between text-left"
-                  onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                >
-                  <span className="flex-1 pr-4">{row.feature}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 transform transition-transform ${
-                      expandedCard === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                
-                {expandedCard === index && (
-                  <div className="px-4 pb-4 space-y-3 border-t border-dark-700/50 pt-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">Ferramentas Avulsas:</span>
-                      <StatusIcon status={row.tools} />
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">Freelancers:</span>
-                      <StatusIcon status={row.freelancers} />
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/70">EduAi:</span>
-                      <StatusIcon status={row.eduAi} />
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Exclusive Advantages */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-8">
+              🚀 <GradientText>Vantagens Exclusivas</GradientText>
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <AdvantageCard 
+              icon={<Zap className="w-8 h-8" />}
+              title="Tecnologia Proprietária"
+              description="Sistema exclusivo de otimização com IA que melhora conversões automaticamente"
+            />
+            <AdvantageCard 
+              icon={<Shield className="w-8 h-8" />}
+              title="Garantia de ROI"
+              description="Se não gerar lucro em 90 dias, devolvemos seu investimento"
+            />
+            <AdvantageCard 
+              icon={<Target className="w-8 h-8" />}
+              title="Escala Sem Limites"
+              description="Infraestrutura pronta para processar milhares de leads simultâneos"
+            />
           </div>
         </div>
       </Container>
     </section>
+  );
+};
+
+type AdvantageCardProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+const AdvantageCard: React.FC<AdvantageCardProps> = ({ icon, title, description }) => {
+  return (
+    <div className="group relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
+        <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="text-primary-400">
+            {icon}
+          </div>
+        </div>
+        <h3 className="text-xl font-bold mb-3">{title}</h3>
+        <p className="text-white/70">{description}</p>
+      </div>
+    </div>
   );
 };
 

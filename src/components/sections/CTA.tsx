@@ -1,10 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
+import { ArrowRight, Loader2, CheckCircle, Clock, FileText, Target } from 'lucide-react';
 
 const CTA: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    whatsapp: '',
+    website: '',
+    revenue: '',
+    challenge: '',
+    investment: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,65 +41,265 @@ const CTA: React.FC = () => {
     };
   }, []);
 
-  return (
-    <section id="apply" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
-      <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.name.trim()) newErrors.name = 'Nome é obrigatório';
+    if (!formData.email.trim()) newErrors.email = 'E-mail é obrigatório';
+    if (!formData.whatsapp.trim()) newErrors.whatsapp = 'WhatsApp é obrigatório';
+    if (!formData.revenue) newErrors.revenue = 'Selecione o faturamento';
+    if (!formData.challenge) newErrors.challenge = 'Selecione o principal desafio';
+    if (!formData.investment) newErrors.investment = 'Selecione o investimento disponível';
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Simular envio
+      await new Promise(resolve => setTimeout(resolve, 2000));
       
+      // Redirecionar para Typebot com dados
+      const typebotUrl = new URL('https://typebot.co/be-connected-diagnostico');
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value) typebotUrl.searchParams.set(key, value);
+      });
+      
+      window.location.href = typebotUrl.toString();
+      
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: '' }));
+    }
+  };
+
+  return (
+    <section id="contato" className="py-20 md:py-32 relative overflow-hidden">
       <Container>
         <div 
           ref={sectionRef} 
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left Side - Benefits */}
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
                 <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                  Comece Agora
+                  Transforme Seu Negócio
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-                Pronto para transformar seu negócio com <GradientText>IA?</GradientText>
+                Transforme Seu Negócio <GradientText>Agora</GradientText>
               </h2>
+              
+              <h3 className="text-2xl font-bold mb-6 text-primary-400">
+                Diagnóstico Estratégico Gratuito
+              </h3>
+              
               <p className="text-xl text-white/80 mb-8">
-                Agende um diagnóstico gratuito para entender como EduAi pode levar sua empresa para o próximo nível com automação humanizada.
+                <strong>Receba em 48 horas:</strong>
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <BenefitCard
+              <div className="space-y-4 mb-8">
+                <BenefitItem 
+                  icon={<FileText className="w-6 h-6" />}
+                  text="Análise completa do seu funil atual"
+                />
+                <BenefitItem 
                   icon={<Target className="w-6 h-6" />}
-                  title="Diagnóstico Gratuito"
-                  description="Análise completa das necessidades do seu negócio"
+                  text="Mapa de oportunidades perdidas"
                 />
-                <BenefitCard
-                  icon={<Lightbulb className="w-6 h-6" />}
-                  title="Proposta Personalizada"
-                  description="Solução sob medida para seus objetivos"
+                <BenefitItem 
+                  icon={<CheckCircle className="w-6 h-6" />}
+                  text="Projeção de resultados com nosso sistema"
                 />
-                <BenefitCard
-                  icon={<Rocket className="w-6 h-6" />}
-                  title="Implementação Rápida"
-                  description="Resultados em semanas, não meses"
+                <BenefitItem 
+                  icon={<ArrowRight className="w-6 h-6" />}
+                  text="Estratégia personalizada de implementação"
                 />
-                <BenefitCard
-                  icon={<Gauge className="w-6 h-6" />}
-                  title="Suporte Dedicado"
-                  description="Acompanhamento em todas as etapas"
+                <BenefitItem 
+                  icon={<Clock className="w-6 h-6" />}
+                  text="Orçamento transparente com ROI projetado"
                 />
               </div>
             </div>
             
+            {/* Right Side - Form */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
-              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-500/10">
-                <iframe
-                  src="https://typebot.co/ag-ncia-aplica-es-automatik-labs-1-f1h19py"
-                  style={{ border: 'none', width: '100%', height: '600px' }}
-                  title="Typebot - EduAi"
-                />
+              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Nome */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      Nome Completo *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 transition-all ${
+                        errors.name ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      placeholder="Seu nome completo"
+                      disabled={isSubmitting}
+                    />
+                    {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      E-mail Corporativo *
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 transition-all ${
+                        errors.email ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      placeholder="seu@empresa.com"
+                      disabled={isSubmitting}
+                    />
+                    {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
+                  </div>
+
+                  {/* WhatsApp */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      WhatsApp *
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.whatsapp}
+                      onChange={(e) => handleInputChange('whatsapp', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 transition-all ${
+                        errors.whatsapp ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      placeholder="(11) 99999-9999"
+                      disabled={isSubmitting}
+                    />
+                    {errors.whatsapp && <p className="mt-1 text-xs text-red-400">{errors.whatsapp}</p>}
+                  </div>
+
+                  {/* Website */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      Site/Negócio
+                    </label>
+                    <input
+                      type="url"
+                      value={formData.website}
+                      onChange={(e) => handleInputChange('website', e.target.value)}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:border-primary-500/50 focus:ring-primary-500/20 transition-all"
+                      placeholder="https://seusite.com"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+
+                  {/* Faturamento */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      Faturamento Mensal Atual *
+                    </label>
+                    <select
+                      value={formData.revenue}
+                      onChange={(e) => handleInputChange('revenue', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white focus:outline-none focus:ring-2 transition-all ${
+                        errors.revenue ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Selecione...</option>
+                      <option value="ate-50k">Até R$ 50k</option>
+                      <option value="50k-200k">R$ 50k - R$ 200k</option>
+                      <option value="200k-500k">R$ 200k - R$ 500k</option>
+                      <option value="500k-1m">R$ 500k - R$ 1M</option>
+                      <option value="acima-1m">Acima de R$ 1M</option>
+                    </select>
+                    {errors.revenue && <p className="mt-1 text-xs text-red-400">{errors.revenue}</p>}
+                  </div>
+
+                  {/* Desafio */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      Principal Desafio *
+                    </label>
+                    <select
+                      value={formData.challenge}
+                      onChange={(e) => handleInputChange('challenge', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white focus:outline-none focus:ring-2 transition-all ${
+                        errors.challenge ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Selecione...</option>
+                      <option value="gerar-leads">Gerar mais leads qualificados</option>
+                      <option value="aumentar-conversao">Aumentar taxa de conversão</option>
+                      <option value="escalar-vendas">Escalar vendas mantendo CAC</option>
+                      <option value="automatizar">Automatizar processos de venda</option>
+                      <option value="previsibilidade">Criar previsibilidade</option>
+                    </select>
+                    {errors.challenge && <p className="mt-1 text-xs text-red-400">{errors.challenge}</p>}
+                  </div>
+
+                  {/* Investimento */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/90 mb-2">
+                      Investimento Disponível/Mês *
+                    </label>
+                    <select
+                      value={formData.investment}
+                      onChange={(e) => handleInputChange('investment', e.target.value)}
+                      className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white focus:outline-none focus:ring-2 transition-all ${
+                        errors.investment ? 'border-red-500 focus:ring-red-500/50' : 'border-white/20 focus:border-primary-500/50 focus:ring-primary-500/20'
+                      }`}
+                      disabled={isSubmitting}
+                    >
+                      <option value="">Selecione...</option>
+                      <option value="3k-10k">R$ 3k - R$ 10k</option>
+                      <option value="10k-30k">R$ 10k - R$ 30k</option>
+                      <option value="30k-50k">R$ 30k - R$ 50k</option>
+                      <option value="acima-50k">Acima de R$ 50k</option>
+                    </select>
+                    {errors.investment && <p className="mt-1 text-xs text-red-400">{errors.investment}</p>}
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 disabled:from-primary-600 disabled:to-primary-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        Processando...
+                      </>
+                    ) : (
+                      <>
+                        Solicitar Análise Gratuita
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -98,24 +309,20 @@ const CTA: React.FC = () => {
   );
 };
 
-type BenefitCardProps = {
+type BenefitItemProps = {
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  text: string;
 };
 
-const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
+const BenefitItem: React.FC<BenefitItemProps> = ({ icon, text }) => {
   return (
-    <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-dark-800/50 transition-colors duration-300">
-      <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-        <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+    <div className="flex items-center gap-3">
+      <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg">
+        <div className="text-primary-400">
           {icon}
         </div>
       </div>
-      <div>
-        <h3 className="font-semibold mb-1">{title}</h3>
-        <p className="text-white/70 text-sm">{description}</p>
-      </div>
+      <span className="text-white/80">{text}</span>
     </div>
   );
 };

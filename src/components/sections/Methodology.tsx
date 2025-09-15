@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Search, FileText, Cpu, RefreshCw, ArrowRight, Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
+import { Search, FileText, Rocket, TrendingUp, ArrowRight } from 'lucide-react';
 
 const Methodology: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,12 +31,7 @@ const Methodology: React.FC = () => {
   }, []);
 
   return (
-    <section id="methodology" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 to-dark-950 -z-10" />
-      <div className="absolute top-1/2 left-1/4 w-1/2 h-1/2 bg-primary-500/20 rounded-full blur-[96px] -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-accent-500/20 rounded-full blur-[96px] -z-10" />
-      
+    <section id="metodologia" className="py-20 md:py-32 relative overflow-hidden">
       <Container>
         <div 
           ref={sectionRef} 
@@ -49,81 +44,80 @@ const Methodology: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Metodologia <GradientText>EduAi</GradientText>
+              Nossa Metodologia <GradientText>SCALE</GradientText>
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              O caminho para resultados
-            </p>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Nossa abordagem proprietária combina diagnóstico profundo, planejamento estratégico 
-              e implementação gradual para transformar seu negócio com IA.
-            </p>
           </div>
           
-          <div className="mt-16 relative">
-            <div className="max-w-5xl mx-auto">
-              {/* Steps grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <MethodologyStep
-                  number="01"
-                  icon={<Target className="w-8 h-8" />}
-                  title="Diagnóstico Profundo"
-                  description="Análise completa dos processos, dores e oportunidades do seu negócio."
-                  features={[
-                    "Mapeamento de processos",
-                    "Análise de eficiência",
-                    "Identificação de gargalos"
-                  ]}
-                />
-                
-                <MethodologyStep
-                  number="02"
-                  icon={<Lightbulb className="w-8 h-8" />}
-                  title="Planejamento Estratégico"
-                  description="Identificação dos fluxos que podem ser otimizados com IA e automação."
-                  features={[
-                    "Definição de objetivos",
-                    "Roadmap",
-                    "KPIs de sucesso"
-                  ]}
-                />
-                
-                <MethodologyStep
-                  number="03"
-                  icon={<Rocket className="w-8 h-8" />}
-                  title="Implementação Ágil"
-                  description="Desenvolvimento e integração dos agentes de IA sob medida."
-                  features={[
-                    "Sprints focados",
-                    "Testes contínuos e integração com seus sistemas"
-                  ]}
-                />
-                
-                <MethodologyStep
-                  number="04"
-                  icon={<Gauge className="w-8 h-8" />}
-                  title="Otimização Contínua"
-                  description="Análise de resultados e refinamento constante para maior eficiência."
-                  features={[
-                    "Monitoramento 24/7",
-                    "Ajustes baseados em dados",
-                    "Evolução constante"
-                  ]}
-                />
-              </div>
-            </div>
+          <div className="space-y-12">
+            <MethodologyStep
+              letter="S"
+              title="Scan (Diagnóstico Profundo)"
+              timeline="Semana 1: Entendemos seu negócio por completo"
+              features={[
+                "Auditoria completa do funil atual",
+                "Análise de concorrência e mercado",
+                "Mapeamento da jornada do cliente",
+                "Identificação de bottlenecks e oportunidades"
+              ]}
+              icon={<Search className="w-8 h-8" />}
+              color="from-blue-500 to-cyan-500"
+            />
             
-            <div className="text-center mt-16">
-              <a 
-                href="#apply" 
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-dark-800/50 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300"
-              >
-                <span className="text-white/90 group-hover:text-white transition-colors">
-                  Conheça mais sobre nossa metodologia
-                </span>
-                <ArrowRight className="w-4 h-4 text-primary-400 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
+            <MethodologyStep
+              letter="C"
+              title="Create (Construção do Funil)"
+              timeline="Semanas 2-3: Desenvolvemos sua máquina de vendas"
+              features={[
+                "Setup completo de tracking e pixels",
+                "Criação de todas as páginas do funil",
+                "Desenvolvimento de criativos e copy",
+                "Configuração de automações e IA"
+              ]}
+              icon={<FileText className="w-8 h-8" />}
+              color="from-green-500 to-emerald-500"
+            />
+            
+            <MethodologyStep
+              letter="A"
+              title="Activate (Lançamento Estratégico)"
+              timeline="Semana 4: Colocamos o funil para rodar"
+              features={[
+                "Lançamento de campanhas otimizadas",
+                "Ativação de automações e chatbots",
+                "Implementação de sequences de email",
+                "Monitoramento 24/7 da performance"
+              ]}
+              icon={<Rocket className="w-8 h-8" />}
+              color="from-purple-500 to-violet-500"
+            />
+            
+            <MethodologyStep
+              letter="L"
+              title="Learn (Aprendizado com Dados)"
+              timeline="Semanas 5-8: Coletamos insights valiosos"
+              features={[
+                "Análise de comportamento do usuário",
+                "Identificação de padrões de conversão",
+                "Testes A/B em todos os elementos",
+                "Machine learning processando dados"
+              ]}
+              icon={<TrendingUp className="w-8 h-8" />}
+              color="from-orange-500 to-red-500"
+            />
+            
+            <MethodologyStep
+              letter="E"
+              title="Expand (Escala Exponencial)"
+              timeline="Mês 3+: Multiplicamos seus resultados"
+              features={[
+                "Scaling horizontal (novos canais)",
+                "Scaling vertical (mais investimento)",
+                "Novos funis e ofertas",
+                "Expansão internacional"
+              ]}
+              icon={<TrendingUp className="w-8 h-8" />}
+              color="from-pink-500 to-rose-500"
+            />
           </div>
         </div>
       </Container>
@@ -132,43 +126,54 @@ const Methodology: React.FC = () => {
 };
 
 type MethodologyStepProps = {
-  number: string;
-  icon: React.ReactNode;
+  letter: string;
   title: string;
-  description: string;
+  timeline: string;
   features: string[];
+  icon: React.ReactNode;
+  color: string;
 };
 
-const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
+const MethodologyStep: React.FC<MethodologyStepProps> = ({ 
+  letter, 
+  title, 
+  timeline, 
+  features, 
+  icon, 
+  color 
+}) => {
   return (
     <div className="group relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
-        {/* Step number */}
-        <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-sm font-bold">
-          {number}
-        </div>
-        
-        {/* Icon */}
-        <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
-            {icon}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-accent-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300">
+        <div className="flex items-start gap-6">
+          {/* Letter Badge */}
+          <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r ${color} flex items-center justify-center text-2xl font-bold`}>
+            {letter}
+          </div>
+          
+          {/* Icon */}
+          <div className="flex-shrink-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-primary-400">
+              {icon}
+            </div>
+          </div>
+          
+          {/* Content */}
+          <div className="flex-1">
+            <h3 className="text-xl md:text-2xl font-bold mb-2">{title}</h3>
+            <p className="text-primary-400 font-semibold mb-4">{timeline}</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+                  <span className="text-white/70 text-sm">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        
-        {/* Content */}
-        <h3 className="text-xl font-bold mb-3">{title}</h3>
-        <p className="text-white/70 mb-6">{description}</p>
-        
-        {/* Features */}
-        <ul className="space-y-2">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-2 text-sm text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-              {feature}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
