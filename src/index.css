@@ -254,6 +254,15 @@
     }
   }
 
+  @keyframes blink-caret {
+    from, to { 
+      border-color: transparent; 
+    }
+    50% { 
+      border-color: #ff00ff; 
+    }
+  }
+
   .mega-orb {
     animation: megaOrb 12s ease-in-out infinite;
   }
