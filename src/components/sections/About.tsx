@@ -69,18 +69,34 @@ const About: React.FC = () => {
                 <p className="text-center mb-6">
                   A maioria das empresas não automatiza porque acham que é:
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
-                    <p className="text-primary-300 font-semibold">Muito complicado</p>
-                  </div>
-                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
-                    <p className="text-primary-300 font-semibold">Muito caro</p>
-                  </div>
-                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
-                    <p className="text-primary-300 font-semibold">Só para grandes</p>
-                  </div>
-                  <div className="flex items-center justify-center text-center p-5 bg-primary-500/10 rounded-lg border border-primary-500/20 min-h-[120px]">
-                    <p className="text-primary-300 font-semibold">Desumaniza</p>
+                
+                {/* Checklist de Problemas */}
+                <div className="max-w-2xl mx-auto mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <ChecklistItem 
+                      icon="❌" 
+                      text="Muito complicado" 
+                      delay={0}
+                      revealed={cardsRevealed}
+                    />
+                    <ChecklistItem 
+                      icon="❌" 
+                      text="Muito caro" 
+                      delay={100}
+                      revealed={cardsRevealed}
+                    />
+                    <ChecklistItem 
+                      icon="❌" 
+                      text="Só para grandes empresas" 
+                      delay={200}
+                      revealed={cardsRevealed}
+                    />
+                    <ChecklistItem 
+                      icon="❌" 
+                      text="Vai desumanizar o negócio" 
+                      delay={300}
+                      revealed={cardsRevealed}
+                    />
                   </div>
                 </div>
                 
@@ -156,6 +172,43 @@ const About: React.FC = () => {
         </div>
       </Container>
     </section>
+  );
+};
+
+type ChecklistItemProps = {
+  icon: string;
+  text: string;
+  delay: number;
+  revealed: boolean;
+};
+
+const ChecklistItem: React.FC<ChecklistItemProps> = ({ icon, text, delay, revealed }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <div className={`flex items-center gap-4 p-4 rounded-xl bg-dark-800/30 border border-dark-700/50 transition-all duration-500 ${
+      isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+    } ${
+      revealed ? 'border-primary-500/30 bg-primary-500/5' : ''
+    }`}>
+      <div className={`text-2xl transition-all duration-300 ${
+        revealed ? 'scale-110' : ''
+      }`}>
+        {icon}
+      </div>
+      <p className={`font-medium transition-colors duration-300 ${
+        revealed ? 'text-primary-300' : 'text-white/80'
+      }`}>
+        {text}
+      </p>
+    </div>
   );
 };
 
