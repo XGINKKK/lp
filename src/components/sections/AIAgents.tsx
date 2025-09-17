@@ -218,7 +218,7 @@ const AIAgents: React.FC = () => {
                         )}
                       </div>
                     </div>
-                    <div className="space-y-3 max-h-48 md:max-h-64 overflow-y-auto pr-2 chat-scrollbar">
+                  </div>
                 </div>
               </div>
             </div>
