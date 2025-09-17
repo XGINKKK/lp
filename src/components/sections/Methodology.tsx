@@ -138,34 +138,30 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group methodology-mobile-card mobile-card" data-number={number}>
-      {/* Número circular rosa */}
-      <div className="mobile-card-header">
-        <div className="mobile-card-icon">
+    <div className="group responsive-card" data-number={number}>
+      <div className="card-header">
+        <div className="card-icon">
+          {icon}
+        </div>
+        <div className="card-number">{number}</div>
       </div>
       
-        <div className="mobile-card-content">
-          <h3 className="mobile-card-title">{title}</h3>
-        {icon}
+      <div className="card-content">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-description">{description}</p>
       </div>
       
-      <div className="mobile-card-body">
-        <p className="mobile-card-description">{description}</p>
-        <h3 className="methodology-title">{title}</h3>
-        <p className="methodology-description">{description}</p>
-      <div className="mobile-card-footer">
-        <ul className="mobile-card-features">
-          {features.map((feature, index) => (
-            <li key={index} className="methodology-feature">
-            <li key={index} className="mobile-card-feature">
-              {feature}
-            </li>
-          ))}
-        </ul>
+      <div className="card-body">
+        <div className="card-footer">
+          <ul className="card-features">
+            {features.map((feature, index) => (
+              <li key={index} className="card-feature">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    )
-    )
-    }
     </div>
   );
 };
