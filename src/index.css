@@ -494,7 +494,7 @@ img {
 .cta-mobile-cards .mobile-card-description {
   font-size: 0.8rem;
   line-height: 1.4;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 @media (min-width: 640px) {
@@ -514,6 +514,7 @@ img {
   
   .cta-mobile-cards .mobile-card-description {
     font-size: 0.85rem;
+    margin-top: 0.25rem;
   }
 }
 
@@ -534,6 +535,7 @@ img {
   
   .cta-mobile-cards .mobile-card-description {
     font-size: 0.9rem;
+    margin-top: 0.25rem;
   }
 }
 
