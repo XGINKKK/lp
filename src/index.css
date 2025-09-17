@@ -503,7 +503,7 @@ img {
 /* Número circular rosa - EXATO DA REFERÊNCIA */
 .methodology-number {
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   right: 0rem;
   width: 2.5rem;
   height: 2.5rem;
