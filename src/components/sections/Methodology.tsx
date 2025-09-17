@@ -57,13 +57,13 @@ const Methodology: React.FC = () => {
           </div>
           
           <div className="mt-16 relative">
-            <div className="max-w-5xl mx-auto">
-              {/* Steps grid */}
-              <div className="mobile-responsive-grid">
+            <div className="max-w-7xl mx-auto">
+              {/* Methodology Cards Grid */}
+              <div className="methodology-grid">
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
-                  title="Dias 1-3: Raio-X do Seu Negócio"
+                  title="Dias 1-3: Raio-X<br/>do Seu Negócio"
                   description="Onde você está perdendo dinheiro sem saber?"
                   features={[
                     "Mapeamento de processos",
@@ -75,7 +75,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="02"
                   icon={<Lightbulb className="w-8 h-8" />}
-                  title="Dias 4-7: Construção<br className='sm:hidden'/> da Sua IA"
+                  title="Dias 4-7:<br/>Construção da<br/>Sua IA"
                   description="Criamos sua assistente virtual personalizada"
                   features={[
                     "Desenvolvemos os agentes de IA",
@@ -87,7 +87,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="03"
                   icon={<Rocket className="w-8 h-8" />}
-                  title="Dias 8-10: Colocando Para Funcionar"
+                  title="Dias 8-10:<br/>Colocando Para<br/>Funcionar"
                   description="Hora de ver o dinheiro entrando"
                   features={[
                     "Testamos tudo em ambiente controlado",
@@ -99,7 +99,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="04"
                   icon={<Gauge className="w-8 h-8" />}
-                  title="Sempre: Cuidamos da Evolução"
+                  title="Sempre:<br/>Cuidamos da<br/>Evolução"
                   description="Sua IA fica mais inteligente todo dia"
                   features={[
                     "Monitoramento 24/7",
@@ -138,11 +138,34 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group methodology-mobile-card mobile-card" data-number={number}>
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="methodology-card group">
+      {/* Número circular rosa */}
+      <div className="methodology-number">
+        {number}
+      </div>
       
-      <div className="mobile-card-header">
-        <div className="mobile-card-icon">
+      {/* Ícone quadrado roxo */}
+      <div className="methodology-icon">
+        {icon}
+      </div>
+      
+      {/* Conteúdo do card */}
+      <div className="methodology-content">
+        <h3 className="methodology-title" dangerouslySetInnerHTML={{ __html: title }} />
+        <p className="methodology-description">{description}</p>
+        
+        <ul className="methodology-features">
+          {features.map((feature, index) => (
+            <li key={index} className="methodology-feature">
+              <span className="methodology-bullet"></span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
           {icon}
         </div>
         <div className="mobile-card-content">
