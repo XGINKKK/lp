@@ -403,6 +403,50 @@ img {
   max-width: 100%;
 }
 
+.hero-card {
+  position: relative;
+  background: rgba(30, 13, 46, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-card:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+@media (min-width: 640px) {
+  .hero-mobile-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .hero-card {
+    min-height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-mobile-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .hero-card {
+    min-height: 240px;
+    padding: 2.5rem;
+  }
+}
+
 .methodology-mobile-card {
   position: relative;
 }
