@@ -487,7 +487,7 @@ img {
 .cta-mobile-cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem;
+  gap: 0.5rem;
   width: 100%;
 }
 
@@ -536,7 +536,7 @@ img {
 @media (min-width: 640px) {
   .cta-mobile-cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 0.75rem;
   }
   
   .cta-mobile-cards .mobile-card {
@@ -575,7 +575,7 @@ img {
 @media (min-width: 1024px) {
   .cta-mobile-cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .cta-mobile-cards .mobile-card {
@@ -1129,6 +1129,21 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.005);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
 }
 
 .animate-fade-in {

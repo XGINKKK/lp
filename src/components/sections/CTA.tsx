@@ -77,6 +77,7 @@ const CTA: React.FC = () => {
                   icon={<AlertTriangle className="w-6 h-6" />}
                   title="Última Chance"
                   description="Apenas 5 empresas por mês. 3 vagas restantes para este mês."
+                  isUrgent={true}
                 />
               </div>
             </div>
@@ -103,21 +104,34 @@ type BenefitCardProps = {
   icon: React.ReactNode;
   title: string;
   description: string;
+  isUrgent?: boolean;
 };
 
-const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
+const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, isUrgent = false }) => {
   return (
-    <div className="group mobile-card hover:bg-dark-800/50 transition-colors duration-300">
+    <div className={`group mobile-card hover:bg-dark-800/50 transition-all duration-300 ${
+      isUrgent 
+        ? 'border-orange-500/40 bg-orange-500/5 shadow-lg shadow-orange-500/20 animate-pulse-subtle hover:border-orange-400/60 hover:shadow-xl hover:shadow-orange-500/30' 
+        : ''
+    }`}>
       <div className="mobile-card-header">
-        <div className="mobile-card-icon">
+        <div className={`mobile-card-icon ${
+          isUrgent 
+            ? 'bg-gradient-to-br from-orange-500/30 to-red-500/30 border border-orange-500/40' 
+            : ''
+        }`}>
           {icon}
         </div>
         <div className="mobile-card-content">
-          <h3 className="mobile-card-title">{title}</h3>
+          <h3 className={`mobile-card-title ${
+            isUrgent ? 'text-orange-100' : ''
+          }`}>{title}</h3>
         </div>
       </div>
       <div className="mobile-card-body">
-        <p className="mobile-card-description">{description}</p>
+        <p className={`mobile-card-description ${
+          isUrgent ? 'text-orange-200/90' : ''
+        }`}>{description}</p>
       </div>
     </div>
   );
