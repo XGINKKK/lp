@@ -126,15 +126,5 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) =
     </div>
   );
 };
-          {icon}
-        </div>
-      </div>
-      <div>
-        <h3 className="font-semibold mb-1 text-sm md:text-base">{title}</h3>
-        <p className="text-white/70 text-xs md:text-sm">{description}</p>
-      </div>
-    </div>
-  );
-};
 
 export default CTA;
