@@ -501,7 +501,7 @@ img {
   justify-content: flex-start;
   text-align: left;
   margin-bottom: 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .cta-mobile-cards .mobile-card-icon {
@@ -539,6 +539,11 @@ img {
     padding: 1.25rem;
   }
   
+  .cta-mobile-cards .mobile-card-header {
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
   .cta-mobile-cards .mobile-card-title {
     font-size: 0.95rem;
     text-align: left;
@@ -567,7 +572,7 @@ img {
     justify-content: flex-start;
     text-align: left;
     margin-bottom: 0.75rem;
-    margin-top: 0.75rem;
+    margin-top: 1.5rem;
   }
   
   .cta-mobile-cards .mobile-card-title {
