@@ -57,7 +57,7 @@ const CTA: React.FC = () => {
                 A automação não é um gasto. É o melhor investimento que você pode fazer no seu negócio.
               </p>
               
-              <div className="responsive-grid mb-10 max-w-4xl mx-auto">
+              <div className="cta-mobile-cards mb-10 max-w-4xl mx-auto">
                 <BenefitCard
                   icon={<Target className="w-6 h-6" />}
                   title="🎯 Diagnóstico Gratuito (Vale R$ 2.500)"
@@ -107,17 +107,17 @@ type BenefitCardProps = {
 
 const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="group responsive-card hover:bg-dark-800/50 transition-colors duration-300">
-      <div className="card-header">
-        <div className="card-icon">
+    <div className="group mobile-card hover:bg-dark-800/50 transition-colors duration-300">
+      <div className="mobile-card-header">
+        <div className="mobile-card-icon">
           {icon}
         </div>
-        <div className="card-content">
-          <h3 className="card-title">{title}</h3>
+        <div className="mobile-card-content">
+          <h3 className="mobile-card-title">{title}</h3>
         </div>
       </div>
-      <div className="card-body">
-        <p className="card-description">{description}</p>
+      <div className="mobile-card-body">
+        <p className="mobile-card-description">{description}</p>
       </div>
     </div>
   );

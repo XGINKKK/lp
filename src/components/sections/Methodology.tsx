@@ -59,7 +59,7 @@ const Methodology: React.FC = () => {
           <div className="mt-16 relative">
             <div className="max-w-5xl mx-auto">
               {/* Steps grid */}
-              <div className="methodology-cards">
+              <div className="mobile-responsive-grid">
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
@@ -138,26 +138,26 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group methodology-card responsive-card" data-number={number}>
+    <div className="group methodology-mobile-card mobile-card" data-number={number}>
       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="card-header">
-        <div className="card-icon">
+      <div className="mobile-card-header">
+        <div className="mobile-card-icon">
           {icon}
         </div>
-        <div className="card-content">
-          <h3 className="card-title">{title}</h3>
+        <div className="mobile-card-content">
+          <h3 className="mobile-card-title">{title}</h3>
         </div>
       </div>
       
-      <div className="card-body">
-        <p className="card-description">{description}</p>
+      <div className="mobile-card-body">
+        <p className="mobile-card-description">{description}</p>
       </div>
       
-      <div className="card-footer">
-        <ul className="card-features">
+      <div className="mobile-card-footer">
+        <ul className="mobile-card-features">
           {features.map((feature, index) => (
-            <li key={index} className="card-feature">
+            <li key={index} className="mobile-card-feature">
               {feature}
             </li>
           ))}

@@ -133,39 +133,39 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="hero-cards max-w-6xl mx-auto slide-in-right">
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
+          <div className="hero-mobile-cards max-w-6xl mx-auto slide-in-right">
+            <div className="mobile-card tilt-card">
+              <div className="mobile-card-header">
+                <div className="mobile-card-icon">
                   <Bot />
                 </div>
-                <div className="card-content">
-                  <h3 className="card-title">IA Humanizada</h3>
-                  <p className="card-description">Agentes que pensam e agem como humanos</p>
+                <div className="mobile-card-content">
+                  <h3 className="mobile-card-title">IA Humanizada</h3>
+                  <p className="mobile-card-description">Agentes que pensam e agem como humanos</p>
                 </div>
               </div>
             </div>
 
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
+            <div className="mobile-card tilt-card">
+              <div className="mobile-card-header">
+                <div className="mobile-card-icon">
                   <Brain />
                 </div>
-                <div className="card-content">
-                  <h3 className="card-title">Automação 360°</h3>
-                  <p className="card-description">Integração completa de processos</p>
+                <div className="mobile-card-content">
+                  <h3 className="mobile-card-title">Automação 360°</h3>
+                  <p className="mobile-card-description">Integração completa de processos</p>
                 </div>
               </div>
             </div>
 
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
+            <div className="mobile-card tilt-card">
+              <div className="mobile-card-header">
+                <div className="mobile-card-icon">
                   <Zap />
                 </div>
-                <div className="card-content">
-                  <h3 className="card-title">Resultados Reais</h3>
-                  <p className="card-description">ROI mensurável e garantido</p>
+                <div className="mobile-card-content">
+                  <h3 className="mobile-card-title">Resultados Reais</h3>
+                  <p className="mobile-card-description">ROI mensurável e garantido</p>
                 </div>
               </div>
             </div>
