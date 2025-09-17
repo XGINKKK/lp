@@ -167,5 +167,3 @@ const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, 
 };
 
 export default Methodology;
-  )
-}
