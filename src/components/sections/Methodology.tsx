@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Search, FileText, Cpu, RefreshCw, ArrowRight, Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
+import { Target, Lightbulb, Rocket, Gauge, ArrowRight } from 'lucide-react';
 
 const Methodology: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -63,7 +63,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
-                  title="Dias 1-3: Raio-X<br/>do Seu Negócio"
+                  title="Dias 1-3: Raio-X do Seu Negócio"
                   description="Onde você está perdendo dinheiro sem saber?"
                   features={[
                     "Mapeamento de processos",
@@ -75,7 +75,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="02"
                   icon={<Lightbulb className="w-8 h-8" />}
-                  title="Dias 4-7:<br/>Construção da<br/>Sua IA"
+                  title="Dias 4-7: Construção da Sua IA"
                   description="Criamos sua assistente virtual personalizada"
                   features={[
                     "Desenvolvemos os agentes de IA",
@@ -87,7 +87,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="03"
                   icon={<Rocket className="w-8 h-8" />}
-                  title="Dias 8-10:<br/>Colocando Para<br/>Funcionar"
+                  title="Dias 8-10: Colocando Para Funcionar"
                   description="Hora de ver o dinheiro entrando"
                   features={[
                     "Testamos tudo em ambiente controlado",
@@ -99,7 +99,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="04"
                   icon={<Gauge className="w-8 h-8" />}
-                  title="Sempre:<br/>Cuidamos da<br/>Evolução"
+                  title="Sempre: Cuidamos da Evolução"
                   description="Sua IA fica mais inteligente todo dia"
                   features={[
                     "Monitoramento 24/7",
@@ -151,45 +151,13 @@ const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, 
       
       {/* Conteúdo do card */}
       <div className="methodology-content">
-        <h3 className="methodology-title" dangerouslySetInnerHTML={{ __html: title }} />
+        <h3 className="methodology-title">{title}</h3>
         <p className="methodology-description">{description}</p>
         
         <ul className="methodology-features">
           {features.map((feature, index) => (
             <li key={index} className="methodology-feature">
               <span className="methodology-bullet"></span>
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const MobileMethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
-  return (
-    <div className="mobile-card">
-      <div className="mobile-card-header">
-        <div className="mobile-card-number">
-          {number}
-        </div>
-        <div className="mobile-card-icon">
-          {icon}
-        </div>
-        <div className="mobile-card-content">
-          <h3 className="mobile-card-title">{title}</h3>
-        </div>
-      </div>
-      
-      <div className="mobile-card-body">
-        <p className="mobile-card-description">{description}</p>
-      </div>
-      
-      <div className="mobile-card-footer">
-        <ul className="mobile-card-features">
-          {features.map((feature, index) => (
-            <li key={index} className="mobile-card-feature">
               {feature}
             </li>
           ))}
