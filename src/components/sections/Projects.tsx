@@ -166,25 +166,3 @@ const ProjectStep: React.FC<ProjectStepProps> = ({ icon, title, description, fea
 };
 
 export default Projects;
-              {icon}
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col">
-            <h3 className="text-lg md:text-xl font-bold mb-3">{title}</h3>
-            <p className="text-white/70 mb-4 md:mb-6 flex-1 text-sm md:text-base">{description}</p>
-            <ul className="space-y-2 mt-auto">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-xs md:text-sm text-white/60">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Projects;
