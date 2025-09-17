@@ -46,15 +46,15 @@ const Header: React.FC = () => {
           <a href="#about" className="text-white/80 hover:text-white font-medium transition-colors">
             Sobre
           </a>
-          <a href="#services" className="text-white/80 hover:text-white font-medium transition-colors">
-            Serviços
+          <a href="#projects" className="text-white/80 hover:text-white font-medium transition-colors">
+            Projetos
           </a>
           <a href="#methodology" className="text-white/80 hover:text-white font-medium transition-colors">
             Metodologia
           </a>
           <Button 
             variant="primary" 
-            className="ml-4"
+            className="ml-4 text-sm"
             onClick={() => window.location.href = '#apply'}
           >
             Aplicar Agora
@@ -83,11 +83,11 @@ const Header: React.FC = () => {
               Sobre
             </a>
             <a 
-              href="#services" 
+              href="#projects" 
               className="text-white/80 hover:text-white font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Serviços
+              Projetos
             </a>
             <a 
               href="#methodology" 

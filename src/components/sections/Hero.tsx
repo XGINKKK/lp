@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16 slide-in-left">
             <Button 
               variant="primary" 
-              className="w-full sm:w-auto text-lg py-6 px-12 group"
+              className="w-full sm:w-auto text-base md:text-lg py-4 md:py-6 px-8 md:px-12 group"
               onClick={() => window.location.href = '#apply'}
             >
               <span className="flex items-center justify-center gap-2">
@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
             </Button>
             <Button 
               variant="secondary" 
-              className="w-full sm:w-auto text-lg group"
+              className="w-full sm:w-auto text-base md:text-lg py-4 md:py-6 px-8 md:px-12 group"
               onClick={() => window.location.href = '#projects'}
             >
               <span className="flex items-center justify-center gap-2">
@@ -133,34 +133,34 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto slide-in-right">
-            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+          <div className="responsive-grid max-w-4xl mx-auto slide-in-right">
+            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
               <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
                 <Bot className="w-6 h-6 text-primary-400" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold mb-1">IA Humanizada</h3>
-                <p className="text-sm text-white/70">Agentes que pensam e agem como humanos</p>
+                <h3 className="font-semibold mb-1 text-sm md:text-base">IA Humanizada</h3>
+                <p className="text-xs md:text-sm text-white/70">Agentes que pensam e agem como humanos</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
               <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center scale-in">
                 <Brain className="w-6 h-6 text-accent-400" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold mb-1">Automação 360°</h3>
-                <p className="text-sm text-white/70">Integração completa de processos</p>
+                <h3 className="font-semibold mb-1 text-sm md:text-base">Automação 360°</h3>
+                <p className="text-xs md:text-sm text-white/70">Integração completa de processos</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
               <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
                 <Zap className="w-6 h-6 text-primary-400" />
               </div>
               <div className="text-left">
-                <h3 className="font-semibold mb-1">Resultados Reais</h3>
-                <p className="text-sm text-white/70">ROI mensurável e garantido</p>
+                <h3 className="font-semibold mb-1 text-sm md:text-base">Resultados Reais</h3>
+                <p className="text-xs md:text-sm text-white/70">ROI mensurável e garantido</p>
               </div>
             </div>
           </div>
@@ -170,7 +170,6 @@ const Hero: React.FC = () => {
       {/* Marquee section */}
       <div className="mt-20">
         <Marquee items={benefitItems} speed="normal" />
-        <Marquee items={benefitItems} direction="right" speed="normal" />
       </div>
     </section>
   );

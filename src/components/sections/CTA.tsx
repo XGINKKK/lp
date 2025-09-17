@@ -42,7 +42,7 @@ const CTA: React.FC = () => {
           ref={sectionRef} 
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
                 <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
@@ -50,14 +50,14 @@ const CTA: React.FC = () => {
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-6">
                 Comece Sua <GradientText>Transformação Hoje</GradientText>
               </h2>
-              <p className="text-xl text-white/80 mb-8">
+              <p className="text-lg md:text-xl text-white/80 mb-8">
                 A automação não é um gasto. É o melhor investimento que você pode fazer no seu negócio.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <div className="responsive-grid mb-10">
                 <BenefitCard
                   icon={<Target className="w-6 h-6" />}
                   title="🎯 Diagnóstico Gratuito (Vale R$ 2.500)"
@@ -86,7 +86,8 @@ const CTA: React.FC = () => {
               <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-500/10">
                 <iframe
                   src="https://typebot.co/ag-ncia-aplica-es-automatik-labs-1-f1h19py"
-                  style={{ border: 'none', width: '100%', height: '600px' }}
+                  style={{ border: 'none', width: '100%', height: '500px' }}
+                  className="md:h-[600px]"
                   title="Typebot - EduAi"
                 />
               </div>
@@ -106,15 +107,15 @@ type BenefitCardProps = {
 
 const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-dark-800/50 transition-colors duration-300">
-      <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+    <div className="group flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl hover:bg-dark-800/50 transition-colors duration-300 card-uniform">
+      <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
         <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
           {icon}
         </div>
       </div>
       <div>
-        <h3 className="font-semibold mb-1">{title}</h3>
-        <p className="text-white/70 text-sm">{description}</p>
+        <h3 className="font-semibold mb-1 text-sm md:text-base">{title}</h3>
+        <p className="text-white/70 text-xs md:text-sm">{description}</p>
       </div>
     </div>
   );

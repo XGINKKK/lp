@@ -59,7 +59,7 @@ const Methodology: React.FC = () => {
           <div className="mt-16 relative">
             <div className="max-w-5xl mx-auto">
               {/* Steps grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
@@ -138,16 +138,16 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group relative h-full">
+    <div className="group relative h-full card-uniform">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full flex flex-col">
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full flex flex-col">
         {/* Step number */}
-        <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-sm font-bold">
+        <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-xs md:text-sm font-bold">
           {number}
         </div>
         
         {/* Icon */}
-        <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
           <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
             {icon}
           </div>
@@ -155,14 +155,14 @@ const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, 
         
         {/* Content */}
         <div className="flex-1 flex flex-col">
-          <h3 className="text-xl font-bold mb-3 min-h-[3.5rem] flex items-start">{title}</h3>
-          <p className="text-white/70 mb-6 flex-1">{description}</p>
+          <h3 className="text-lg md:text-xl font-bold mb-3 min-h-[3rem] md:min-h-[3.5rem] flex items-start text-sm md:text-base leading-tight">{title}</h3>
+          <p className="text-white/70 mb-4 md:mb-6 flex-1 text-sm md:text-base">{description}</p>
         </div>
         
         {/* Features */}
         <ul className="space-y-2">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-2 text-sm text-white/60">
+            <li key={index} className="flex items-center gap-2 text-xs md:text-sm text-white/60">
               <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
               {feature}
             </li>

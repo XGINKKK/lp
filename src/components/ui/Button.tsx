@@ -15,25 +15,11 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
 }) => {
-  const baseClasses = 'relative font-bold py-4 px-8 rounded-lg transition-all duration-300 text-white overflow-hidden group magnetic-button ripple-effect pulse-glow';
+  const baseClasses = 'relative font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg transition-all duration-300 text-white overflow-hidden group magnetic-button';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-neon-pink to-primary-600 hover:from-neon-glow hover:to-primary-500 shadow-lg shadow-neon-pink/25 hover:scale-105 hover:shadow-2xl hover:shadow-neon-pink/50',
-    secondary: 'bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-400 hover:to-secondary-500 hover:scale-105',
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const button = e.currentTarget;
-    const rect = button.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    
-    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const button = e.currentTarget;
-    button.style.transform = 'translate(0px, 0px) scale(1)';
+    primary: 'bg-gradient-to-r from-neon-pink to-primary-600 hover:from-neon-glow hover:to-primary-500 shadow-lg shadow-neon-pink/25 hover:scale-[1.02] hover:shadow-xl hover:shadow-neon-pink/40',
+    secondary: 'bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-400 hover:to-secondary-500 hover:scale-[1.02]',
   };
 
   return (
@@ -41,8 +27,6 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
       onClick={onClick}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
     >
       {/* Glow effect */}
       <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg blur-xl animate-pulse" />
