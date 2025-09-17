@@ -133,78 +133,39 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="hero-mobile-cards max-w-6xl mx-auto slide-in-right">
-            <div className="hero-card group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary-500/30 to-accent-500/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Bot className="w-7 h-7 text-primary-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">🧠 IA Humanizada</h3>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"></div>
-                  </div>
+          <div className="hero-cards max-w-6xl mx-auto slide-in-right">
+            <div className="responsive-card tilt-card">
+              <div className="card-header">
+                <div className="card-icon">
+                  <Bot />
                 </div>
-                
-                <p className="text-white/80 text-base leading-relaxed mb-4">
-                  Nossos agentes de IA não são robôs frios. Eles entendem contexto, tomam decisões inteligentes e se comunicam de forma natural com seus clientes.
-                </p>
-                
-                <div className="flex items-center gap-2 text-sm text-primary-400 font-medium">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                  <span>Conversas naturais e decisões inteligentes</span>
+                <div className="card-content">
+                  <h3 className="card-title">IA Humanizada</h3>
+                  <p className="card-description">Agentes que pensam e agem como humanos</p>
                 </div>
               </div>
             </div>
 
-            <div className="hero-card group">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent-500/30 to-primary-500/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Brain className="w-7 h-7 text-accent-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">⚡ Automação 360°</h3>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-accent-500 to-primary-500 rounded-full"></div>
-                  </div>
+            <div className="responsive-card tilt-card">
+              <div className="card-header">
+                <div className="card-icon">
+                  <Brain />
                 </div>
-                
-                <p className="text-white/80 text-base leading-relaxed mb-4">
-                  Conectamos todos os seus sistemas e processos. Do atendimento ao cliente até a análise de dados, tudo funciona em perfeita harmonia.
-                </p>
-                
-                <div className="flex items-center gap-2 text-sm text-accent-400 font-medium">
-                  <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
-                  <span>Integração completa de processos</span>
+                <div className="card-content">
+                  <h3 className="card-title">Automação 360°</h3>
+                  <p className="card-description">Integração completa de processos</p>
                 </div>
               </div>
             </div>
 
-            <div className="hero-card group">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-pink/20 to-primary-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-neon-pink/30 to-primary-500/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="w-7 h-7 text-neon-pink" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">📈 Resultados Reais</h3>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-neon-pink to-primary-500 rounded-full"></div>
-                  </div>
+            <div className="responsive-card tilt-card">
+              <div className="card-header">
+                <div className="card-icon">
+                  <Zap />
                 </div>
-                
-                <p className="text-white/80 text-base leading-relaxed mb-4">
-                  Não vendemos promessas vazias. Nossos clientes veem redução de custos de até 70% e aumento de produtividade em apenas 30 dias.
-                </p>
-                
-                <div className="flex items-center gap-2 text-sm text-neon-pink font-medium">
-                  <div className="w-2 h-2 bg-neon-pink rounded-full animate-pulse"></div>
-                  <span>ROI mensurável e garantido</span>
+                <div className="card-content">
+                  <h3 className="card-title">Resultados Reais</h3>
+                  <p className="card-description">ROI mensurável e garantido</p>
                 </div>
               </div>
             </div>

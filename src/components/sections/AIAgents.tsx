@@ -29,26 +29,6 @@ const AIAgents: React.FC = () => {
       id: 3,
       text: "Claro! Nossas soluções são projetadas para integrar perfeitamente com sua infraestrutura existente. Posso agendar uma demonstração personalizada?",
       sender: 'ai'
-    },
-    {
-      id: 4,
-      text: "Sim, gostaria muito! Quais sistemas vocês já integraram?",
-      sender: 'user'
-    },
-    {
-      id: 5,
-      text: "Já integramos com CRMs como Salesforce e HubSpot, ERPs como SAP, plataformas de e-commerce como Shopify, e muito mais. Qual sistema você usa?",
-      sender: 'ai'
-    },
-    {
-      id: 6,
-      text: "Uso Salesforce e tenho uma loja no Shopify. Como seria a integração?",
-      sender: 'user'
-    },
-    {
-      id: 7,
-      text: "Perfeito! Podemos conectar seus dados do Salesforce com a loja Shopify para automação completa. Vou preparar uma demo personalizada para você!",
-      sender: 'ai'
     }
   ];
 
@@ -182,7 +162,7 @@ const AIAgents: React.FC = () => {
                   
                   {/* Chat interface */}
                   <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-dark-800/90 backdrop-blur-sm rounded-xl p-5 border border-dark-700/50 max-h-80 md:max-h-96">
+                    <div className="bg-dark-800/90 backdrop-blur-sm rounded-xl p-5 border border-dark-700/50">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
                           <BrainCircuit size={18} className="text-white" />
@@ -192,7 +172,7 @@ const AIAgents: React.FC = () => {
                           <p className="text-xs text-white/60">EduAi</p>
                         </div>
                       </div>
-                      <div className="space-y-3 max-h-48 md:max-h-64 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary-500/50 scrollbar-track-dark-700/30">
+                      <div className="space-y-3">
                         {messages && messages.map((message) => (
                           message && (
                             <div
@@ -200,7 +180,7 @@ const AIAgents: React.FC = () => {
                               className={`${
                                 message.sender === 'ai'
                                   ? 'bg-primary-500/10 border border-primary-500/20'
-                                  : 'bg-dark-700/50 border border-dark-600/30 ml-auto max-w-[85%]'
+                                  : 'bg-dark-700/30 border border-dark-600/20 ml-auto'
                               } p-3 rounded-lg max-w-[80%] animate-fade-in`}
                             >
                               <p className="text-white/90 text-sm">{message.text}</p>

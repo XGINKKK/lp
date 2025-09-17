@@ -73,9 +73,9 @@ const Comparison: React.FC = () => {
           </div>
 
           {/* Comparison Cards */}
-          <div className="comparison-mobile-cards mb-12">
+          <div className="comparison-cards mb-12">
             {/* Freelancer Comum */}
-            <div className="comparison-mobile-card mobile-card border-red-500/20">
+            <div className="comparison-card responsive-card border-red-500/20">
               <div className="absolute inset-0 bg-gradient-to-b from-red-500/10 to-red-600/10 rounded-2xl blur-xl opacity-50" />
               
               <div className="text-center mb-6">
@@ -93,7 +93,7 @@ const Comparison: React.FC = () => {
             </div>
 
             {/* EduAi */}
-            <div className="comparison-mobile-card mobile-card border-primary-500/30">
+            <div className="comparison-card responsive-card border-primary-500/30">
               <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
               
               <div className="text-center mb-6">

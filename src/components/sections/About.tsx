@@ -148,7 +148,7 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-3 p-3 md:p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out opacity-100 translate-x-0 w-full max-w-full"
+                        className="flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out opacity-100 translate-x-0"
                         style={{ 
                           animationDelay: `${index * 200}ms`
                         }}
@@ -156,7 +156,7 @@ const About: React.FC = () => {
                         <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 text-center">
                           ✓
                         </span>
-                        <span className="text-white/90 leading-relaxed text-sm md:text-base font-medium text-left flex-1 min-w-0">
+                        <span className="text-white/90 leading-relaxed text-base font-medium">
                           {text}
                         </span>
                       </div>

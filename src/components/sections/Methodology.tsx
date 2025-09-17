@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Target, Lightbulb, Rocket, Gauge, ArrowRight } from 'lucide-react';
+import { Search, FileText, Cpu, RefreshCw, ArrowRight, Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
 
 const Methodology: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,9 +57,9 @@ const Methodology: React.FC = () => {
           </div>
           
           <div className="mt-16 relative">
-            <div className="max-w-7xl mx-auto">
-              {/* Methodology Cards Grid */}
-              <div className="methodology-grid">
+            <div className="max-w-5xl mx-auto">
+              {/* Steps grid */}
+              <div className="methodology-cards">
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
@@ -138,26 +138,26 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="methodology-card group">
-      {/* Número circular rosa */}
-      <div className="methodology-number">
-        {number}
+    <div className="group methodology-card responsive-card" data-number={number}>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <div className="card-header">
+        <div className="card-icon">
+          {icon}
+        </div>
+        <div className="card-content">
+          <h3 className="card-title">{title}</h3>
+        </div>
       </div>
       
-      {/* Ícone quadrado roxo */}
-      <div className="methodology-icon">
-        {icon}
+      <div className="card-body">
+        <p className="card-description">{description}</p>
       </div>
       
-      {/* Conteúdo do card */}
-      <div className="methodology-content">
-        <h3 className="methodology-title">{title}</h3>
-        <p className="methodology-description">{description}</p>
-        
-        <ul className="methodology-features">
+      <div className="card-footer">
+        <ul className="card-features">
           {features.map((feature, index) => (
-            <li key={index} className="methodology-feature">
-              <span className="methodology-bullet"></span>
+            <li key={index} className="card-feature">
               {feature}
             </li>
           ))}
