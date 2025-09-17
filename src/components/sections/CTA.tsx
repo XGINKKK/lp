@@ -117,28 +117,28 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, isU
       <div className="mobile-card-header">
         <div className={`mobile-card-icon ${
           isUrgent 
-    }
-    <div className="group mobile-card hover:bg-dark-800/50 transition-colors duration-300">
-      <div className="mobile-card-header">
-        <div className="mobile-card-icon">
+            ? 'text-orange-400' 
+            : 'text-primary-400'
+        }`}>
           {icon}
         </div>
         <div className="mobile-card-content">
           <h3 className={`mobile-card-title ${
-        <div className="mobile-card-content">
-          <h3 className="mobile-card-title">{title}</h3>
+            isUrgent 
+              ? 'text-orange-300' 
+              : 'text-white'
+          }`}>{title}</h3>
         </div>
-      }
       </div>
       <div className="mobile-card-body">
         <p className={`mobile-card-description ${
-      }
-      <div className="mobile-card-body">
-        <p className="mobile-card-description">{description}</p>
+          isUrgent 
+            ? 'text-orange-200/80' 
+            : 'text-white/70'
+        }`}>{description}</p>
       </div>
     </div>
   );
-}
 };
 
 export default CTA;
