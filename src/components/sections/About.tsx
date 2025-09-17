@@ -72,7 +72,7 @@ const About: React.FC = () => {
                 
                 {/* Checklist de Problemas */}
                 <div className="max-w-2xl mx-auto mb-8">
-                  <div className="responsive-grid">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                     {[
                       "Muito complicado",
                       "Muito caro", 
@@ -81,7 +81,7 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className={`flex items-center gap-3 p-3 md:p-4 bg-dark-800/30 border border-dark-700/50 rounded-lg card-uniform transition-all duration-700 ${
+                        className={`flex items-center gap-3 mobile-padding p-3 md:p-4 bg-dark-800/30 border border-dark-700/50 rounded-lg min-h-[60px] transition-all duration-700 ${
                           cardsRevealed ? 'border-primary-500/30 bg-primary-500/5' : ''
                         }`}
                         style={{ 
@@ -94,7 +94,7 @@ const About: React.FC = () => {
                         <span className="text-red-400 text-lg font-bold flex-shrink-0 w-5 text-center">
                           ✗
                         </span>
-                        <span className="text-white/90 font-medium text-sm md:text-base">
+                        <span className="text-white/90 font-medium mobile-text-sm text-sm md:text-base">
                           {text}
                         </span>
                       </div>

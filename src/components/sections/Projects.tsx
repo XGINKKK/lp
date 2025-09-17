@@ -130,12 +130,42 @@ type ProjectStepProps = {
 
 const ProjectStep: React.FC<ProjectStepProps> = ({ icon, title, description, features }) => {
   return (
-    <div className="group relative card-uniform">
+    <div className="group relative card-uniform h-full">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative bg-dark-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full flex flex-col">
-        <div className="flex items-start gap-5">
-          <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-3 md:p-4 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-            <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full">
+        <div className="mobile-card-content mobile-padding p-5 md:p-6 lg:p-8 h-full">
+          <div className="mobile-card-header flex items-start gap-3 md:gap-4 lg:gap-5 mb-4">
+            <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2.5 md:p-3 lg:p-4 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+              <div className="text-primary-400 group-hover:text-accent-400 transition-colors mobile-icon-size">
+                {icon}
+              </div>
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-bold mobile-text-base text-base md:text-lg lg:text-xl mb-2 md:mb-3 leading-tight">{title}</h3>
+            </div>
+          </div>
+          
+          <div className="mobile-card-body flex-1 mb-4 md:mb-6">
+            <p className="text-white/70 mobile-text-sm text-sm md:text-base leading-relaxed">{description}</p>
+          </div>
+          
+          <div className="mobile-card-footer">
+            <ul className="space-y-2">
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-center gap-2 mobile-text-sm text-xs md:text-sm text-white/60">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0" />
+                  <span className="leading-relaxed">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
               {icon}
             </div>
           </div>

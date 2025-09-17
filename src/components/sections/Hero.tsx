@@ -134,33 +134,45 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="responsive-grid max-w-4xl mx-auto slide-in-right">
-            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
-                <Bot className="w-6 h-6 text-primary-400" />
-              </div>
-              <div className="text-left">
-                <h3 className="font-semibold mb-1 text-sm md:text-base">IA Humanizada</h3>
-                <p className="text-xs md:text-sm text-white/70">Agentes que pensam e agem como humanos</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center scale-in">
-                <Brain className="w-6 h-6 text-accent-400" />
-              </div>
-              <div className="text-left">
-                <h3 className="font-semibold mb-1 text-sm md:text-base">Automação 360°</h3>
-                <p className="text-xs md:text-sm text-white/70">Integração completa de processos</p>
+            <div className="rounded-2xl glass-card tilt-card card-uniform">
+              <div className="mobile-card-content mobile-padding p-4 md:p-6 h-full">
+                <div className="mobile-card-header flex items-center gap-3 md:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
+                    <Bot className="mobile-icon-size w-5 h-5 md:w-6 md:h-6 text-primary-400" />
+                  </div>
+                  <h3 className="font-semibold mobile-text-base text-sm md:text-base">IA Humanizada</h3>
+                </div>
+                <div className="mobile-card-body">
+                  <p className="mobile-text-sm text-xs md:text-sm text-white/70">Agentes que pensam e agem como humanos</p>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 p-4 md:p-6 rounded-2xl glass-card tilt-card card-uniform">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
-                <Zap className="w-6 h-6 text-primary-400" />
+            <div className="rounded-2xl glass-card tilt-card card-uniform">
+              <div className="mobile-card-content mobile-padding p-4 md:p-6 h-full">
+                <div className="mobile-card-header flex items-center gap-3 md:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-accent-500/20 flex items-center justify-center scale-in">
+                    <Brain className="mobile-icon-size w-5 h-5 md:w-6 md:h-6 text-accent-400" />
+                  </div>
+                  <h3 className="font-semibold mobile-text-base text-sm md:text-base">Automação 360°</h3>
+                </div>
+                <div className="mobile-card-body">
+                  <p className="mobile-text-sm text-xs md:text-sm text-white/70">Integração completa de processos</p>
+                </div>
               </div>
-              <div className="text-left">
-                <h3 className="font-semibold mb-1 text-sm md:text-base">Resultados Reais</h3>
-                <p className="text-xs md:text-sm text-white/70">ROI mensurável e garantido</p>
+            </div>
+
+            <div className="rounded-2xl glass-card tilt-card card-uniform">
+              <div className="mobile-card-content mobile-padding p-4 md:p-6 h-full">
+                <div className="mobile-card-header flex items-center gap-3 md:gap-4 mb-3">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
+                    <Zap className="mobile-icon-size w-5 h-5 md:w-6 md:h-6 text-primary-400" />
+                  </div>
+                  <h3 className="font-semibold mobile-text-base text-sm md:text-base">Resultados Reais</h3>
+                </div>
+                <div className="mobile-card-body">
+                  <p className="mobile-text-sm text-xs md:text-sm text-white/70">ROI mensurável e garantido</p>
+                </div>
               </div>
             </div>
           </div>
