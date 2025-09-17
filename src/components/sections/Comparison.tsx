@@ -73,42 +73,42 @@ const Comparison: React.FC = () => {
           </div>
 
           {/* Comparison Cards */}
-          <div className="comparison-cards mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Freelancer Comum */}
-            <div className="comparison-card responsive-card border-red-500/20">
+            <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-b from-red-500/10 to-red-600/10 rounded-2xl blur-xl opacity-50" />
-              
-              <div className="text-center mb-6">
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-red-400 mb-2">🔴 Freelancer Comum</h3>
-              </div>
-              
-              <div className="space-y-4 flex-1">
-                {freelancerPoints.map((point, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <X className="w-4 h-4 md:w-5 md:h-5 text-red-400 mt-0.5 flex-shrink-0" />
-                    <span className="text-white/80 text-sm md:text-base leading-relaxed">{point}</span>
-                  </div>
-                ))}
+              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-red-400 mb-2">🔴 Freelancer Comum</h3>
+                </div>
+                <div className="space-y-4">
+                  {freelancerPoints.map((point, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <X className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80">{point}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* EduAi */}
-            <div className="comparison-card responsive-card border-primary-500/30">
+            <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
-              
-              <div className="text-center mb-6">
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2">
-                  <GradientText>🟢 EduAi</GradientText>
-                </h3>
-              </div>
-              
-              <div className="space-y-4 flex-1">
-                {eduAiPoints.map((point, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 md:w-5 md:h-5 text-primary-400 mt-0.5 flex-shrink-0" />
-                    <span className="text-white/80 text-sm md:text-base leading-relaxed">{point}</span>
-                  </div>
-                ))}
+              <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/30">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2">
+                    <GradientText>🟢 EduAi</GradientText>
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {eduAiPoints.map((point, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80">{point}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -116,8 +116,8 @@ const Comparison: React.FC = () => {
           {/* Conclusion */}
           <div className="text-center">
             <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-75" />
-            <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-primary-500/30 max-w-2xl mx-auto">
-              <p className="text-lg md:text-xl font-bold">
+            <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primary-500/30 max-w-2xl mx-auto">
+              <p className="text-xl font-bold">
                 <span className="text-white/90">A diferença: </span>
                 <span className="text-red-400">Freelancer resolve um problema.</span>
                 <span className="text-white/90"> </span>

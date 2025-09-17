@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-16 slide-in-left">
             <Button 
               variant="primary" 
-              className="w-full sm:w-auto text-base md:text-lg py-4 md:py-6 px-8 md:px-12 group"
+              className="w-full sm:w-auto text-lg py-6 px-12 group"
               onClick={() => window.location.href = '#apply'}
             >
               <span className="flex items-center justify-center gap-2">
@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
             </Button>
             <Button 
               variant="secondary" 
-              className="w-full sm:w-auto text-base md:text-lg py-4 md:py-6 px-8 md:px-12 group"
+              className="w-full sm:w-auto text-lg group"
               onClick={() => window.location.href = '#projects'}
             >
               <span className="flex items-center justify-center gap-2">
@@ -133,40 +133,34 @@ const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="hero-cards max-w-6xl mx-auto slide-in-right">
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
-                  <Bot />
-                </div>
-                <div className="card-content">
-                  <h3 className="card-title">IA Humanizada</h3>
-                  <p className="card-description">Agentes que pensam e agem como humanos</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto slide-in-right">
+            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
+                <Bot className="w-6 h-6 text-primary-400" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold mb-1">IA Humanizada</h3>
+                <p className="text-sm text-white/70">Agentes que pensam e agem como humanos</p>
               </div>
             </div>
 
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
-                  <Brain />
-                </div>
-                <div className="card-content">
-                  <h3 className="card-title">Automação 360°</h3>
-                  <p className="card-description">Integração completa de processos</p>
-                </div>
+            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center scale-in">
+                <Brain className="w-6 h-6 text-accent-400" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold mb-1">Automação 360°</h3>
+                <p className="text-sm text-white/70">Integração completa de processos</p>
               </div>
             </div>
 
-            <div className="responsive-card tilt-card">
-              <div className="card-header">
-                <div className="card-icon">
-                  <Zap />
-                </div>
-                <div className="card-content">
-                  <h3 className="card-title">Resultados Reais</h3>
-                  <p className="card-description">ROI mensurável e garantido</p>
-                </div>
+            <div className="flex items-center gap-4 p-6 rounded-2xl glass-card tilt-card">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center scale-in">
+                <Zap className="w-6 h-6 text-primary-400" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold mb-1">Resultados Reais</h3>
+                <p className="text-sm text-white/70">ROI mensurável e garantido</p>
               </div>
             </div>
           </div>
@@ -176,6 +170,7 @@ const Hero: React.FC = () => {
       {/* Marquee section */}
       <div className="mt-20">
         <Marquee items={benefitItems} speed="normal" />
+        <Marquee items={benefitItems} direction="right" speed="normal" />
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ const Projects: React.FC = () => {
           <div className="mt-16 relative">
             <div className="max-w-5xl mx-auto">
               {/* Projects grid */}
-              <div className="responsive-grid mb-16 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <ProjectStep
                   icon={<Users className="w-10 h-10" />}
                   title="Super Time de Agentes"
@@ -130,30 +130,28 @@ type ProjectStepProps = {
 
 const ProjectStep: React.FC<ProjectStepProps> = ({ icon, title, description, features }) => {
   return (
-    <div className="group responsive-card">
+    <div className="group relative">
       <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      <div className="card-header">
-        <div className="card-icon">
-          {icon}
+      <div className="relative bg-dark-800/50 backdrop-blur-sm p-8 rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10">
+        <div className="flex items-start gap-5">
+          <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-4 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+              {icon}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold mb-3">{title}</h3>
+            <p className="text-white/70 mb-6">{description}</p>
+            <ul className="space-y-2">
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-center gap-2 text-sm text-white/60">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="card-content">
-          <h3 className="card-title">{title}</h3>
-        </div>
-      </div>
-      
-      <div className="card-body">
-        <p className="card-description">{description}</p>
-      </div>
-      
-      <div className="card-footer">
-        <ul className="card-features">
-          {features.map((feature, index) => (
-            <li key={index} className="card-feature">
-              {feature}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

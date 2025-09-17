@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Search, MessageCircle, Rocket, AlertTriangle } from 'lucide-react';
+import { Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
 
 const CTA: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ const CTA: React.FC = () => {
           ref={sectionRef} 
           className="opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 border border-primary-500/20 mb-8">
                 <span className="text-sm font-medium bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
@@ -50,34 +50,33 @@ const CTA: React.FC = () => {
                 </span>
               </div>
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
                 Comece Sua <GradientText>Transformação Hoje</GradientText>
               </h2>
-              <p className="text-lg md:text-xl text-white/80 mb-8">
+              <p className="text-xl text-white/80 mb-8">
                 A automação não é um gasto. É o melhor investimento que você pode fazer no seu negócio.
               </p>
               
-              <div className="cta-mobile-cards mb-10 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <BenefitCard
-                  icon={<Search className="w-6 h-6" />}
-                  title="Diagnóstico Gratuito"
+                  icon={<Target className="w-6 h-6" />}
+                  title="🎯 Diagnóstico Gratuito (Vale R$ 2.500)"
                   description="Análise completa do seu negócio, identificamos onde automatizar primeiro"
                 />
                 <BenefitCard
-                  icon={<MessageCircle className="w-6 h-6" />}
-                  title="Consultoria de 30 Minutos"
+                  icon={<Lightbulb className="w-6 h-6" />}
+                  title="📞 Consultoria de 30 Minutos"
                   description="Falamos sobre suas dores específicas e mostramos casos similares"
                 />
                 <BenefitCard
                   icon={<Rocket className="w-6 h-6" />}
-                  title="Implementação Express"
+                  title="🚀 Implementação Express"
                   description="Primeira automação funcionando em 10 dias com suporte total"
                 />
                 <BenefitCard
-                  icon={<AlertTriangle className="w-6 h-6" />}
-                  title="Última Chance"
+                  icon={<Gauge className="w-6 h-6" />}
+                  title="⚠️ Última Chance"
                   description="Apenas 5 empresas por mês. 3 vagas restantes para este mês."
-                  isUrgent={true}
                 />
               </div>
             </div>
@@ -87,8 +86,7 @@ const CTA: React.FC = () => {
               <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl border border-dark-700/50 hover:border-primary-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-500/10">
                 <iframe
                   src="https://typebot.co/ag-ncia-aplica-es-automatik-labs-1-f1h19py"
-                  style={{ border: 'none', width: '100%', height: '450px' }}
-                  className="sm:h-[500px] md:h-[550px] lg:h-[600px] rounded-2xl"
+                  style={{ border: 'none', width: '100%', height: '600px' }}
                   title="Typebot - EduAi"
                 />
               </div>
@@ -104,38 +102,19 @@ type BenefitCardProps = {
   icon: React.ReactNode;
   title: string;
   description: string;
-  isUrgent?: boolean;
 };
 
-const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, isUrgent = false }) => {
+const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description }) => {
   return (
-    <div className={`group mobile-card hover:bg-dark-800/50 transition-all duration-300 ${
-      isUrgent 
-        ? 'border-orange-500/40 bg-orange-500/5 shadow-lg shadow-orange-500/20 animate-pulse-subtle hover:border-orange-400/60 hover:shadow-xl hover:shadow-orange-500/30' 
-        : ''
-    }`}>
-      <div className="mobile-card-header">
-        <div className={`mobile-card-icon ${
-          isUrgent 
-            ? 'text-orange-400' 
-            : 'text-primary-400'
-        }`}>
+    <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-dark-800/50 transition-colors duration-300">
+      <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
           {icon}
         </div>
-        <div className="mobile-card-content">
-          <h3 className={`mobile-card-title ${
-            isUrgent 
-              ? 'text-orange-300' 
-              : 'text-white'
-          }`}>{title}</h3>
-        </div>
       </div>
-      <div className="mobile-card-body">
-        <p className={`mobile-card-description ${
-          isUrgent 
-            ? 'text-orange-200/80' 
-            : 'text-white/70'
-        }`}>{description}</p>
+      <div>
+        <h3 className="font-semibold mb-1">{title}</h3>
+        <p className="text-white/70 text-sm">{description}</p>
       </div>
     </div>
   );

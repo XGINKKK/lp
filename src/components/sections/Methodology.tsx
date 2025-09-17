@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Target, Lightbulb, Rocket, Gauge, ArrowRight } from 'lucide-react';
+import { Search, FileText, Cpu, RefreshCw, ArrowRight, Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
 
 const Methodology: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,9 +57,9 @@ const Methodology: React.FC = () => {
           </div>
           
           <div className="mt-16 relative">
-            <div className="max-w-7xl mx-auto">
-              {/* Methodology Cards Grid */}
-              <div className="mobile-responsive-grid">
+            <div className="max-w-5xl mx-auto">
+              {/* Steps grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <MethodologyStep
                   number="01"
                   icon={<Target className="w-8 h-8" />}
@@ -138,29 +138,36 @@ type MethodologyStepProps = {
 
 const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
   return (
-    <div className="group responsive-card" data-number={number}>
-      <div className="card-header">
-        <div className="card-icon">
-          {icon}
+    <div className="group relative h-full">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative bg-dark-800/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 h-full flex flex-col">
+        {/* Step number */}
+        <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-sm font-bold">
+          {number}
         </div>
-        <div className="card-number">{number}</div>
-      </div>
-      
-      <div className="card-content">
-        <h3 className="card-title">{title}</h3>
-        <p className="card-description">{description}</p>
-      </div>
-      
-      <div className="card-body">
-        <div className="card-footer">
-          <ul className="card-features">
-            {features.map((feature, index) => (
-              <li key={index} className="card-feature">
-                {feature}
-              </li>
-            ))}
-          </ul>
+        
+        {/* Icon */}
+        <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+            {icon}
+          </div>
         </div>
+        
+        {/* Content */}
+        <div className="flex-1 flex flex-col">
+          <h3 className="text-xl font-bold mb-3 min-h-[3.5rem] flex items-start">{title}</h3>
+          <p className="text-white/70 mb-6 flex-1">{description}</p>
+        </div>
+        
+        {/* Features */}
+        <ul className="space-y-2">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center gap-2 text-sm text-white/60">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary-400" />
+              {feature}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
