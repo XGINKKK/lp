@@ -696,37 +696,71 @@ img {
 }
 
 /* Custom Scrollbar */
-.scrollbar-thin {
+/* Custom Scrollbar - Cyberpunk Theme */
+.scrollbar-cyberpunk {
   scrollbar-width: thin;
+  scrollbar-color: #ff00ff rgba(30, 13, 46, 0.3);
 }
 
-.scrollbar-thumb-primary-500\/50::-webkit-scrollbar-thumb {
-  background-color: rgba(139, 92, 246, 0.5);
-  border-radius: 6px;
+.scrollbar-cyberpunk::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.scrollbar-track-dark-700\/30::-webkit-scrollbar-track {
-  background-color: rgba(55, 65, 81, 0.3);
-  border-radius: 6px;
+.scrollbar-cyberpunk::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(30, 13, 46, 0.4), rgba(10, 10, 10, 0.6));
+  border-radius: 10px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
 }
 
-.scrollbar-thin::-webkit-scrollbar {
+.scrollbar-cyberpunk::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff00ff, #d946ef, #a855f7);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.scrollbar-cyberpunk::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff40ff, #ff00ff, #d946ef);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.6), 0 0 20px rgba(255, 0, 255, 0.3);
+  transform: scaleY(1.1);
+}
+
+.scrollbar-cyberpunk::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ff80ff, #ff40ff, #ff00ff);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.4);
+}
+
+.scrollbar-cyberpunk::-webkit-scrollbar-corner {
+  background: rgba(30, 13, 46, 0.4);
+}
+
+/* Scrollbar para containers específicos */
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ff00ff rgba(30, 13, 46, 0.2);
+}
+
+.chat-scrollbar::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
 }
 
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(139, 92, 246, 0.5);
-  border-radius: 6px;
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 13, 46, 0.3);
+  border-radius: 8px;
 }
 
-.scrollbar-thin::-webkit-scrollbar-track {
-  background-color: rgba(55, 65, 81, 0.3);
-  border-radius: 6px;
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff00ff, #d946ef);
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 0, 255, 0.3);
+  transition: all 0.2s ease;
 }
 
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(139, 92, 246, 0.7);
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff40ff, #ff00ff);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
 /* Prefers reduced motion */
