@@ -154,7 +154,7 @@ const Hero: React.FC = () => {
                 
                 <div className="flex items-center gap-2 text-sm text-primary-400 font-medium">
                   <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                  Conversas naturais e decisões inteligentes
+                  <span>Conversas naturais e decisões inteligentes</span>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ const Hero: React.FC = () => {
                 
                 <div className="flex items-center gap-2 text-sm text-accent-400 font-medium">
                   <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></div>
-                  Integração completa de processos
+                  <span>Integração completa de processos</span>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ const Hero: React.FC = () => {
                 
                 <div className="flex items-center gap-2 text-sm text-neon-pink font-medium">
                   <div className="w-2 h-2 bg-neon-pink rounded-full animate-pulse"></div>
-                  ROI mensurável e garantido
+                  <span>ROI mensurável e garantido</span>
                 </div>
               </div>
             </div>
