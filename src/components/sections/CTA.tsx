@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Container from '../ui/Container';
 import GradientText from '../ui/GradientText';
-import { Target, Lightbulb, Rocket, Gauge } from 'lucide-react';
+import { Search, MessageCircle, Rocket, AlertTriangle } from 'lucide-react';
 
 const CTA: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -59,23 +59,23 @@ const CTA: React.FC = () => {
               
               <div className="cta-mobile-cards mb-10 max-w-4xl mx-auto">
                 <BenefitCard
-                  icon={<Target className="w-6 h-6" />}
-                  title="🎯 Diagnóstico Gratuito"
+                  icon={<Search className="w-6 h-6" />}
+                  title="Diagnóstico Gratuito"
                   description="Análise completa do seu negócio, identificamos onde automatizar primeiro"
                 />
                 <BenefitCard
-                  icon={<Lightbulb className="w-6 h-6" />}
-                  title="📞 Consultoria de 30 Minutos"
+                  icon={<MessageCircle className="w-6 h-6" />}
+                  title="Consultoria de 30 Minutos"
                   description="Falamos sobre suas dores específicas e mostramos casos similares"
                 />
                 <BenefitCard
                   icon={<Rocket className="w-6 h-6" />}
-                  title="🚀 Implementação Express"
+                  title="Implementação Express"
                   description="Primeira automação funcionando em 10 dias com suporte total"
                 />
                 <BenefitCard
-                  icon={<Gauge className="w-6 h-6" />}
-                  title="⚠️ Última Chance"
+                  icon={<AlertTriangle className="w-6 h-6" />}
+                  title="Última Chance"
                   description="Apenas 5 empresas por mês. 3 vagas restantes para este mês."
                 />
               </div>
