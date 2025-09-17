@@ -75,7 +75,7 @@ const Methodology: React.FC = () => {
                 <MethodologyStep
                   number="02"
                   icon={<Lightbulb className="w-8 h-8" />}
-                  title="Dias 4-7: Construção da Sua IA"
+                  title="Dias 4-7: Construção<br className='sm:hidden'/> da Sua IA"
                   description="Criamos sua assistente virtual personalizada"
                   features={[
                     "Desenvolvemos os agentes de IA",
