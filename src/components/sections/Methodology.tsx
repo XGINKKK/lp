@@ -166,6 +166,15 @@ const MethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, 
     </div>
   );
 };
+
+const MobileMethodologyStep: React.FC<MethodologyStepProps> = ({ number, icon, title, description, features }) => {
+  return (
+    <div className="mobile-card">
+      <div className="mobile-card-header">
+        <div className="mobile-card-number">
+          {number}
+        </div>
+        <div className="mobile-card-icon">
           {icon}
         </div>
         <div className="mobile-card-content">
