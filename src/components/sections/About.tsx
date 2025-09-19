@@ -148,15 +148,15 @@ const About: React.FC = () => {
                     ].map((text, index) => (
                       <div 
                         key={index}
-                        className="flex items-start gap-4 p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out opacity-100 translate-x-0"
+                        className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-green-500/5 border border-green-500/20 transition-all duration-800 ease-out opacity-100 translate-x-0"
                         style={{ 
                           animationDelay: `${index * 200}ms`
                         }}
                       >
-                        <span className="text-green-400 text-lg font-bold flex-shrink-0 w-5 text-center">
+                        <span className="text-green-400 text-base md:text-lg font-bold flex-shrink-0 w-4 md:w-5 text-center mt-0.5">
                           ✓
                         </span>
-                        <span className="text-white/90 leading-relaxed text-base font-medium">
+                        <span className="text-white/90 leading-relaxed text-sm md:text-base font-medium">
                           {text}
                         </span>
                       </div>
