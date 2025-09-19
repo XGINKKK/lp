@@ -248,18 +248,14 @@ const AIAgents: React.FC = () => {
                         )}
                       </div>
                       
-                      {/* Chat Input (Visual only) */}
-                      <div className="border-t border-dark-700/50 p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 bg-dark-700/50 rounded-full px-4 py-2 border border-dark-600/30">
-                            <span className="text-white/40 text-sm">Digite sua mensagem...</span>
-                          </div>
-                          <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                            </svg>
-                          </div>
-                        </div>
+                      {/* CTA Message */}
+                      <div className="border-t border-dark-700/50 p-4 text-center">
+                        <p className="text-white/70 text-sm mb-3">
+                          Quer conversar com nossa IA? 
+                        </p>
+                        <p className="text-primary-400 font-medium text-sm">
+                          👆 Clique no botão "Começar Agora" acima!
+                        </p>
                       </div>
                     </div>
                   </div>
