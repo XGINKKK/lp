@@ -54,7 +54,7 @@ const AIAgents: React.FC = () => {
     },
     {
       id: 7,
-      text: "Ótimo! Vou te conectar com nossa equipe especializada. É só clicar no botão 'Aplicar Agora' acima que você será direcionado para nossa consultoria gratuita! 🚀",
+      text: "Ótimo! Vou te conectar com nossa equipe especializada. É só clicar no botão 'Começar Agora' abaixo que você será direcionado para nossa consultoria gratuita! 🚀",
       sender: 'ai',
       timestamp: '14:35'
     }
@@ -190,7 +190,7 @@ const AIAgents: React.FC = () => {
                   
                   {/* Chat interface */}
                   <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-dark-800/95 backdrop-blur-sm rounded-xl border border-dark-700/50 overflow-hidden">
+                    <div className="bg-dark-800/95 backdrop-blur-sm rounded-xl border border-dark-700/50 overflow-hidden p-5">
                       {/* Chat Header */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
@@ -206,7 +206,7 @@ const AIAgents: React.FC = () => {
                       </div>
                       
                       {/* Chat Messages with Scrollbar */}
-                      <div className="h-64 overflow-y-auto space-y-3 px-5 pb-4 scrollbar-thin scrollbar-thumb-primary-500/50 scrollbar-track-dark-700/30">
+                      <div className="h-64 overflow-y-auto space-y-3 pb-4 scrollbar-thin scrollbar-thumb-primary-500/50 scrollbar-track-dark-700/30">
                         {messages && messages.map((message) => (
                           message && (
                             <div
@@ -249,7 +249,7 @@ const AIAgents: React.FC = () => {
                       </div>
                       
                       {/* CTA Message */}
-                      <div className="border-t border-dark-700/50 p-4 text-center">
+                      <div className="border-t border-dark-700/50 pt-4 text-center">
                         <p className="text-white/70 text-sm mb-3">
                           Quer conversar com nossa IA? 
                         </p>
