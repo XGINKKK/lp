@@ -12,23 +12,51 @@ const AIAgents: React.FC = () => {
     id: number;
     text: string;
     sender: 'ai' | 'user';
+    timestamp?: string;
   };
 
   const conversation: Message[] = [
     {
       id: 1,
-      text: "Olá! Estou aqui para ajudar com suas dúvidas sobre nossos produtos. Como posso auxiliar hoje?",
-      sender: 'ai'
+      text: "Olá! Sou a Ana, sua assistente de IA da EduAi. Como posso ajudar você hoje? 😊",
+      sender: 'ai',
+      timestamp: '14:32'
     },
     {
       id: 2,
-      text: "Preciso de informações sobre integrações com meu sistema atual.",
-      sender: 'user'
+      text: "Oi Ana! Preciso automatizar meu atendimento ao cliente. É possível?",
+      sender: 'user',
+      timestamp: '14:33'
     },
     {
       id: 3,
-      text: "Claro! Nossas soluções são projetadas para integrar perfeitamente com sua infraestrutura existente. Posso agendar uma demonstração personalizada?",
-      sender: 'ai'
+      text: "Perfeito! Posso criar um agente que atende 24/7, resolve 80% das dúvidas automaticamente e escala para humanos quando necessário. Quer ver como funciona?",
+      sender: 'ai',
+      timestamp: '14:33'
+    },
+    {
+      id: 4,
+      text: "Isso seria incrível! Quanto tempo leva para implementar?",
+      sender: 'user',
+      timestamp: '14:34'
+    },
+    {
+      id: 5,
+      text: "Em apenas 10 dias você já tem tudo funcionando! Primeiro fazemos um diagnóstico gratuito do seu negócio, depois criamos e implementamos sua IA personalizada. Posso agendar uma demonstração?",
+      sender: 'ai',
+      timestamp: '14:34'
+    },
+    {
+      id: 6,
+      text: "Sim, quero agendar! Como funciona?",
+      sender: 'user',
+      timestamp: '14:35'
+    },
+    {
+      id: 7,
+      text: "Ótimo! Vou te conectar com nossa equipe especializada. É só clicar no botão 'Aplicar Agora' acima que você será direcionado para nossa consultoria gratuita! 🚀",
+      sender: 'ai',
+      timestamp: '14:35'
     }
   ];
 
@@ -162,34 +190,112 @@ const AIAgents: React.FC = () => {
                   
                   {/* Chat interface */}
                   <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-dark-800/90 backdrop-blur-sm rounded-xl p-5 border border-dark-700/50">
+                    <div className="bg-dark-800/95 backdrop-blur-sm rounded-xl border border-dark-700/50 overflow-hidden">
+                      {/* Chat Header */}
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
                           <BrainCircuit size={18} className="text-white" />
                         </div>
                         <div>
-                          <h4 className="font-medium text-white">Assistente IA</h4>
-                          <p className="text-xs text-white/60">EduAi</p>
+                          <h4 className="font-medium text-white flex items-center gap-2">
+                            Ana - Assistente IA
+                            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          </h4>
+                          <p className="text-xs text-white/60">Online • EduAi</p>
                         </div>
                       </div>
-                      <div className="space-y-3">
+                      
+                      {/* Chat Messages with Scrollbar */}
+                      <div className="h-64 overflow-y-auto space-y-3 px-5 pb-4 scrollbar-thin scrollbar-thumb-primary-500/50 scrollbar-track-dark-700/30">
                         {messages && messages.map((message) => (
                           message && (
                             <div
                               key={message.id}
-                              className={`${
+                              className={`flex ${
                                 message.sender === 'ai'
-                                  ? 'bg-primary-500/10 border border-primary-500/20'
-                                  : 'bg-dark-700/30 border border-dark-600/20 ml-auto'
-                              } p-3 rounded-lg max-w-[80%] animate-fade-in`}
+                                  ? 'justify-start'
+                                  : 'justify-end'
+                              } animate-fade-in`}
                             >
-                              <p className="text-white/90 text-sm">{message.text}</p>
+                              <div className={`${
+                                message.sender === 'ai'
+                                  ? 'bg-primary-500/15 border border-primary-500/25'
+                                  : 'bg-dark-700/50 border border-dark-600/30'
+                              } p-3 rounded-2xl max-w-[85%] relative`}>
+                                <p className="text-white/90 text-sm leading-relaxed">{message.text}</p>
+                                {message.timestamp && (
+                                  <span className="text-xs text-white/40 mt-1 block">
+                                    {message.timestamp}
+                                  </span>
+                                )}
+                              </div>
                             </div>
                           )
                         ))}
                         {isTyping && (
-                          <div className="bg-primary-500/10 p-3 rounded-lg max-w-[80%] border border-primary-500/20">
-                            <div className="flex gap-1">
+                          <div className="flex justify-start animate-fade-in">
+                            <div className="bg-primary-500/15 border border-primary-500/25 p-3 rounded-2xl max-w-[85%]">
+                              <div className="flex gap-1 items-center">
+                                <span className="text-xs text-white/60 mr-2">Ana está digitando</span>
+                                <div className="flex gap-1">
+                                  <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+                                  <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+                                  <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Chat Input (Visual only) */}
+                      <div className="border-t border-dark-700/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1 bg-dark-700/50 rounded-full px-4 py-2 border border-dark-600/30">
+                            <span className="text-white/40 text-sm">Digite sua mensagem...</span>
+                          </div>
+                          <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+type FeatureItemProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
+  return (
+    <div className="group flex items-start gap-4 p-4 rounded-xl hover:bg-dark-800/50 transition-colors duration-300">
+      <div className="bg-gradient-to-br from-primary-500/20 to-accent-500/20 p-2 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <div className="text-primary-400 group-hover:text-accent-400 transition-colors">
+          {icon}
+        </div>
+      </div>
+      <div>
+        <h3 className="font-semibold mb-1">{title}</h3>
+        <p className="text-white/70 text-sm">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default AIAgents;
                               <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '0ms' }} />
                               <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '150ms' }} />
                               <div className="w-2 h-2 rounded-full bg-primary-400 animate-bounce" style={{ animationDelay: '300ms' }} />

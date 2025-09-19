@@ -368,3 +368,32 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Custom Scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-primary-500\/50::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 70, 239, 0.5);
+  border-radius: 6px;
+}
+
+.scrollbar-track-dark-700\/30::-webkit-scrollbar-track {
+  background-color: rgba(45, 27, 71, 0.3);
+  border-radius: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 70, 239, 0.5);
+  border-radius: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: rgba(45, 27, 71, 0.3);
+  border-radius: 6px;
+}
