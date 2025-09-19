@@ -332,6 +332,21 @@
   animation: fade-in 0.5s ease-out forwards;
 }
 
+/* Mobile card improvements */
+@media (max-width: 640px) {
+  .space-y-4 > * + * {
+    margin-top: 0.75rem !important;
+  }
+  
+  .bg-green-500\/5 {
+    background-color: rgba(34, 197, 94, 0.08) !important;
+  }
+  
+  .border-green-500\/20 {
+    border-color: rgba(34, 197, 94, 0.25) !important;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
