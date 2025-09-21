@@ -60,22 +60,22 @@ const CTA: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <BenefitCard
                   icon={<Target className="w-6 h-6" />}
-                  title="🎯 Diagnóstico Gratuito (Vale R$ 2.500)"
+                  title="Diagnóstico Gratuito (Vale R$ 2.500)"
                   description="Análise completa do seu negócio, identificamos onde automatizar primeiro"
                 />
                 <BenefitCard
                   icon={<Lightbulb className="w-6 h-6" />}
-                  title="📞 Consultoria de 30 Minutos"
+                  title="Consultoria de 30 Minutos"
                   description="Falamos sobre suas dores específicas e mostramos casos similares"
                 />
                 <BenefitCard
                   icon={<Rocket className="w-6 h-6" />}
-                  title="🚀 Implementação Express"
+                  title="Implementação Express"
                   description="Primeira automação funcionando em 10 dias com suporte total"
                 />
                 <BenefitCard
                   icon={<Gauge className="w-6 h-6" />}
-                  title="⚠️ Última Chance"
+                  title="Última Chance"
                   description="Apenas 5 empresas por mês. 3 vagas restantes para este mês."
                 />
               </div>
