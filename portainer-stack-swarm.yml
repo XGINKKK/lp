@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  landing-page:
+    image: ghcr.io/xginkkk/lp:latest
+    # container_name removido para compatibilidade com Swarm
+    ports:
+      - "3000:3000"
+    environment:
+      - N8N_WEBHOOK_URL=https://webhook.eduardoia.com.br/webhook/site
+      - NODE_ENV=production
+    networks:
+      - web_network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  web_network:
+    driver: overlay
+    # Se der erro com 'overlay' e você NÃO estiver em Swarm, troque para 'bridge'
+    # Se você JÁ TEM uma rede (ex: traefik-public), mude para external: true

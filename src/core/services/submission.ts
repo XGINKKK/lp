@@ -1,10 +1,14 @@
-export const TRACE_ID = crypto.randomUUID();
+import { TRACE_ID } from "./submission"; // Import existing constant if possible, or re-declare but prefer keeping logic intact.
+// Actually checking previous file content... TRACE_ID is exported.
+
+export const TRACE_ID_CONST = crypto.randomUUID();
 
 export interface DiagnosisData {
     name: string;
     whatsapp: string;
     role: string;
     hasDecisionPower: string;
+    companyName: string; // [NEW]
     teamSize: string;
     adsInvestment: string;
     usesCRM: string;
@@ -13,11 +17,14 @@ export interface DiagnosisData {
 
 export const submitDiagnosis = async (data: DiagnosisData) => {
     console.log(`%c[SECURE_CHANNEL] Enviando diagnóstico...`, "color: #06b6d4");
-    console.log(`[TRACE_ID]: ${TRACE_ID}`);
+
+    // TRACE_ID logic from previous turns
+    const currentTraceId = crypto.randomUUID();
+    console.log(`[TRACE_ID]: ${currentTraceId}`);
 
     const payload = {
         ...data,
-        trace_id: TRACE_ID,
+        trace_id: currentTraceId,
         timestamp: new Date().toISOString()
     };
 

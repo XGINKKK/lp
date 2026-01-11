@@ -3,16 +3,26 @@ version: '3.8'
 services:
   landing-page:
     image: ghcr.io/xginkkk/lp:latest
-    container_name: revenue_engineering_lp
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
     environment:
       - N8N_WEBHOOK_URL=https://webhook.eduardoia.com.br/webhook/site
       - NODE_ENV=production
     networks:
       - web_network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      labels:
+        # Habilita o Traefik para este serviço
+        - "traefik.enable=true"
+        # Define o roteador para HTTP (Porta 80) e HTTPS (443)
+        - "traefik.http.routers.lp.rule=Host(`lp.eduardoia.com.br`)"
+        - "traefik.http.routers.lp.entrypoints=websecure"
+        - "traefik.http.routers.lp.tls.certresolver=myresolver"
+        # Aponta para a porta 3000 do container
+        - "traefik.http.services.lp.loadbalancer.server.port=3000"
 
 networks:
   web_network:
     external: true
+    name: EduNet

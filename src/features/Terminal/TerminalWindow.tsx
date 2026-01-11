@@ -166,6 +166,13 @@ export const TerminalWindow = () => {
                                     <p className="text-white/50">Conte um pouco sobre a estrutura atual.</p>
                                 </div>
                                 <div className="space-y-5">
+                                    <InputField
+                                        label="NOME DA SUA EMPRESA"
+                                        value={formData.companyName}
+                                        onChange={(e) => updateField("companyName", e.target.value)}
+                                        placeholder="Ex: Revenue Engineering"
+                                        autoFocus
+                                    />
                                     <div className="flex flex-col gap-2">
                                         <label className="text-xs text-white/50">// TAMANHO DA EQUIPE</label>
                                         <select

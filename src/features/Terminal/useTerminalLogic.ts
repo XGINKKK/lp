@@ -16,6 +16,7 @@ export const useTerminalLogic = () => {
         whatsapp: "",
         role: "",
         hasDecisionPower: "",
+        companyName: "",
         teamSize: "",
         adsInvestment: "",
         usesCRM: "",
