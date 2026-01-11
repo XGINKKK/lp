@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  landing-page:
+    image: ghcr.io/xginkkk/lp:latest
+    container_name: revenue_engineering_lp
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - N8N_WEBHOOK_URL=https://webhook.eduardoia.com.br/webhook/site
+      - NODE_ENV=production
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    external: true
