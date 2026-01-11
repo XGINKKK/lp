@@ -1,4 +1,4 @@
-import { TRACE_ID } from "./submission"; // Import existing constant if possible, or re-declare but prefer keeping logic intact.
+
 // Actually checking previous file content... TRACE_ID is exported.
 
 export const TRACE_ID_CONST = crypto.randomUUID();
